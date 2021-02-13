@@ -1,0 +1,46 @@
+{
+  "header": {
+    "topbar": {
+      "aboutUs": "معلومات عنا",
+      "contacts": "جهات الاتصال",
+      "storeLocation": "موقع المتجر",
+      "trackOrder": "تتبع الطلبات",
+      "blog": "المدونة",
+      "myAccount": "حسابي",
+      "currency": "العملة", 
+      "CustomerService": "خدمة العملاء",
+      "language": "اللغة"
+    },
+    "nav-links": {
+      "home": "الرئيسية",
+      "product": "المنتجات",
+      "CE": "نحن",
+      "actualites": "الجديد",
+      "aPropos": "عنا",
+      "contant": "راسلنا",
+      "ShopByCategory" : "تسوق حسب الاقسام"
+    },
+    "search": {
+      "AllCategories": "جميع الفئات"
+    }
+  },
+  "home" :{
+      "blocks" : {
+        "features_title_1" : "الشحن مجانا",
+        "features_subtitle_1" : "للطلبات من 3500 دج",
+        "features_title_2" : "دعم 24/7",
+        "features_subtitle_2" : "اتصل بنا في أي وقت",
+        "features_title_3" : "100٪ أمان",
+        "features_subtitle_3" : "مدفوعات آمنة فقط",
+        "features_title_4" : "عروض ساخنة",
+        "features_subtitle_4" : "خصومات تصل إلى 90"
+    }
+  }
+} 
+
+
+
+
+
+
+

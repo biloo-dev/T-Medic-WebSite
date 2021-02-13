@@ -1,0 +1,29 @@
+// -------------------------
+// --- You can add your custom CSS here and it will overwrite template styles.
+// -------------------------
+ 
+@font-face {
+    font-family: 'Droid Arabic Kufi';
+    src: url('~assets/fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf');
+}
+.locale-en {
+    font-family: 'Roboto', sans-serif;
+}
+
+.locale-fr {
+    font-family: 'Roboto', serif;
+}
+
+.locale-ar {
+    font-family: 'Droid Arabic Kufi',
+    'Traditional Arabic';
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+} /* ---- tsParticles container ---- */
+#tsparticles {  
+ 
+  margin: 0;
+}

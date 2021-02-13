@@ -1,0 +1,40 @@
+{
+  "header": {
+    "topbar": {
+      "aboutUs": "À propos de nous", 
+      "contacts": "Contacts",
+      "storeLocation": "Emplacement du magasin",
+      "trackOrder": "Suivre la commande",
+      "blog": "Blog",
+      "myAccount": "Mon compte",
+      "currency": "Currency",
+      "CustomerService": "Service Clients",
+      "language": "Language"
+    },
+    "nav-links" : {
+      "home": "Accueil",
+      "product": "Produits",
+      "CE" : "CE",
+      "actualites": "Actualités",
+      "aPropos": "à Propos",
+      "contant": "Contact",
+      "ShopByCategory" : "Acheter par catégorie"
+    },
+    "search" : {
+      "AllCategories": "Toutes catégories"
+    }
+  },
+  "home" :{
+      "blocks" : {
+        "features_title_1" : "Livraison gratuite",
+        "features_subtitle_1" : "Pour les commandes de 3500DZD",
+        "features_title_2" : "Assistance 24/7",
+        "features_subtitle_2" : "Appelez-nous à tout moment",
+        "features_title_3" : "100% sécurité",
+        "features_subtitle_3" : "Seuls les paiements sécurisés",
+        "features_title_4" : "Offres chaudes",
+        "features_subtitle_4" : "Réductions jusqu'à 90%"
+    }
+  }
+}
+

@@ -1,0 +1,39 @@
+{
+  "header": {
+    "topbar": {
+      "aboutUs": "About Us",
+      "contacts": "Contacts",
+      "storeLocation": "Store Location",
+      "trackOrder": "Track Order",
+      "blog": "Blog",
+      "myAccount": "My Account",
+      "currency": "Currency", 
+      "CustomerService": "Customer Service",
+      "language": "Language"
+    },
+    "nav-links": {
+      "home": "Home",
+      "product": "Products",
+      "CE": "CE",
+      "actualites": "News",
+      "aPropos": "About us",
+      "contant": "Contact",
+      "ShopByCategory" : "Shop By Category"
+    },
+    "search": {
+      "AllCategories": "All Categories"
+    }
+  }, 
+  "home" :{
+      "blocks" : {
+        "features_title_1" : "Free Shipping",
+        "features_subtitle_1" : "For orders from 3500DZD",
+        "features_title_2" : "Support 24/7",
+        "features_subtitle_2" : "Call us anytime",
+        "features_title_3" : "100% Safety",
+        "features_subtitle_3" : "Only secure payments",
+        "features_title_4" : "Hot Offers",
+        "features_subtitle_4" : "Discounts up to 90%"
+    }
+  }
+}

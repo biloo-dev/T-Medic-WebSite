@@ -9,12 +9,13 @@ import Menu18x14Svg from '~/svg/menu-18x14.svg'
 import ArrowRoundedDown9x6Svg from '~/svg/arrow-rounded-down-9x6.svg'
 import ArrowRoundedRight6x9Svg from '~/svg/arrow-rounded-right-6x9.svg' 
  import { IDepartement } from '~/interfaces//menus/config' 
+import dataHeaderDepartments from '~/data/headerDepartments'
 @Component({
     components: { AppLink, Megamenu, Menu, Menu18x14Svg, ArrowRoundedDown9x6Svg, ArrowRoundedRight6x9Svg }
 })
 export default class Departments extends Vue {
     hoveredItem: INavLink | null = null
-    items: []  = []
+    items: INav = []
     isOpen: boolean = false
     isTransition: boolean = false
     fixed: boolean = false

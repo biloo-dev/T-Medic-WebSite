@@ -1,11 +1,12 @@
 import { NuxtConfig } from '@nuxt/types/config'
+import Vue from 'vue'
 import { NuxtOptionsHead } from '@nuxt/types/config/head'
 import dataLanguages, { defaultLocale } from './src/data/languages'
 import { ILanguage } from '~/interfaces/language'
 // CKH9n9pLaTsHsqw 
 const envMode = process.env.MODE as NuxtConfig['mode'] || 'universal'
 const envRouterBase = process.env.ROUTER_BASE || '/'
- 
+const $this = this
 // noinspection JSUnusedGlobalSymbols
 const config: NuxtConfig = {
     env: {
@@ -16,7 +17,7 @@ const config: NuxtConfig = {
     /*
     ** Headers of the page
     */
-    head: function () {
+    head: function (this: Vue) {
         let currentLanguage: ILanguage | null = null
         const links = []; 
         if (this.$store) {

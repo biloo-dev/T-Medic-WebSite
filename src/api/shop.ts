@@ -55,7 +55,7 @@ const shopApi = {
          */
         // return fetch(`https://example.com/api/categories.json?${qs.stringify(options)}`)
         //     .then((response) => response.json());
-        let { data } = await axios.get('http://127.0.0.1:3333/api/categorys') 
+        let { data } = await axios.get('http://161.35.124.15/api/categorys') 
         return data
         // This is for demonstration purposes only. Remove it and use the code above. 
         // console.log('getCategories(options) :>> ', getCategories(options));

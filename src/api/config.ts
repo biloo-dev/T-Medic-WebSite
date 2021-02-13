@@ -1,6 +1,6 @@
 import axios from "axios";   
 import { ICarousel, IDepartement } from '~/interfaces//menus/config'
-let url = 'http://142.93.203.168/api/'
+let url = 'http://161.35.124.15/api/'
 // let url = 'http://127.0.0.1:3333/api/'
 const Config = {
 

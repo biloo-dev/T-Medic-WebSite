@@ -53,7 +53,7 @@
                                     <div v-if="item.product.images.length > 0" class="product-image">
                                         <AppLink :to="$url.product(item.product)" class="product-image__body">
                                             <!--suppress HtmlUnknownTarget -->
-                                            <img class="product-image__img" :src="$url.img(item.product.images[0])" alt="">
+                                            <img class="product-image__img" :src="$url.img($url.parse(item.product.images))" alt="">
                                         </AppLink>
                                     </div>
                                 </td>

@@ -76,8 +76,7 @@ export default class BlockSlideshow extends Vue {
     get direction () { 
         return this.language.direction
     } 
-    async created(){  
-        this.slides = await apiConfig.getCarousel() 
+    async created(){   
     }
     mounted () { 
         departments.set(this.$el) // this code for open shop by categories 

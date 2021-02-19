@@ -1,7 +1,7 @@
 <template>
     <div :class="`product product--layout--${layout}`">
         <div class="product__content">
-            <ProductGallery :layout="layout" :images="product.images" />
+            <ProductGallery :layout="layout" :images="$url.parse(product.images)" />
 
             <div class="product__info">
                 <div class="product__wishlist-compare">

@@ -125,6 +125,11 @@ function make (context: Context) {
         img (url: string) {
             return this.base(url)
         }
+        ,
+        parse(str :string){
+            let obj = typeof str == "string" ? JSON.parse(str) : str
+            return obj[0]
+        }
     }
 }
 

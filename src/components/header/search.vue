@@ -68,7 +68,7 @@
                         <div class="suggestions__item-image product-image">
                             <div class="product-image__body">
                                 <!--suppress HtmlUnknownTarget -->
-                                <img class="product-image__img" :src="$url.img(product.images[0])" alt="">
+                                <img class="product-image__img" :src="$url.img($url.parse(product.images))" alt="">
                             </div>
                         </div>
 

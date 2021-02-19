@@ -10,6 +10,7 @@ module.exports = {
     ],
     // add your custom rules here
     rules: {
+        "@typescript-eslint/no-explicit-any": "off",
         "indent": ["error", 4],
         "vue/html-indent": ["error", 4, {
             "attribute": 1,

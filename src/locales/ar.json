@@ -1,5 +1,14 @@
 {
-  "DZD": "دج",
+  "DZD": "دج", 
+  "wishlist":{
+    "wishEmpty" :  "قائمة رغباتك فارغة!",
+    "Continue" :   "إستكمال",
+    "Image" :  "صورة",
+    "Product" :  "منتج",
+    "StockStatus" :   "وضع مخزون",
+    "Price" :  "السعر",
+    "InStock" :   "في المخزن"
+  },
   "headerMobile" : {
     "Menu" : "قائمة ت-ميديك"
   },

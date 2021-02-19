@@ -13,7 +13,7 @@
                     <div class="product-image">
                         <AppLink :to="$url.product(product)" class="product-image__body">
                             <!--suppress HtmlUnknownTarget -->
-                            <img class="product-image__img" :src="$url.img(product.images[0])" alt="">
+                            <img class="product-image__img" :src="$url.img($url.parse(product.images))" alt="">
                         </AppLink>
                     </div>
                 </div>
@@ -54,6 +54,7 @@ import AppLink from '~/components/shared/app-link.vue'
 export default class WidgetProducts extends Vue {
     @Prop({ type: String, default: () => '' }) readonly title!: string
     @Prop({ type: Array, default: () => [] }) readonly products!: IProduct[]
+    
 }
 
 </script>

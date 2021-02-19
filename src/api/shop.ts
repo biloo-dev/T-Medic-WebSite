@@ -40,7 +40,7 @@ export type GetSuggestionsOptions = {
     category?: string;
 };
 // let url = 'http://161.35.124.15/api/'
-let url = 'http://127.0.0.1:3333/api/'
+// let url = 'http://127.0.0.1:3333/api/'
 interface AxiosRequestConfig {
     options?: IListOptions;
 }
@@ -50,7 +50,7 @@ const shopApi = {
      */
     getCategories: async (options: GetCategoriesOptions = {}): Promise<[]> => {
          
-        let data = await $axios.$post(url + 'categorys', { options }) 
+        let data = await $axios.$post('categorys', { options }) 
     
         return data 
     },
@@ -58,7 +58,7 @@ const shopApi = {
      * Returns an array of most popular products.
      */
     getPopularCategories: async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        let data = await $axios.$post(url + 'getPopularCategories', { options })
+        let data = await $axios.$post('getPopularCategories', { options })
         return data
         // return getPopularProducts(options)
     },
@@ -73,7 +73,7 @@ const shopApi = {
      * Returns product.
      */
     getProductBySlug: (slug: string): Promise<IProduct> => {
-   
+        
         return getProductBySlug(slug)
     },
     /**
@@ -91,7 +91,7 @@ const shopApi = {
     
     getProductsList: async (options: IListOptions = {}, filters: IFilterValues = {}): Promise<IProductsList> => {
        
-        let data = await $axios.$post(url + 'getProductsList',{ options, filters})
+        let data = await $axios.$post('getProductsList',{ options, filters})
        
         return getProductsList(options, filters)
     },
@@ -99,7 +99,7 @@ const shopApi = {
      * Returns array of featured products.
      */
     getFeaturedProducts: async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        let data = await $axios.$post(url + 'getFeaturedProducts', { options })
+        let data = await $axios.$post('getFeaturedProducts', { options })
         return data
         return getFeaturedProducts(options)
     },
@@ -107,7 +107,7 @@ const shopApi = {
      * Returns array of latest products.
      */
     getLatestProducts : async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        let data = await $axios.$post(url + 'getLatestProducts', { options })
+        let data = await $axios.$post('getLatestProducts', { options })
         return data 
         return getLatestProducts(options)
     },
@@ -115,7 +115,7 @@ const shopApi = {
      * Returns an array of top rated products.
      */
     getTopRatedProducts: async  (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        let data = await $axios.$post(url + 'getTopRatedProducts', { options })
+        let data = await $axios.$post('getTopRatedProducts', { options })
         return data
         return getTopRatedProducts(options)
     },
@@ -123,7 +123,7 @@ const shopApi = {
      * Returns an array of discounted products.
      */
     getDiscountedProducts: async  (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-         let data = await $axios.$post(url + 'getDiscountedProducts', { options })
+         let data = await $axios.$post('getDiscountedProducts', { options })
         return data
         return getDiscountedProducts(options)
     },
@@ -131,7 +131,7 @@ const shopApi = {
      * Returns an array of most popular products.
      */
     getPopularProducts: async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        let data = await $axios.$post(url + 'getPopularProducts', { options })
+        let data = await $axios.$post('getPopularProducts', { options })
         return data
         return getPopularProducts(options)
     },

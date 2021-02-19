@@ -1,6 +1,6 @@
-import { initializeAxios } from '~/utils/api'
-
-const accessor: Plugin = ({ $axios }) => {
+import { initializeAxios } from '~/utils/api' 
+ 
+const accessor = ({ $axios } : { $axios: any}) => {
   initializeAxios($axios)
 }
 

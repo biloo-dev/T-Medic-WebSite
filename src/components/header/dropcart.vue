@@ -24,7 +24,7 @@
                         <div class="product-image dropcart__product-image">
                             <AppLink :to="$url.product(item.product)" class="product-image__body">
                                 <!--suppress HtmlUnknownTarget -->
-                                <img class="product-image__img" :src="$url.img(item.product.images[0])" alt="">
+                                <img class="product-image__img" :src="$url.img($url.parse(item.product.images))" alt="">
                             </AppLink>
                         </div>
                         <div class="dropcart__product-info">

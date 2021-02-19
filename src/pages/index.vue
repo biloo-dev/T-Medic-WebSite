@@ -129,7 +129,7 @@ async function loadColumns () {
         const featuredProducts = runOnlyOnServer(() => shopApi.getFeaturedProducts({ limit: 8 }), null)
         const bestsellers = runOnlyOnServer(() => shopApi.getPopularProducts({ limit: 7 }), null)
         const latestProducts = runOnlyOnServer(() => shopApi.getLatestProducts({ limit: 8 }), null)
-        const columns = runOnlyOnServer(() => loadColumns(context), null)
+        const columns = runOnlyOnServer(() => loadColumns(), null)
         const categories =  shopApi.getPopularCategories({ limit : 8 })
         const slides =  apiConfig.getCarousel()
         return {

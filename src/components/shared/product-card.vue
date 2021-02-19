@@ -38,7 +38,7 @@
         <div v-if="product.images && product.images.length > 0" class="product-card__image product-image">
             <AppLink :to="$url.product(product)" class="product-image__body">
                 <!--suppress HtmlUnknownTarget -->
-                <img class="product-image__img" :src="$url.img(parse(product.images))" alt="">
+                <img class="product-image__img" :src="$url.img($url.parse(product.images))" alt="">
             </AppLink>
         </div>
 
@@ -154,10 +154,7 @@ export type ProductCardLayout = 'grid-sm' | 'grid-nl' | 'grid-lg' | 'list' | 'ho
 export default class ProductCard extends Vue {
     @Prop({ type: Object, required: true }) readonly product!: IProduct
     @Prop({ type: String, default: () => undefined }) readonly layout!: ProductCardLayout
-    parse(str){ 
-        let obj =  typeof str =="string" ? JSON.parse(str) : str
-        return obj[0]
-    } 
+  
     get features () {
         return this.product.attributes.filter(x => x.featured)
     }

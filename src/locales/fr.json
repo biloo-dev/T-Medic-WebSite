@@ -1,5 +1,14 @@
 {
-  "DZD": "DZD",
+  "DZD": "DZD", 
+  "wishlist":{
+    "wishEmpty" : "Votre liste de souhaits est vide!",
+    "Continue" :  "Continuez",
+    "Image" : "Image",
+    "Product" : "Produit",
+    "StockStatus" :  "État des stocks",
+    "Price" : "Prix",
+    "InStock" :  "En stock"
+  },
   "headerMobile" : {
     "Menu" : "T-Medic Menu"
   },

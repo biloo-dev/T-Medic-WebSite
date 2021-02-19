@@ -1,5 +1,37 @@
 {
+  "DZD": "DZD",
+  "headerMobile" : {
+    "Menu" : "Menu T-Medic "
+  },
+  "btns" :{
+    "ShopNow" : "Shop Now" ,
+    "AddToCart" : "Add To Cart"
+  },
+  "badges" : {
+    "Sale" : "Sale",
+    "Hot" : "Hot",
+    "New" : "New"
+  },
+   "blocks": {
+    "FeaturedProducts" : "Featured Products ",
+    "Bestsellers" : "Best Sellers ",
+    "PopularCategories" : "Popular Categories ",
+    "NewArrivals" : "New Arrivals ",
+    "LatestNews" : "Latest News",
+     "category": {
+       "title": "Popular Categories",
+       "showAll": "Show All"
+     },
+      "columns" : { 
+        "TopRatedProducts" : "Top Rated Products",
+        "SpecialOffers" : "Special Offers",
+        "Bestsellers" : "Bestsellers"
+      } 
+   },
   "header": {
+     "titlePage":{
+      "title" : "Home"
+    },
     "topbar": {
       "aboutUs": "About Us",
       "contacts": "Contacts",
@@ -21,7 +53,8 @@
       "ShopByCategory" : "Shop By Category"
     },
     "search": {
-      "AllCategories": "All Categories"
+      "AllCategories": "All Categories",
+      "placeHolder": "Search over 10,000 products"
     }
   }, 
   "home" :{

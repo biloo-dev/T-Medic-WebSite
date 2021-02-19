@@ -15,15 +15,15 @@
                     }"
                 />
                 <div class="block-banner__title">
-                    Hundreds
+                    STAR|CARE
                     <br class="block-banner__mobile-br">
-                    Hand Tools
+                    Banner
                 </div>
                 <div class="block-banner__text">
-                    Hammers, Chisels, Universal Pliers, Nippers, Jigsaws, Saws
+                    Juste pour votre santé...
                 </div>
                 <div class="block-banner__button">
-                    <span class="btn btn-sm btn-primary">Shop Now</span>
+                    <span class="btn btn-sm btn-primary">{{ $t('btns.ShopNow') }}</span>
                 </div>
             </AppLink>
         </div>

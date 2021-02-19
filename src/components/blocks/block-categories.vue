@@ -1,14 +1,13 @@
 <template>
     <div :class="`block block--highlighted block-categories block-categories--layout--${layout}`">
         <div class="container">
-            <BlockHeader :title="title" />
+            <BlockHeader :title="$t('blocks.'+title)" />
 
             <div class="block-categories__list">
-                <div
-                    v-for="(category, index) in categories"
+                <div v-for="(category, index) in categories"
                     :key="index"
                     :class="`block-categories__item category-card category-card--layout--${layout}`"
-                >
+                >      
                     <div class=" category-card__body">
                         <div class=" category-card__image">
                             <AppLink :to="$url.category(category)">
@@ -31,7 +30,7 @@
                             </ul>
                             <div class="category-card__all">
                                 <AppLink :to="$url.category(category)">
-                                    Show All
+                                    {{ $t('blocks.category.showAll') }}
                                 </AppLink>
                             </div>
                             <div class="category-card__products">

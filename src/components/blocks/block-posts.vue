@@ -7,7 +7,7 @@
         <div class="container">
             <BlockHeader
                 arrows
-                :title="title"
+                :title="$t('blocks.'+title)"
                 @next="handleNextClick"
                 @prev="handlePrevClick"
             />

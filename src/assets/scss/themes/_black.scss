@@ -2,6 +2,7 @@
 $accent-color:          #333 !default;
 $accent-opposite-color: #fff !default;
 $light-opposite-color:  #333 !default;
+$accent-color: #333 !default;
 
 
 // .topbar
@@ -11,7 +12,13 @@ $topbar-border-bottom:     1px solid #ebebeb !default;
 $topbar-font-color:        #8c8c8c           !default;
 $topbar-dropdown-hover-bg: #f2f2f2           !default;
 
+#tsparticles {
+    display: none;
+}
 
+#footer canvas {
+    display: none;
+}
 // .departments
 $departments-icon-color:    rgba(#fff, .2)  !default;
 $departments-arrow-color:   rgba(#fff, .2)  !default;
@@ -49,7 +56,7 @@ $product-card-quickview-default-color: $accent-color           !default;
 
 
 // .nouislider
-$nouislider-border-color: $accent-colors          !default;
+$nouislider-border-color: $accent-color          !default;
 $nouislider-handle-color: $accent-opposite-color !default;
 
 

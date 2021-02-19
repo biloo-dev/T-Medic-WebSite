@@ -77,7 +77,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Add To Cart</th>
+                                    <th>{{ $t('btns.AddToCart') }}</th>
                                     <td v-for="product in items" :key="product.id">
                                         <AsyncAction
                                             v-slot:default="{ run, isLoading }"
@@ -91,7 +91,7 @@
                                                 ]"
                                                 @click="run"
                                             >
-                                                Add To Cart
+                                                {{ $t('btns.AddToCart') }}
                                             </button>
                                         </AsyncAction>
                                     </td>

@@ -34,7 +34,7 @@
                                         <!-- eslint-disable-next-line vue/no-v-html -->
                                         <div class="block-slideshow__slide-text" v-html="slide.text" />
                                         <div class="block-slideshow__slide-button">
-                                            <span class="btn btn-primary btn-lg">Shop Now</span>
+                                            <span class="btn btn-primary btn-lg">{{ $t('btns.ShopNow') }}</span>
                                         </div>
                                     </div>
                                 </AppLink>
@@ -68,58 +68,10 @@ type BlockSlideshowLayout = 'full' | 'with-departments';
 })
 export default class BlockSlideshow extends Vue {
     @Prop({ type: String, default: () => 'full' }) readonly layout!: BlockSlideshowLayout 
+    @Prop({ type: Array, default: () => []  }) readonly slides!: ICarousel[] 
     @Getter('locale/language') language!: ILanguage  
     
-    slides:ICarousel[] = [
-        {
-            title: '',
-            text: '',
-            imageClassic: {
-                ltr: '',
-                rtl: ''
-            },
-            imageFull: {
-                ltr: '',
-                rtl: ''
-            },
-            imageMobile: {
-                ltr: '',
-                rtl: ''
-            }
-        },
-        {
-            title: '',
-            text: '',
-            imageClassic: {
-                ltr: '',
-                rtl: ''
-            },
-            imageFull: {
-                ltr: '',
-                rtl: ''
-            },
-            imageMobile: {
-                ltr: '',
-                rtl: ''
-            }
-        },
-        {
-            title: '',
-            text: '',
-            imageClassic: {
-                ltr: '',
-                rtl: ''
-            },
-            imageFull: {
-                ltr: '',
-                rtl: ''
-            },
-            imageMobile: {
-                ltr: '',
-                rtl: ''
-            }
-        }
-    ]
+    // slides:ICarousel[] = []
 
     get direction () { 
         return this.language.direction
@@ -127,7 +79,7 @@ export default class BlockSlideshow extends Vue {
     async created(){  
         this.slides = await apiConfig.getCarousel() 
     }
-    mounted () {
+    mounted () { 
         departments.set(this.$el) // this code for open shop by categories 
     }
 

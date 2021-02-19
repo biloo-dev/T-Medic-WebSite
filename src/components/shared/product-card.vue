@@ -25,20 +25,20 @@
 
         <div v-if="product.badges.length" class="product-card__badges-list">
             <div v-if="product.badges.includes('sale')" class="product-card__badge product-card__badge--sale">
-                Sale
+                {{ $t('badges.Sale') }}
             </div>
             <div v-if="product.badges.includes('hot')" class="product-card__badge product-card__badge--hot">
-                Hot
+                {{ $t('badges.Hot') }}
             </div>
             <div v-if="product.badges.includes('new')" class="product-card__badge product-card__badge--new">
-                New
+                {{ $t('badges.New') }}
             </div>
         </div>
 
         <div v-if="product.images && product.images.length > 0" class="product-card__image product-image">
             <AppLink :to="$url.product(product)" class="product-image__body">
                 <!--suppress HtmlUnknownTarget -->
-                <img class="product-image__img" :src="$url.img(product.images[0])" alt="">
+                <img class="product-image__img" :src="$url.img(parse(product.images))" alt="">
             </AppLink>
         </div>
 
@@ -89,7 +89,7 @@
                         ]"
                         @click="run"
                     >
-                        Add To Cart
+                        {{ $t('btns.AddToCart') }}
                     </button>
                 </AsyncAction>
                 <AsyncAction v-slot:default="{ run, isLoading }" :action="() => $store.dispatch('cart/add', { product })">
@@ -101,7 +101,7 @@
                         ]"
                         @click="run"
                     >
-                        Add To Cart
+                        {{ $t('btns.AddToCart') }}
                     </button>
                 </AsyncAction>
 
@@ -137,7 +137,7 @@
 
 <script lang="ts">
 
-import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component, Prop, Watch } from 'vue-property-decorator'
 import { IProduct } from '~/interfaces/product'
 import AsyncAction from '~/components/shared/async-action.vue'
 import AppLink from '~/components/shared/app-link.vue'
@@ -154,7 +154,10 @@ export type ProductCardLayout = 'grid-sm' | 'grid-nl' | 'grid-lg' | 'list' | 'ho
 export default class ProductCard extends Vue {
     @Prop({ type: Object, required: true }) readonly product!: IProduct
     @Prop({ type: String, default: () => undefined }) readonly layout!: ProductCardLayout
-
+    parse(str){ 
+        let obj =  typeof str =="string" ? JSON.parse(str) : str
+        return obj[0]
+    } 
     get features () {
         return this.product.attributes.filter(x => x.featured)
     }

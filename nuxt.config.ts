@@ -110,6 +110,7 @@ const config: NuxtConfig = {
         '~/plugins/url.ts',
         '~/plugins/currency.ts',
         '~/plugins/i18n.ts',
+        '~/plugins/axios-accessor.ts',
         { src: '~/plugins/notifications.ts', ssr: false },
         { src: '~/plugins/local-storage.ts', ssr: false }
     ],

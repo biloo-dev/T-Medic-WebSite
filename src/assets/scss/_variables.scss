@@ -304,7 +304,7 @@
    // ----------------------------------------
    // -- .nav-panel, .mobile-header
    // ----------------------------------------
-      $nav-panel-bg:           $accent-color                                                                   !default;
+      $nav-panel-bg:           $accent-color-gradinet !default;
       $nav-panel-shadow:       0 1px rgba(#000, .04), inset 0 -1px rgba(#000, .04)                             !default;
       $nav-panel-stuck-shadow: 0 1px rgba(#000, .04), inset 0 -1px rgba(#000, .04), 0 1px 20px rgba(#000, .15) !default;
       $nav-panel-font-color:   $accent-opposite-color                                                          !default;
@@ -537,7 +537,7 @@
 
       $block-header-arrow-default-bg:      #f2f2f2                                   !default;
       $block-header-arrow-default-color:   #999                                      !default;
-      $block-header-arrow-hover-bg:        $accent-colors                             !default;
+      $block-header-arrow-hover-bg:        $accent-color                             !default;
       $block-header-arrow-hover-color:     $accent-opposite-color                    !default;
       $block-header-arrow-active-bg:       lighten($block-header-arrow-hover-bg, 8%) !default;
       $block-header-arrow-active-color:    $block-header-arrow-hover-color           !default;
@@ -681,7 +681,7 @@
       $layout-switcher-hover-color:          $light-opposite-color                 !default;
       // active
       $layout-switcher-active-bg:            $accent-color                         !default;
-      $layout-switcher-active-border-color:  $accent-colors                         !default;
+      $layout-switcher-active-border-color:  $accent-color                         !default;
       $layout-switcher-active-color:         $accent-opposite-color                !default;
 
    // ----------------------------------------
@@ -734,7 +734,7 @@
       $product-card-font-muted-color:        $light-opposite-muted-color              !default;
 
       $product-card-default-shadow:          0 0 0 1px #ededed inset                  !default;
-      $product-card-hover-shadow:            0 0 0 2px rgba($accent-colors, .7) inset  !default;
+      $product-card-hover-shadow:            0 0 0 2px rgba($accent-color, .7) inset  !default;
 
       $product-card-badge-sale-bg:           #ff3333                                  !default;
       $product-card-badge-sale-color:        #fff                                     !default;
@@ -897,7 +897,7 @@
       $product-tabs-border:              $product-tabs-border-width solid $product-tabs-border-color !default;
       $product-tabs-hover-bg:            #f7f7f7                                                     !default;
       $product-tabs-hover-border-color:  #d9d9d9                                                     !default;
-      $product-tabs-active-border-color: $accent-colors                                               !default;
+      $product-tabs-active-border-color: $accent-color                                               !default;
 
    // ----------------------------------------
    // -- .quickview

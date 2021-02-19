@@ -1,5 +1,37 @@
 {
+  "DZD": "دج",
+  "headerMobile" : {
+    "Menu" : "قائمة ت-ميديك"
+  },
+  "btns" :{ 
+    "ShopNow" : "تسوق الآن",
+    "AddToCart" : "أضف إلى السلة"
+  },
+  "badges" : {
+    "Sale" : "تخفيض السعر",
+    "Hot" : "حار",
+    "New" : "جديد" 
+  },
+  "blocks" : {
+    "FeaturedProducts" : "منتجات مميزة",
+    "Bestsellers" : "أفضل البائعين",
+    "PopularCategories" : "الفئات الشعبية",
+    "NewArrivals" : "الوافدون الجدد",
+    "LatestNews" : "أحدث الأخبار",
+    "category":{
+      "title": "الفئات الشعبية",
+      "showAll": "عرض الكل"
+    },
+    "columns" : {   
+      "TopRatedProducts" : "المنتجات الأعلى تقييماً",
+      "SpecialOffers" : "عروض خاصة",
+      "Bestsellers" : "الأكثر مبيعًا "
+    }  
+  },
   "header": {
+     "titlePage":{
+      "title" : "الرئيسية"
+    },
     "topbar": {
       "aboutUs": "معلومات عنا",
       "contacts": "جهات الاتصال",
@@ -21,7 +53,8 @@
       "ShopByCategory" : "تسوق حسب الاقسام"
     },
     "search": {
-      "AllCategories": "جميع الفئات"
+      "AllCategories": "جميع الفئات",
+      "placeHolder": "ابحث في أكثر من 10000 منتج"
     }
   },
   "home" :{

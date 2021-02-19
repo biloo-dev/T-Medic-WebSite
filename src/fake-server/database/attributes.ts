@@ -40,7 +40,7 @@ const attributesDef: IAttributeDef[] = [
         values: [
             { name: 'Cordless-Electric', slug: 'cordless-electric' }
         ]
-    },
+    }, 
     {
         name: 'Battery Cell Type',
         slug: 'battery-cell-type',

@@ -1,5 +1,37 @@
 {
+  "DZD": "DZD",
+  "headerMobile" : {
+    "Menu" : "T-Medic Menu"
+  },
+  "btns" :{
+    "ShopNow" : "Achetez maintenant",
+    "AddToCart" : "Ajouter au panier"
+  },
+  "badges" : {
+    "Sale" : "Vente",
+    "Hot" : "Chaud",
+    "New" : "Nouveau"
+  },
+  "blocks": {
+    "FeaturedProducts" : "Produits populaires",
+    "Bestsellers" : "Meilleurs vendeurs",
+    "PopularCategories" : "Catégories populaires",
+    "NewArrivals" : "Nouvelles Arrivées",
+    "LatestNews" : "Dernières nouvelles",
+    "category": {
+      "title": "Catégories populaires",
+      "showAll": "Afficher tout"
+    },
+    "columns" : { 
+      "TopRatedProducts" : "Produits les mieux notés",
+      "SpecialOffers" : "Offres spéciales",
+      "Bestsellers" : "Meilleures ventes"
+    }
+  },
   "header": {
+    "titlePage":{
+      "title" : "Accueil"
+    },
     "topbar": {
       "aboutUs": "À propos de nous", 
       "contacts": "Contacts",
@@ -21,7 +53,8 @@
       "ShopByCategory" : "Acheter par catégorie"
     },
     "search" : {
-      "AllCategories": "Toutes catégories"
+      "AllCategories": "Toutes catégories",
+      "placeHolder": "Rechercher plus de 10000 produits"
     }
   },
   "home" :{

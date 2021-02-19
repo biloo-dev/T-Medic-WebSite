@@ -74,7 +74,9 @@ export default class Menu extends Vue {
     @Prop({ type: Array, default: () => [] }) readonly items!: INestedLink[]
 
     hoveredItem: INestedLink | null = null
-
+    mounted(){
+         
+    }
     get itemElements () {
         return this.$refs.items as HTMLDivElement[] || []
     }

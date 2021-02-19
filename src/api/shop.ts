@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars,arrow-body-style */
 // noinspection ES6UnusedImports
 // import qs from 'query-string';
-import axios from "axios";
+import { $axios } from '~/utils/api'
 import { getCategories, getCategoryBySlug } from '~/fake-server/endpoints/categories'
 import { IShopCategory } from '~/interfaces/category'
 import { IProduct, IProductsList } from '~/interfaces/product'
@@ -39,80 +39,48 @@ export type GetSuggestionsOptions = {
     limit?: number;
     category?: string;
 };
-
+// let url = 'http://161.35.124.15/api/'
+let url = 'http://127.0.0.1:3333/api/'
+interface AxiosRequestConfig {
+    options?: IListOptions;
+}
 const shopApi = {
     /**
      * Returns array of categories.
      */
     getCategories: async (options: GetCategoriesOptions = {}): Promise<[]> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/categories.json?depth=2
-         *
-         * where:
-         * - 2 = options.depth
-         */
-        // return fetch(`https://example.com/api/categories.json?${qs.stringify(options)}`)
-        //     .then((response) => response.json());
-        let { data } = await axios.get('http://161.35.124.15/api/categorys') 
+         
+        let data = await $axios.$post(url + 'categorys', { options }) 
+    
+        return data 
+    },
+    /**
+     * Returns an array of most popular products.
+     */
+    getPopularCategories: async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
+        let data = await $axios.$post(url + 'getPopularCategories', { options })
         return data
-        // This is for demonstration purposes only. Remove it and use the code above. 
-        // console.log('getCategories(options) :>> ', getCategories(options));
-        // return getCategories(options)
+        // return getPopularProducts(options)
     },
     /**
      * Returns category by slug.
      */
     getCategoryBySlug: (slug: string, options: GetCategoryBySlugOptions = {}): Promise<IShopCategory> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/categories/power-tools.json?depth=2
-         *
-         * where:
-         * - power-tools = slug
-         * - 2           = options.depth
-         */
-        // return fetch(`https://example.com/api/categories/${slug}.json?${qs.stringify(options)}`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above. 
+        
         return getCategoryBySlug(slug, options)
     },
     /**
      * Returns product.
      */
     getProductBySlug: (slug: string): Promise<IProduct> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/products/screwdriver-a2017.json
-         *
-         * where:
-         * - screwdriver-a2017 = slug
-         */
-        // return fetch(`https://example.com/api/products/${slug}.json`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above.
+   
         return getProductBySlug(slug)
     },
     /**
      * Returns array of related products.
      */
     getRelatedProducts: (slug: string, options: GetRelatedProductsOptions = {}): Promise<IProduct[]> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/shop/products/screwdriver-a2017/related.json&limit=3
-         *
-         * where:
-         * - screwdriver-a2017 = slug
-         * - limit             = options.limit
-         */
-        // return fetch(`https://example.com/api/products/${slug}/related.json?${qs.stringify(options)}`)
-        //     .then((response) => response.json());
+        
 
         // This is for demonstration purposes only. Remove it and use the code above.
         return getRelatedProducts(slug, options)
@@ -120,144 +88,59 @@ const shopApi = {
     /**
      * Return products list.
      */
-    getProductsList: (options: IListOptions = {}, filters: IFilterValues = {}): Promise<IProductsList> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/products.json?page=2&limit=12&sort=name_desc&filter_category=screwdriwers&filter_price=500-1000
-         *
-         * where:
-         * - page            = options.page
-         * - limit           = options.limit
-         * - sort            = options.sort
-         * - filter_category = filters.category
-         * - filter_price    = filters.price
-         */
-        // const params = { ...options };
-        //
-        // Object.keys(filters).forEach((slug) => {
-        //     params[`filter_${slug}`] = filters[slug];
-        // });
-        //
-        // return fetch(`https://example.com/api/products.json?${qs.stringify(params)}`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above.
+    
+    getProductsList: async (options: IListOptions = {}, filters: IFilterValues = {}): Promise<IProductsList> => {
+       
+        let data = await $axios.$post(url + 'getProductsList',{ options, filters})
+       
         return getProductsList(options, filters)
     },
     /**
      * Returns array of featured products.
      */
-    getFeaturedProducts: (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/shop/featured-products.json?limit=3&category=power-tools
-         *
-         * where:
-         * - 3           = options.limit
-         * - power-tools = options.category
-         */
-        // return fetch(`https://example.com/api/featured-products.json?${qs.stringify(options)}`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above.
+    getFeaturedProducts: async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
+        let data = await $axios.$post(url + 'getFeaturedProducts', { options })
+        return data
         return getFeaturedProducts(options)
     },
     /**
      * Returns array of latest products.
      */
-    getLatestProducts: (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/shop/latest-products.json?limit=3&category=power-tools
-         *
-         * where:
-         * - 3           = options.limit
-         * - power-tools = options.category
-         */
-        // return fetch(`https://example.com/api/latest-products.json?${qs.stringify(options)}`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above.
+    getLatestProducts : async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
+        let data = await $axios.$post(url + 'getLatestProducts', { options })
+        return data 
         return getLatestProducts(options)
     },
     /**
      * Returns an array of top rated products.
      */
-    getTopRatedProducts: (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/shop/top-rated-products.json?limit=3&category=power-tools
-         *
-         * where:
-         * - 3           = options.limit
-         * - power-tools = options.category
-         */
-        // return fetch(`https://example.com/api/top-rated-products.json?${qs.stringify(options)}`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above.
+    getTopRatedProducts: async  (options: GetProductsOptions = {}): Promise<IProduct[]> => {
+        let data = await $axios.$post(url + 'getTopRatedProducts', { options })
+        return data
         return getTopRatedProducts(options)
     },
     /**
      * Returns an array of discounted products.
      */
-    getDiscountedProducts: (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/shop/discounted-products.json?limit=3&category=power-tools
-         *
-         * where:
-         * - 3           = options.limit
-         * - power-tools = options.category
-         */
-        // return fetch(`https://example.com/api/discounted-products.json?${qs.stringify(options)}`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above.
+    getDiscountedProducts: async  (options: GetProductsOptions = {}): Promise<IProduct[]> => {
+         let data = await $axios.$post(url + 'getDiscountedProducts', { options })
+        return data
         return getDiscountedProducts(options)
     },
     /**
      * Returns an array of most popular products.
      */
-    getPopularProducts: (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/shop/popular-products.json?limit=3&category=power-tools
-         *
-         * where:
-         * - 3           = options.limit
-         * - power-tools = options.category
-         */
-        // return fetch(`https://example.com/api/popular-products.json?${qs.stringify(options)}`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above.
+    getPopularProducts: async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
+        let data = await $axios.$post(url + 'getPopularProducts', { options })
+        return data
         return getPopularProducts(options)
     },
+    
     /**
      * Returns search suggestions.
      */
     getSuggestions: (query: string, options: GetSuggestionsOptions = {}): Promise<IProduct[]> => {
-        /**
-         * This is what your API endpoint might look like:
-         *
-         * https://example.com/api/search/suggestions.json?query=screwdriver&limit=5&category=power-tools
-         *
-         * where:
-         * - screwdriver = query
-         * - 5           = options.limit
-         * - power-tools = options.category
-         */
-        // return fetch(`https://example.com/api/search/suggestions.json?${qs.stringify({ ...options, query })}`)
-        //     .then((response) => response.json());
-
-        // This is for demonstration purposes only. Remove it and use the code above.
+         
         return getSuggestions(query, options)
     }
 }

@@ -193,7 +193,7 @@
                                         :disabled="!quantity"
                                         @click="run"
                                     >
-                                        Add to cart
+                                        {{ $t('btns.AddToCart') }}
                                     </button>
                                 </AsyncAction>
                             </div> 

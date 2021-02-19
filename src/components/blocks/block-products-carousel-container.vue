@@ -31,7 +31,7 @@ export default class BlockProductsCarouselContainer<Tab extends {}> extends Vue 
                     tab.current = tab === firstTab
                 })
             }
-        }
+        } 
     }
 
     async handleTabChange (currentTab: WithCurrent<Tab>) {

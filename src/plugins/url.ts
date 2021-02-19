@@ -114,11 +114,12 @@ function make (context: Context) {
         terms () {
             return '/site/terms'
         },
-        base (url: string) {
-            if (url[0] === '/') {
-                return context.base + url.substr(1)
-            }
-
+        base (url: string) { 
+            if (url && url[0] === '/') {
+                if (url.substr(1)) { 
+                    return 'http://127.0.0.1:3333/api/getImg'+ context.base + url.substr(1)
+                } 
+            } 
             return url
         },
         img (url: string) {

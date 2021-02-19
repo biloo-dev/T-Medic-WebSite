@@ -17,7 +17,33 @@
                     </button>
                     <AppLink to="/" class="mobile-header__logo">
                         <!-- mobile-logo -->
-                        <LogoSmallSvg />
+                        <!-- <LogoSmallSvg /> -->
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1000 400">
+
+                            <!-- Symbol -->
+                            <symbol id="s-text">
+                                <text text-anchor="middle"  x="30%" y="50%" dy=".35em">
+                                    T-Medic
+                                </text>
+                            </symbol>
+
+                            <!-- Duplicate symbols -->
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use>
+                            <use xlink:href="#s-text" class="text"></use> 
+                            
+                        </svg>
+                        <!-- <div class="mobileLogo tracking-in-contract" >
+                            <span>T</span>
+                            <span>-</span>
+                            <span>M</span>
+                            <span>e</span>
+                            <span>d</span>
+                            <span>i</span>
+                            <span>c</span>
+                        </div> -->
                         <!-- mobile-logo / end -->
                     </AppLink>
 

@@ -4,7 +4,7 @@ $accent-color:          #47991f       !default;
 $accent-opposite-color: #fff          !default;
 $link-color:            $accent-color !default;
 $link-hover-color:      $accent-color !default;
-
+$accent-color: #47991f !default;
 
 // .topbar
 $topbar-bg:                transparent               !default;
@@ -47,5 +47,12 @@ $product-card-quickview-default-color: $light-opposite-color   !default;
 
 
 // .nouislider
-$nouislider-border-color: $accent-colors          !default;
+$nouislider-border-color: $accent-color          !default;
 $nouislider-handle-color: $accent-opposite-color !default;
+#tsparticles {
+    display: none;
+}
+
+#footer canvas {
+    display: none;
+}

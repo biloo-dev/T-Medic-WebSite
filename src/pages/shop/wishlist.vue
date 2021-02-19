@@ -41,7 +41,7 @@
                                 <th class="wishlist__column wishlist__column--price">
                                     Price
                                 </th>
-                                <th class="wishlist__column wishlist__column--tocart" aria-label="Add to cart" />
+                                <th class="wishlist__column wishlist__column--tocart" aria-label="$t('btns.AddToCart')" />
                                 <th class="wishlist__column wishlist__column--remove" aria-label="Remove" />
                             </tr>
                         </thead>
@@ -87,7 +87,7 @@
                                             ]"
                                             @click="run"
                                         >
-                                            Add To Cart
+                                            {{ $t('btns.AddToCart') }}
                                         </button>
                                     </AsyncAction>
                                 </td>

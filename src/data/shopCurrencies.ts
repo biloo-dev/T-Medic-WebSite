@@ -12,9 +12,9 @@ const dataShopCurrencies: ICurrency[] = [
         name: 'Pound Sterling'
     },
     {
-        code: 'USD',
-        symbol: '$',
-        name: 'US Dollar'
+        code: 'DZD',
+        symbol: 'DZD',
+        name: 'Dinar_algerien'
     },
     {
         code: 'RUB',

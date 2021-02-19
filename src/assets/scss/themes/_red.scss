@@ -4,6 +4,7 @@ $accent-color:          #cc3333       !default;
 $accent-opposite-color: #fff          !default;
 $link-color:            $accent-color !default;
 $link-hover-color:      $accent-color !default;
+$accent-color: #cc3333 !default;
 
 
 // .nav-links
@@ -17,7 +18,13 @@ $departments-bg:            #303138         !default;
 $departments-icon-color:    rgba(#fff, .4)  !default;
 $departments-arrow-color:   rgba(#fff, .4)  !default;
 $departments-item-hover-bg: rgba(#fff, .08) !default;
+#tsparticles {
+    display: none;
+}
 
+#footer canvas {
+    display: none;
+}
 
 // .mobile-header
 $mobile-header-menu-button-hover-bg:                  $nav-links-item-hover-bg !default;
@@ -46,5 +53,5 @@ $product-card-quickview-default-color: $light-opposite-color   !default;
 
 
 // .nouislider
-$nouislider-border-color: $accent-colors          !default;
+$nouislider-border-color: $accent-color          !default;
 $nouislider-handle-color: $accent-opposite-color !default;

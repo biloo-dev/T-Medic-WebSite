@@ -1,7 +1,7 @@
 <template>
     <div>
         
-        <BlockSlideshow layout="with-departments" :items="items" />
+        <BlockSlideshow layout="with-departments" :slides="slides" />
 
         <BlockFeatures />
 
@@ -17,7 +17,7 @@
             :data-source="featuredProductsSource"
         >
             <BlockProductsCarousel
-                title="Featured Products"
+                title="FeaturedProducts"
                 layout="grid-4"
                 :products="products"
                 :loading="isLoading"
@@ -36,7 +36,7 @@
         />
 
         <BlockCategories
-            title="Popular Categories"
+            title="PopularCategories"
             layout="classic"
             :categories="categories"
         />
@@ -53,7 +53,7 @@
             :data-source="latestProductsSource"
         >
             <BlockProductsCarousel
-                title="New Arrivals"
+                title="NewArrivals"
                 layout="horizontal"
                 :rows="2"
                 :products="products"
@@ -64,7 +64,7 @@
         </BlockProductsCarouselContainer>
 
         <BlockPosts
-            title="Latest News"
+            title="LatestNews"
             layout="list"
             :posts="posts"
         />
@@ -75,8 +75,7 @@
     </div>
 </template>
 
-<script lang="ts">
-
+<script lang="ts"> 
 import { Vue, Component } from 'vue-property-decorator'
 import { Context } from '@nuxt/types'
 import { runOnlyOnServer } from '~/services/helpers'
@@ -103,14 +102,14 @@ async function loadColumns () {
     const topRated = shopApi.getTopRatedProducts({ limit: 3 })
     const specialOffers = shopApi.getDiscountedProducts({ limit: 3 })
     const bestsellers = shopApi.getPopularProducts({ limit: 3 })
-
+     
     return [
-        { title: 'Top Rated Products', products: await topRated },
-        { title: 'Special Offers', products: await specialOffers },
+        { title: 'TopRatedProducts', products: await topRated },
+        { title: 'SpecialOffers', products: await specialOffers },
         { title: 'Bestsellers', products: await bestsellers }
     ]
 }
-
+ 
 @Component({
     components: {
         BlockSlideshow,
@@ -130,43 +129,39 @@ async function loadColumns () {
         const featuredProducts = runOnlyOnServer(() => shopApi.getFeaturedProducts({ limit: 8 }), null)
         const bestsellers = runOnlyOnServer(() => shopApi.getPopularProducts({ limit: 7 }), null)
         const latestProducts = runOnlyOnServer(() => shopApi.getLatestProducts({ limit: 8 }), null)
-        const columns = runOnlyOnServer(() => loadColumns(), null)
-
+        const columns = runOnlyOnServer(() => loadColumns(context), null)
+        const categories =  shopApi.getPopularCategories({ limit : 8 })
+        const slides =  apiConfig.getCarousel()
         return {
             featuredProducts: await featuredProducts,
             bestsellers: await bestsellers,
             latestProducts: await latestProducts,
-            columns: await columns
+            columns: await columns,
+            categories : await categories,
+            slides : await slides
         }
     },
-    head () {
-        return {
-            title: 'Home Page One'
-        }
+    head () { 
+        return { title : this.$t('header.titlePage.title').toString() } 
     }
 })
 export default class HomePageOne extends Vue {
     shopApi = shopApi
 
-    items : ICarousel[] = []
+    slides : ICarousel[] = []
 
     featuredProducts: IProduct[] | null = []
 
     bestsellers: IProduct[] | null = []
 
-    categories: ICategory[] = dataShopBlockCategories
+    categories: ICategory[] = []
 
     latestProducts: IProduct[] | null = []
 
     posts: IPost[] = dataBlogPosts
 
     columns: BlockProductColumnsItem[] | null = []
-    
-    created(){
-        apiConfig.getCarousel().then(e =>{ 
-            this.items = e
-        })
-    }
+     
     mounted () {
         
         if (this.bestsellers === null) {
@@ -178,9 +173,7 @@ export default class HomePageOne extends Vue {
             loadColumns().then((columns) => {
                 this.columns = columns
             })
-        }
-      
-
+        } 
     }
 
     featuredProductsSource (tab: {categorySlug: string}): Promise<IProduct[]> {

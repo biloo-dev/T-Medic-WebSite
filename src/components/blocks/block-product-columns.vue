@@ -3,8 +3,8 @@
         <div class="container">
             <div class="row">
                 <div v-for="(column, index) in columns" :key="index" class="col">
-                    <BlockHeader :title="column.title" />
-
+                    <BlockHeader :title="$t('blocks.columns.'+column.title)" />
+ 
                     <div class="block-product-columns__column">
                         <div v-for="product in column.products" :key="product.id" class="block-product-columns__item">
                             <ProductCard :product="product" layout="horizontal" />

@@ -1,12 +1,12 @@
 import { makeIdGenerator, nameToSlug } from '../utils'
 import { IAttributeDef } from '../interfaces/attributes'
 import {
-    IProductAttributeDef,
-    IProductAttributeValuesDef,
-    IProductBadgesDef,
-    IProductCategoriesDef,
-    IProductDef,
-    IProductImagesDef
+    IProductAttributeDef, 
+    IProductAttributeValuesDef, 
+    IProductBadgesDef, 
+    IProductCategoriesDef,  
+    IProductDef, 
+    IProductImagesDef 
 } from '../interfaces/products'
 import attributesDef from './attributes'
 import brandsData from './brands'

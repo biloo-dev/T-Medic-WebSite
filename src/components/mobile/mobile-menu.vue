@@ -9,7 +9,7 @@
         <div class="mobilemenu__body">
             <div class="mobilemenu__header">
                 <div class="mobilemenu__title">
-                    Menu
+                    {{ $t('headerMobile.Menu') }}
                 </div>
                 <button type="button" class="mobilemenu__close" @click="$store.commit('mobileMenu/close')">
                     <Cross20Svg />
@@ -44,27 +44,30 @@ export default class MobileMenu extends Vue {
 
     links: IMobileMenu = [
         ...dataMobileMenu,
+        // {
+        //     type: 'button',
+        //     title: 'Currency',
+        //     children: dataShopCurrencies.map((currency) => {
+        //         return {
+        //             type: 'button',
+        //             title: `${currency.symbol} ${currency.name}`,
+        //             data: {
+        //                 type: 'currency',
+        //                 currency
+        //             }
+        //         }
+        //     })
+        // },
         {
-            type: 'button',
-            title: 'Currency',
-            children: dataShopCurrencies.map((currency) => {
-                return {
-                    type: 'button',
-                    title: `${currency.symbol} ${currency.name}`,
-                    data: {
-                        type: 'currency',
-                        currency
-                    }
-                }
-            })
-        },
-        {
-            type: 'button',
+            type: 'link',
             title: 'Language',
+            icon : 'fas fa-language',
             children: dataLanguages.map((language) => {
                 return {
                     type: 'button',
                     title: language.name,
+                    img : language.icon,
+                    locale : language.locale,
                     data: {
                         type: 'language',
                         language

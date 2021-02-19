@@ -1,7 +1,7 @@
 <template>
     <div :class="`block block-products block-products--layout--${layout}`">
         <div class="container">
-            <BlockHeader :title="title" />
+            <BlockHeader :title="$t('blocks.'+title)" />
 
             <div class="block-products__body">
                 <div v-if="featuredProduct && layout === 'large-first'" class="block-products__featured">

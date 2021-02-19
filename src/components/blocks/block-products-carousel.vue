@@ -12,7 +12,7 @@
     >
         <div :class="{container: !withSidebar}">
             <BlockHeader
-                :title="title"
+                :title="$t('blocks.'+title)"
                 :groups="groups"
                 arrows
                 @next="handleNextClick"

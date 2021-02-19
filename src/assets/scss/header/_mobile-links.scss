@@ -8,7 +8,33 @@
 $local-item-height: 48px;
 $local-expand-transition-duration: .3s;
 
+.mobile-chack-lang {
+    color : #333
+}
+.mobile-un-chack-lang  {
+    color : green
+}
 
+.mobile-chack-lang,
+.mobile-un-chack-lang {
+    width: 18px;
+    float: right;
+    margin: 4px;
+}
+.mobile-img {
+    float: right;
+}
+.locale-ar {
+    .mobile-img {
+        float: left;
+    }
+    .mobile-chack-lang,
+    .mobile-un-chack-lang {
+        width: 18px;
+        float: left;
+        margin: 4px;
+    }   
+}
 .mobile-links {
     list-style: none;
     padding: 0;

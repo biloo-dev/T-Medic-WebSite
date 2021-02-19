@@ -33,7 +33,7 @@
                     ref="input"
                     class="search__input"
                     name="search"
-                    placeholder="Search over 10,000 products"
+                    :placeholder="$t('header.search.placeHolder')"
                     aria-label="Site search"
                     type="text"
                     autocomplete="off"
@@ -86,9 +86,9 @@
 
                         <div v-if="location === 'header'" class="suggestions__item-actions">
                             <AsyncAction v-slot:default="{ run, isLoading }" :action="() => $store.dispatch('cart/add', { product })">
-                                <button
+                                <button v-b-tooltip.hover title="Tooltip directive content"
                                     type="button"
-                                    title="Add to cart"
+                                    :title="$t('btns.AddToCart')"
                                     :class="[
                                         'btn btn-primary btn-sm btn-svg-icon',
                                         {'btn-loading': isLoading}

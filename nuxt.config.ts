@@ -128,10 +128,7 @@ const config: NuxtConfig = {
         'bootstrap-vue/nuxt',
         '@nuxtjs/axios'
     ],
-     axios: {
-        // baseURL: 'http://127.0.0.1:3333/api/', // Used as fallback if no runtime config is provided
-        baseURL: 'http://161.35.124.15/api/', // Used as fallback if no runtime config is provided
-    },
+    
     /*
     ** Build configuration
     */

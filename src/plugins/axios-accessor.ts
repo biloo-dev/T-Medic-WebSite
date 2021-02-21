@@ -1,6 +1,6 @@
 import { initializeAxios } from '~/utils/api' 
  
-const accessor = ({ $axios } : { $axios: any}) => {
+const accessor = ({ $axios } : { $axios: any }) => {
   initializeAxios($axios)
 }
 

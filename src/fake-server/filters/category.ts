@@ -1,8 +1,4 @@
-import {
-    categoriesListData,
-    categoriesTreeData,
-    prepareCategory
-} from '../database/categories'
+import { categoriesListData, categoriesTreeData,  prepareCategory } from '../database/categories'
 import AbstractFilterBuilder from './abstract'
 import { ICategoryFilter, ICategoryFilterValue } from '~/interfaces/filter'
 import { IProduct } from '~/interfaces/product'

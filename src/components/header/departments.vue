@@ -53,7 +53,9 @@
                         @mouseenter="onItemMouseEnter(department)"
                     >
                         <AppLink class="departments__item-link" :to="department.url">
-                            {{ department.title }}
+                            
+                                {{ $i18n.locale == 'ar' ? department.title_ar : department.title }}
+                            
                             <ArrowRoundedRight6x9Svg v-if="department.submenu" class="departments__item-arrow" />
                         </AppLink>
                     </li>

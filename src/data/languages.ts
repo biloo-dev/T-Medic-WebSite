@@ -9,14 +9,14 @@ const dataLanguages: ILanguage[] = [
         direction: 'ltr',
         messages: require('../locales/fr.json')
     },
-    {
-        locale: 'en',
-        code: 'EN',
-        name: 'English',
-        icon: '/images/languages/us.png',
-        direction: 'ltr',
-        messages: require('../locales/en.json')
-    }, 
+    // {
+    //     locale: 'en',
+    //     code: 'EN',
+    //     name: 'English',
+    //     icon: '/images/languages/us.png',
+    //     direction: 'ltr',
+    //     messages: require('../locales/en.json')
+    // }, 
     {
         locale: 'ar',
         code: 'AR',
@@ -27,6 +27,6 @@ const dataLanguages: ILanguage[] = [
     }
 ]
 
-export const defaultLocale = 'en'
+export const defaultLocale = 'fr'
 
 export default dataLanguages

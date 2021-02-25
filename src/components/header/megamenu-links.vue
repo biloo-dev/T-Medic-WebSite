@@ -8,7 +8,8 @@
                 {'megamenu__item--with-submenu': link.children}
             ]">
     <AppLink v-if="link.title" :to="link.url">
-      {{ link.title }} 
+        {{ $i18n.locale == 'ar' ? link.title_ar : link.title }}
+      
     </AppLink>
     <MegamenuLinks v-if="link.children" :links="link.children" :level="level + 1" />
   </li>

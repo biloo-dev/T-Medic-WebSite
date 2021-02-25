@@ -130,7 +130,7 @@ export const actions: ActionTree<ShopState, {}> = {
             request = shopApi.getCategoryBySlug(payload.categorySlug)
         } else {
             request = Promise.resolve(null)
-        }
+        } 
 
         const category = await request
 
@@ -185,7 +185,7 @@ export const getters: GetterTree<ShopState, {}> = {
         return store.categoryIsLoading || (store.productsListIsLoading && !store.productsList)
     },
     category: (store) => {
-        return store.category
+        return store.category 
     },
     productsListIsLoading: (store) => {
         return store.productsListIsLoading

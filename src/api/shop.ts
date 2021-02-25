@@ -80,7 +80,7 @@ const shopApi = {
      * Returns array of related products.
      */
     getRelatedProducts: (slug: string, options: GetRelatedProductsOptions = {}): Promise<IProduct[]> => {
-        
+         
 
         // This is for demonstration purposes only. Remove it and use the code above.
         return getRelatedProducts(slug, options)
@@ -91,8 +91,10 @@ const shopApi = {
     
     getProductsList: async (options: IListOptions = {}, filters: IFilterValues = {}): Promise<IProductsList> => {
        
+        console.log('getProductsList(options, filters)',await getProductsList(options, filters))
+        console.log('{ options, filters}',  { options, filters})
         let data = await $axios.$post('getProductsList',{ options, filters})
-       
+        // return data
         return getProductsList(options, filters)
     },
     /**

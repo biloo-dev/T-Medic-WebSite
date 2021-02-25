@@ -419,9 +419,13 @@ Table of Contents:
 @import 'widgets/widget-search';
 @import 'widgets/widget-tags';
 
-
+$one :                        #24a4ea       !default;
+$two :                        #379deb       !default;
+$three :                      #b76bf0       !default; 
+$accent-color-gradinet: linear-gradient(100deg, $one, $two 25%, $three) !default;
 
 @import 'custom';
+@import './hover.sass';
 
 .category-card {
     transition: all;
@@ -436,3 +440,103 @@ Table of Contents:
     -o-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
 }
+ .product-card {
+   overflow:hidden
+ }
+ 
+ /* Shine */
+ .product-card .figure {
+     position: relative; 
+ }
+
+ .product-card .figure::before {
+     position: absolute;
+     top: 0;
+     left: -75%;
+     z-index: 2;
+     display: block;
+     content: '';
+     width: 50%;
+     height: 100%;
+    //  background: -webkit-linear-gradient(left,  #24a5ea1f 0%,  #379deb63 50%, #b66bf060 100%);
+    //  background: linear-gradient(to right, #24a5ea1f 0%, #379deb63 50%, #b66bf060 100%);
+     background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+     background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+     -webkit-transform: skewX(-25deg);
+     transform: skewX(-25deg);
+ }
+
+ .product-card:hover .figure::before {
+     -webkit-animation: shine .75s;
+     animation: shine .75s;
+ }
+
+ @-webkit-keyframes shine {
+     100% {
+         left: 225%;
+     }
+ }
+
+ @keyframes shine {
+     100% {
+         left: 225%;
+     }
+ }
+
+ /* Circle */
+ .hover15 figure {
+     position: relative;
+ }
+
+ .hover15 figure::before {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     z-index: 2;
+     display: block;
+     content: '';
+     width: 0;
+     height: 0;
+     background: rgba(255, 255, 255, .2);
+     border-radius: 100%;
+     -webkit-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+     opacity: 0;
+ }
+
+ .hover15 figure:hover::before {
+     -webkit-animation: circle .75s;
+     animation: circle .75s;
+ }
+
+ @-webkit-keyframes circle {
+     0% {
+         opacity: 1;
+     }
+
+     40% {
+         opacity: 1;
+     }
+
+     100% {
+         width: 200%;
+         height: 200%;
+         opacity: 0;
+     }
+ }
+
+ @keyframes circle {
+     0% {
+         opacity: 1;
+     }
+
+     40% {
+         opacity: 1;
+     }
+
+     100% {
+         width: 200%;
+         height: 200%;
+         opacity: 0;
+     }
+ }

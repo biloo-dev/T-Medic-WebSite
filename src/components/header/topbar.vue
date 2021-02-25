@@ -4,7 +4,7 @@
   <div class="site-header__topbar topbar name">
     <div class="topbar__container container">
       <div class="topbar__row">
-        <div class="topbar__item topbar__item--link">
+        <!-- <div class="topbar__item topbar__item--link">
           <AppLink :to="$url.about()" class="topbar-link">
             {{ $t('header.topbar.aboutUs') }}
           </AppLink>
@@ -28,7 +28,7 @@
           <AppLink :to="$url.blog()" class="topbar-link">
             {{ $t('header.topbar.blog') }}
           </AppLink>
-        </div>
+        </div> -->
         <div class="topbar__spring" />
         <!-- <div class="topbar__item">
                     <Dropdown

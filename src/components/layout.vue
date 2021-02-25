@@ -16,8 +16,11 @@
 
             <!-- site__body -->
             <div class="site__body">
-                <slot />
+                <div class="container">
+                    <slot />
+                </div>
             </div>
+
             <!-- site__body / end -->
 
             <!-- site__footer -->

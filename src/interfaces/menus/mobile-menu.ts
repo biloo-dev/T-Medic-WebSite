@@ -1,6 +1,9 @@
 import { INestedLink } from './link'
 
-export interface IMobileMenuLink extends INestedLink {
+export interface INestedLinkLang extends INestedLink {
+    title_ar?: string
+}
+export interface IMobileMenuLink extends INestedLinkLang  {
     type: 'link' | 'button';
     data?: any;
 }

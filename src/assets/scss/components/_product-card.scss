@@ -14,8 +14,7 @@
     padding: 1px;
     display: flex;
     flex-direction: column;
-    background: $product-card-bg;
-
+    background: $product-card-bg; 
     &::before {
         content: '';
         display: block;
@@ -33,7 +32,7 @@
     }
 
     &:hover::before {
-        transition-duration: 0s;
+        transition-duration: 1s;
         box-shadow: $product-card-hover-shadow;
         z-index: 2;
     }
@@ -221,7 +220,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    z-index: 1;
+    z-index: 5;
 
     @include direction {
         #{$inset-inline-start}: 18px;

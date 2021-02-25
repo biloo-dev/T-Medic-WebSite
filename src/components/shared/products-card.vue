@@ -16,7 +16,7 @@
                 ]" @click="run">
         <Quickview16Svg />
       </button>
-    </AsyncAction>  
+    </AsyncAction> 
     <div v-if="product.badges.length" class="product-card__badges-list">
       <div v-if="product.badges.includes('sale')" class="product-card__badge product-card__badge--sale">
         {{ $t('badges.Sale') }}
@@ -25,20 +25,17 @@
         {{ $t('badges.Hot') }}
       </div>
       <div v-if="product.badges.includes('new')" class="product-card__badge product-card__badge--new">
-        {{ $t('badges.New')}} 
+        {{ $t('badges.New') }}
       </div>
     </div>
 
-         <div class="figure">
     <div v-if="product.images && product.images.length > 0" class="product-card__image product-image">
-    
-      <AppLink :to="$url.product(product)" class="product-image__body b-game-card hover14 column">
-        <!-- suppress HtmlUnknownTarget -->
+      <AppLink :to="$url.product(product)" class="product-image__body b-game-card">
+        <!--suppress HtmlUnknownTarget -->
         <!-- <div class="b-game-card__cover" :style="'background-image: url('+ $url.img($url.parse(product.images)) +');'"></div> -->
-           <img class="product-image__img b-game-card__cover hoverGlass" :src="$url.img($url.parse(product.images))" alt=""> 
+        <img class="product-image__img b-game-card__cover" :src="$url.img($url.parse(product.images))" alt="">
       </AppLink>
     </div>
-      </div>
 
     <div class="product-card__info">
       <div class="product-card__name">

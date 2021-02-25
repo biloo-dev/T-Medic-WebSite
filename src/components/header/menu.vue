@@ -39,6 +39,7 @@
                         <img :src="$url.img(item.icon)" alt="">
                     </div>
                     {{ item.title }}
+
                     <ArrowRoundedRight6x9Svg v-if="item.children" class="menu__item-arrow" />
                 </AppLink>
 
@@ -48,6 +49,7 @@
                         <img :src="$url.img(item.icon)" alt="">
                     </span>
                     {{ item.title }}
+
                     <ArrowRoundedRight6x9Svg v-if="item.children" class="menu__item-arrow" />
                 </button>
             </li>

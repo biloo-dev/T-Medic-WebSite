@@ -22,6 +22,7 @@
                         >
                             <i v-if="link.icon" :class="link.icon" class="px-2"></i>
                             {{ link.title }}
+
                         </AppLink>
 
                         <button
@@ -33,6 +34,7 @@
                             <i v-if="link.icon" :class="link.icon"></i>
                             
                             {{ link.title }}
+
                             <img v-if="link.img" class="mobile-img" :src="$url.img(link.img)" />
                              <CircleRegular v-if="link.locale && link.locale != $i18n.locale" class="mobile-chack-lang  text--success" />
                              <CheckCircleRegular v-else-if="link.locale && link.locale == $i18n.locale" class="mobile-un-chack-lang " />
@@ -80,7 +82,7 @@ import CheckCircleRegular from '~/svg/check-circle-regular.svg'
 export default class MobileLinks extends Vue {
     @Prop({ type: Number, default: () => 0 }) readonly level!: number
     @Prop({ type: Array, default: () => [] }) readonly links!: IMobileMenuLink[]
-
+    created(){}
     onItemClick (item: IMobileMenuLink) {
         this.$emit('itemClick', item)
     }

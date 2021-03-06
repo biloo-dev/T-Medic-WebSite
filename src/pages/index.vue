@@ -7,12 +7,7 @@
 
         <BlockProductsCarouselContainer
             v-slot:default="{ products, isLoading, tabs, handleTabChange }"
-            :tabs="[
-                { id: 1, name: 'All', categorySlug: undefined },
-                { id: 2, name: 'Power Tools', categorySlug: 'power-tools' },
-                { id: 3, name: 'Hand Tools', categorySlug: 'hand-tools' },
-                { id: 4, name: 'Plumbing', categorySlug: 'plumbing' }
-            ]"
+            :tabs="[ { id: 1, name: $t('general.all'), categorySlug: undefined },...categories ] "
             :initial-data="featuredProducts"
             :data-source="featuredProductsSource"
         >
@@ -163,7 +158,7 @@ export default class HomePageOne extends Vue {
     columns: BlockProductColumnsItem[] | null = []
      
     mounted () {
-        
+        console.log('categories',this.categories)
         if (this.bestsellers === null) {
             shopApi.getPopularProducts({ limit: 7 }).then((products) => {
                 this.bestsellers = products

@@ -9,14 +9,13 @@
 .product-image__body {
     display: block;
     position: relative;
-    padding-bottom: #{100% * (1 / $product-image-ratio)};
     width: 100%;
+    padding-bottom: #{100% * (1 / $product-image-ratio)};
 }
 .product-image__img {
     display: block;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100%; 
     object-fit: scale-down;
 
     &,

@@ -443,7 +443,18 @@ $accent-color-gradinet: linear-gradient(100deg, $one, $two 25%, $three) !default
  .product-card {
    overflow:hidden
  }
+
+ .active-cat  {
+   color: #24a4ea !important; 
+ }
  
+ .products-view__options,
+ .productsView__options {
+    padding-bottom: 20px;
+}
+ .productsView__pagination {
+    padding-top: 20px;
+}
  /* Shine */
  .product-card .figure {
      position: relative; 

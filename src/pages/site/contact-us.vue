@@ -3,11 +3,11 @@
         <BlockMap />
 
         <PageHeader
-            title="Contact Us"
+            :title="$t('header.ContactUs')"
             :breadcrumb="[
-                { title: 'Home', url: '' },
-                { title: 'Contact Us', url: '' },
-            ]"
+                { title: $t('header.Home'), url: '/' },
+                { title: $t('header.ContactUs'), url: '' },
+            ]" 
         />
 
         <div class="block">

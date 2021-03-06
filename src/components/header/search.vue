@@ -26,7 +26,7 @@
                         :key="i"
                         :value="category.slug"
                     >
-                        {{ String.fromCharCode(160).repeat(category.depth * 4) + category.name }}
+                        {{ String.fromCharCode(160).repeat(category.depth * 4) + category['name_'+$i18n.locale] }}
                     </option>
                 </select>
                 <input
@@ -42,7 +42,7 @@
                     @focus="onQueryFocus"
                     @keydown.esc="onQueryEscape"
                 >
-                <button class="search__button search__button--type--submit" type="submit">
+                <button class="search__button search__button--type--submit" type="submit" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipSearch__button')">
                     <Search20Svg />
                 </button>
                 <button
@@ -74,7 +74,7 @@
 
                         <div class="suggestions__item-info">
                             <NuxtLink :to="$url.product(product)" class="suggestions__item-name" @click.native="closeSuggestion()">
-                                {{ product.name }}
+                                {{ product['name_'+$i18n.locale] }}
                             </NuxtLink>
                             <div class="suggestions__item-meta">
                                 SKU: {{ product.sku }}
@@ -86,9 +86,9 @@
 
                         <div v-if="location === 'header'" class="suggestions__item-actions">
                             <AsyncAction v-slot:default="{ run, isLoading }" :action="() => $store.dispatch('cart/add', { product })">
-                                <button v-b-tooltip.hover title="Tooltip directive content"
+                                <button  
                                     type="button"
-                                    :title="$t('btns.AddToCart')"
+                                     v-b-tooltip.hover :title="$t('general.ToolTips.TooltipAddToCart')" 
                                     :class="[
                                         'btn btn-primary btn-sm btn-svg-icon',
                                         {'btn-loading': isLoading}

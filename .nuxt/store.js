@@ -19,6 +19,7 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
+  resolveStoreModules(require('..\\src\\store\\auth.ts'), 'auth.ts')
   resolveStoreModules(require('..\\src\\store\\cart.ts'), 'cart.ts')
   resolveStoreModules(require('..\\src\\store\\compare.ts'), 'compare.ts')
   resolveStoreModules(require('..\\src\\store\\config.ts'), 'config.ts')
@@ -28,6 +29,7 @@ let store = {};
   resolveStoreModules(require('..\\src\\store\\offcanvasCart.ts'), 'offcanvasCart.ts')
   resolveStoreModules(require('..\\src\\store\\options.ts'), 'options.ts')
   resolveStoreModules(require('..\\src\\store\\quickview.ts'), 'quickview.ts')
+  resolveStoreModules(require('..\\src\\store\\settings.ts'), 'settings.ts')
   resolveStoreModules(require('..\\src\\store\\shop.ts'), 'shop.ts')
   resolveStoreModules(require('..\\src\\store\\wishlist.ts'), 'wishlist.ts')
 
@@ -36,6 +38,7 @@ let store = {};
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
+      '..\\src\\store\\auth.ts',
       '..\\src\\store\\cart.ts',
       '..\\src\\store\\compare.ts',
       '..\\src\\store\\config.ts',
@@ -46,6 +49,7 @@ let store = {};
       '..\\src\\store\\offcanvasCart.ts',
       '..\\src\\store\\options.ts',
       '..\\src\\store\\quickview.ts',
+      '..\\src\\store\\settings.ts',
       '..\\src\\store\\shop.ts',
       '..\\src\\store\\wishlist.ts',
     ], () => {

@@ -1,5 +1,5 @@
 <template>
-    <ShopPageCategory :columns="4" view-mode="grid" />
+    <ShopPageCategory :columns="3" sidebar-position="start" view-mode="grid" />
 </template>
 
 <script lang="ts">
@@ -13,8 +13,7 @@ import ShopPageCategory from '~/components/shop/shop-page-category.vue'
     components: { ShopPageCategory },
     async asyncData ({ store, query }): Promise<object | void> {
         const options = parseQueryOptions(query as ParsedQuery)
-        const filters = parseQueryFilters(query as ParsedQuery)
-
+        const filters = parseQueryFilters(query as ParsedQuery) 
         await store.dispatch('shop/init', {
             categorySlug: null,
             options,

@@ -41,7 +41,7 @@
                                 <th class="wishlist__column wishlist__column--price">
                                     {{ $t('wishlist.Price') }}
                                 </th>
-                                <th class="wishlist__column wishlist__column--tocart" aria-label="$t('btns.AddToCart')" />
+                                <th class="wishlist__column wishlist__column--tocart" :aria-label="$t('btns.AddToCart')" />
                                 <th class="wishlist__column wishlist__column--remove" aria-label="Remove" />
                             </tr>
                         </thead>
@@ -62,7 +62,7 @@
                                     <div class="wishlist__product-rating">
                                         <Rating :value="item.rating" />
                                         <div class="wishlist__product-rating-legend">
-                                            {{ item.reviews }} Reviews
+                                            {{ item.reviews }}  {{ $t('shop.productsView.Reviews') }}
                                         </div>
                                     </div>
                                 </td>
@@ -79,7 +79,7 @@
                                         v-slot:default="{ run, isLoading }"
                                         :action="() => $store.dispatch('cart/add', { product: item })"
                                     >
-                                        <button
+                                        <button v-b-tooltip.hover :title="$t('general.ToolTips.TooltipAddToCart')" 
                                             type="button"
                                             :class="[
                                                 'btn btn-primary btn-sm',
@@ -97,6 +97,7 @@
                                         :action="() => $store.dispatch('wishlist/remove', { productId: item.id })"
                                     >
                                         <button
+                                        v-b-tooltip.hover :title="$t('general.ToolTips.TooltipRemoveWishlist')" 
                                             type="button"
                                             :class="[
                                                 'btn btn-light btn-sm btn-svg-icon',

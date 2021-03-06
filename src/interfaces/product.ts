@@ -5,12 +5,17 @@ import { IShopCategory } from './category'
 
 export interface IProductAttributeValue {
     slug: string;
-    name: string;
+    name?: string;
+    name_fr?: string;
+    name_ar?: string;
 }
 
 export interface IProductAttribute {
     slug: string;
-    name: string;
+    name_fr?: string;
+    name_ar?: string;
+    name?: string;
+    pivot?: any;
     values: IProductAttributeValue[];
     featured: boolean;
 }

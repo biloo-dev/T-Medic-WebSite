@@ -41,7 +41,7 @@
         border-bottom-#{$inline-end}-radius: nth($args, 3);
     }
 }
-
+ 
 @mixin direction() {
     @if ($both-directions == true) {
         [dir=#{$direction}] & {

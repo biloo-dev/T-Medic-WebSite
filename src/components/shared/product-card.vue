@@ -13,7 +13,7 @@
       <button type="button" :class="[
                     'product-card__quickview',
                     {'product-card__quickview--preload': isLoading}
-                ]" @click="run">
+                ]" @click="run" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipQuickview')" >
         <Quickview16Svg />
       </button>
     </AsyncAction>  
@@ -43,13 +43,13 @@
     <div class="product-card__info">
       <div class="product-card__name">
         <AppLink :to="$url.product(product)">
-          {{ product.name }}
+          {{ product['name_'+$i18n.locale] }}
         </AppLink>
       </div>
       <div class="product-card__rating">
         <Rating class="product-card__rating-stars" :value="product.rating" />
         <div class=" product-card__rating-legend">
-          {{ product.reviews }} Reviews
+          {{ product.reviews }} {{ $t('shop.productsView.Reviews') }}
         </div>
       </div>
 
@@ -79,7 +79,7 @@
           <button type="button" :class="[
                             'btn btn-primary product-card__addtocart',
                             {'btn-loading': isLoading}
-                        ]" @click="run">
+                        ]" @click="run"  v-b-tooltip.hover :title="$t('general.ToolTips.TooltipAddToCart')">
             {{ $t('btns.AddToCart') }}
           </button>
         </AsyncAction>
@@ -87,7 +87,7 @@
           <button type="button" :class="[
                             'btn btn-secondary product-card__addtocart product-card__addtocart--list',
                             {'btn-loading': isLoading}
-                        ]" @click="run">
+                        ]" @click="run" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipAddToCart')">
             {{ $t('btns.AddToCart') }}
           </button>
         </AsyncAction>
@@ -96,7 +96,7 @@
           <button type="button" :class="[
                             'btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist',
                             {'btn-loading': isLoading}
-                        ]" @click="run">
+                        ]" @click="run" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipWishlist')">
             <Wishlist16Svg />
           </button>
         </AsyncAction>
@@ -105,7 +105,7 @@
           <button type="button" :class="[
                             'btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare',
                             {'btn-loading': isLoading}
-                        ]" @click="run">
+                        ]" @click="run" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipCompare')">
             <Compare16Svg />
           </button>
         </AsyncAction>
@@ -144,17 +144,11 @@ export type ProductCardLayout = 'grid-sm' | 'grid-nl' | 'grid-lg' | 'list' | 'ho
   }
 })
 export default class ProductCard extends Vue {
-  @Prop({
-    type: Object,
-    required: true
-  }) readonly product!: IProduct
-  @Prop({
-    type: String,
-    default: () => undefined
-  }) readonly layout!: ProductCardLayout
+  @Prop({ type: Object, required: true }) readonly product!: IProduct
+  @Prop({ type: String, default: () => undefined }) readonly layout!: ProductCardLayout
 
   get features() {
-    return this.product.attributes.filter(x => x.featured)
+    return this.product ? this.product.attributes.filter(x => x.featured) : []
   }
 }
 </script>

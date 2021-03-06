@@ -4,7 +4,9 @@ export interface IBaseCategory {
     type: string;
     id: number;
     slug: string;
-    name: string;
+    name_fr?: string;
+    name_ar?: string;
+    name?: string;
     image?: string;
     items?: number;
     parent?: this;

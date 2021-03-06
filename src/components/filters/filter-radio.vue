@@ -23,7 +23,7 @@
                         <span class="input-radio__circle" />
                     </span>
                 </span>
-                <span class="filter-list__title">{{ item.name }}</span>
+                <span class="filter-list__title">{{ item['name_'+$i18n.locale] }}</span>
                 <span v-if="item.count" class="filter-list__counter">{{ item.count }}</span>
             </label>
         </div>

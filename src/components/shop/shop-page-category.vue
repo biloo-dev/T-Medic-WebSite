@@ -16,10 +16,10 @@
                         @closeSidebar="sidebarIsOpen = false"
                     >
                         <CategorySidebarItem>
-                            <WidgetFilters title="Filters" :offcanvas="offcanvas" />
+                            <WidgetFilters :title="$t('shop.categorySideBar.Filters')" :offcanvas="offcanvas" />
                         </CategorySidebarItem>
                         <CategorySidebarItem v-if="offcanvas !== 'always'" class="d-none d-lg-block">
-                            <WidgetProducts title="Latest Products" :products="latestProducts" />
+                            <WidgetProducts :title="$t('shop.productSidebar.LatestProducts')" :products="latestProducts" />
                         </CategorySidebarItem>
                     </CategorySidebar>
                 </template>
@@ -100,21 +100,23 @@ export default class ShopPageCategory extends Vue {
     }
 
     get pageTitle () {
-        return this.category ? this.category.name : 'Shop'
-    }
-
+        let names = this.$url.getName(this.$i18n.locale,this.category) 
+        return this.category ?  names : this.$t('header.Shop') 
+        //   return this.category ? this.category['name_'+this.$i18n.locale]  : this.$t('header.Shop')
+    } 
     get breadcrumb (): ILink[] {
         const breadcrumb = [
-            { title: 'Home', url: this.$url.home() },
-            { title: 'Shop', url: this.$url.catalog() }
+            { title: this.$t('header.Home').toString(), url: this.$url.home() },
+            { title: this.$t('header.Shop').toString(), url: this.$url.catalog() }
         ]
 
         if (this.category) {
-            getCategoryParents(this.category).forEach((parent) => {
-                breadcrumb.push({ title: parent.name, url: this.$url.category(parent) })
-            })
-
-            breadcrumb.push({ title: this.category.name, url: this.$url.category(this.category) })
+            getCategoryParents(this.category).forEach((parent) => { 
+                let name = this.$url.getName(this.$i18n.locale,parent) 
+                breadcrumb.push({ title:  name  , url: this.$url.category(parent) })
+            })  
+            let name = this.$url.getName(this.$i18n.locale,this.category) 
+            breadcrumb.push({ title: name , url: this.$url.category(this.category) })
         }
 
         return breadcrumb

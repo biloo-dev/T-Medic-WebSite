@@ -58,7 +58,7 @@
         font-weight: $font-weight-medium;
 
         @include direction {
-            text-align: $inline-end;
+            text-align: $inline-start;
         }
     }
     td {

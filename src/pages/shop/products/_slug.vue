@@ -1,5 +1,5 @@
 <template>
-    <ShopPageProduct :product="product" layout="standard" />
+    <ShopPageProduct :product="product" layout="sidebar" sidebar-position="start" />
 </template>
 
 <script lang="ts">

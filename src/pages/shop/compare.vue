@@ -1,10 +1,10 @@
 <template>
     <div>
         <PageHeader
-            title="Comparison"
+            :title="$t('header.Comparison')"
             :breadcrumb="[
-                { title: 'Home', url: '' },
-                { title: 'Comparison', url: '' },
+                { title: $t('header.Home') , url: '/' },
+                { title: $t('header.Comparison') , url: '' },
             ]"
         />
 
@@ -13,11 +13,11 @@
                 <div class="container">
                     <div class="block-empty__body">
                         <div class="block-empty__message">
-                            You have not chosen any products to compare!
+                             {{ $t('shop.compare.compareEmpty') }}
                         </div>
                         <div class="block-empty__actions">
                             <AppLink to="/" class="btn btn-primary btn-sm">
-                                Continue
+                                {{ $t('wishlist.Continue') }}
                             </AppLink>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                         <table class="compare-table">
                             <tbody>
                                 <tr>
-                                    <th>Product</th>
+                                    <th> {{ $t('wishlist.Product') }} </th>
                                     <td v-for="product in items" :key="product.id">
                                         <AppLink :to="$url.product(product)" class="compare-table__product-link">
                                             <div
@@ -43,35 +43,35 @@
                                                 </div>
                                             </div>
                                             <div class="compare-table__product-name">
-                                                {{ product.name }}
+                                                {{ product['name_'+$i18n.locale] }}
                                             </div>
                                         </AppLink>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Rating</th>
+                                    <th>{{ $t('shop.compare.Rating') }}</th>
                                     <td v-for="product in items" :key="product.id">
                                         <div class="compare-table__product-rating">
                                             <Rating :value="product.rating" />
                                         </div>
                                         <div class=" compare-table__product-rating-legend">
-                                            {{ product.reviews }} Reviews
+                                            {{ product.reviews }}  {{ $t('shop.productsView.Reviews') }}
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Availability</th>
+                                    <th> {{ $t('shop.compare.Availability') }}</th>
                                     <td v-for="product in items" :key="product.id">
                                         <span
                                             v-if="product.availability === 'in-stock'"
                                             class="compare-table__product-badge badge badge-success"
                                         >
-                                            In Stock
+                                            {{ $t('wishlist.InStock') }}
                                         </span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th>Price</th>
+                                    <th>{{ $t('general.Price') }} </th>
                                     <td v-for="product in items" :key="product.id">
                                         {{ $price(product.price) }}
                                     </td>
@@ -83,7 +83,7 @@
                                             v-slot:default="{ run, isLoading }"
                                             :action="() => $store.dispatch('cart/add', { product })"
                                         >
-                                            <button
+                                            <button v-b-tooltip.hover :title="$t('general.ToolTips.TooltipAddToCart')" 
                                                 type="button"
                                                 :class="[
                                                     'btn btn-primary',
@@ -97,7 +97,7 @@
                                     </td>
                                 </tr>
                                 <tr v-for="(feature, index) in attributes" :key="index">
-                                    <th>{{ feature.name }}</th>
+                                    <th>{{ feature['name_'+$i18n.locale] }}</th>
                                     <td v-for="product in items" :key="product.id">
                                         {{ feature.values[product.id] }}
                                     </td>
@@ -109,7 +109,7 @@
                                             v-slot:default="{ run, isLoading }"
                                             :action="() => $store.dispatch('compare/remove', { productId: product.id })"
                                         >
-                                            <button
+                                            <button v-b-tooltip.hover :title="$t('general.ToolTips.TooltipRemoveCompare')" 
                                                 type="button"
                                                 :class="[
                                                     'btn btn-secondary btn-sm',
@@ -117,7 +117,7 @@
                                                 ]"
                                                 @click="run"
                                             >
-                                                Remove
+                                                {{ $t('general.Remove') }}
                                             </button>
                                         </AsyncAction>
                                     </td>
@@ -142,7 +142,9 @@ import Rating from '~/components/shared/rating.vue'
 import AsyncAction from '~/components/shared/async-action.vue'
 
 export type Attributes = Array<{
-    name: string;
+    name_ar: string | undefined;
+    name_fr: string | undefined;
+    slug: string;
     values: {[productId: number]: string};
 }>
 
@@ -155,23 +157,25 @@ export type Attributes = Array<{
     }
 })
 export default class Page extends Vue {
-    @Getter('compare/items') items!: IProduct[]
-
+    @Getter('compare/items') items!: IProduct[] 
     get attributes (): Attributes {
-        const attributes: Attributes = []
-
+        const attributes: Attributes = [] 
         this.items.forEach(product => product.attributes.forEach((productAttribute) => {
-            let attribute = attributes.find(x => x.name === productAttribute.name)
-
+            let attribute = attributes.find(x => x.slug === productAttribute.slug) 
             if (!attribute) {
                 attribute = {
-                    name: productAttribute.name,
+                    name_ar: productAttribute.name_ar,
+                    name_fr: productAttribute.name_fr,
+                    slug: productAttribute.slug,
                     values: {}
                 }
                 attributes.push(attribute)
             }
-
-            attribute.values[product.id] = productAttribute.values.map(x => x.name).join(', ')
+            
+            attribute.values[product.id] = JSON.parse(productAttribute.pivot.values).map((x:any) => {
+                let name = this.$url.getName(this.$i18n.locale,x)
+                return name
+            }).join(', ')
         }))
 
         return attributes

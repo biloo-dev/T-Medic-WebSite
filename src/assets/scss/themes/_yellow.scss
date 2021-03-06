@@ -1,3 +1,8 @@
+$one :                        #24a4ea       !default;
+$two :                        #379deb       !default;
+$three :                      #b76bf0       !default;
+$accent-color:                #3366cc       !default;
+$accent-color-gradinet: linear-gradient(100deg, $one, $two 25%, $three) !default;
 #tsparticles {
     display: none;
 }

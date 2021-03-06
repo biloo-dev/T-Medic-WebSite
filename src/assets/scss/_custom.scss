@@ -12,10 +12,32 @@
 
 .locale-fr {
     font-family: 'Roboto', serif;
+    .product-card__addtocart {
+        font-size: .755rem !important;
+    }
+    .active-cat::before  {
+        content: '';
+        top: 0;
+        width: 5px;
+        height: 30px;
+        position: absolute;
+        background: orange;
+        left: 0;
+        
+    }
 }
 
 .locale-ar {
     font-family: 'Droid Arabic Kufi',
     'Traditional Arabic';
+    .active-cat::before  {
+        content: '';
+        top: 0;
+        width: 5px;
+        height: 30px;
+        position: absolute;
+        background: orange;
+        right: 0;
+    }
 }
-
+ 

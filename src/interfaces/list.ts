@@ -10,7 +10,7 @@ export interface IPaginatedList<T> extends IList<T> {
     /** Items per page. */
     limit: number;
 
-    /** Sorting algorithm. */
+    /** Sorting algorithm. */ 
     sort: string;
 
     /** Total items in list. Not a items.length. */

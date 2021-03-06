@@ -109,7 +109,7 @@ function make (context: Context) {
             return '/site/about-us'
         },
         contacts () {
-            return '/site/contact-us'
+            return '/site/contact-us-alt'
         },
         terms () {
             return '/site/terms'
@@ -124,11 +124,24 @@ function make (context: Context) {
         },
         img (url: string) {
             return this.base(url)
-        }
-        ,
-        parse(str :string){
+        },
+        parse(str :string){ 
             let obj = typeof str == "string" ? JSON.parse(str) : str
             return obj[0]
+        },
+        getName(local : string ,obj : any){ 
+            if (obj && local == 'ar') {
+                return obj.name_ar
+            }else if(obj){
+                return obj.name_fr
+            } 
+            return '' 
+        },
+        currentSlug(catSlug : any ,params : any){ 
+            if (catSlug && params && catSlug.slug == params.slug) {
+                return 'active-cat' 
+            } 
+            return ''
         }
     }
 }

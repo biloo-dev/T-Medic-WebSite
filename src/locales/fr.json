@@ -1,4 +1,69 @@
 {
+  "general": {
+    "all" : "Tout",
+    "products" : "Produits",
+    "Remove" : "Supprimer",
+    "Price" : "Prix",
+    "Reset" :"Réinitialiser",
+    "ToolTips" : {
+      "TooltipAddToCart" : "ajouter à la liste de panier",
+      "TooltipWishlist" : "Ajouter à la liste de souhaits",
+      "TooltipCompare" : "Ajouter à la liste de comparaison de produits",
+      "TooltipQuickview" : "Aperçu rapide",
+      "TooltipRemoveWishlist" : "Retirer de la liste de souhaits",
+      "TooltipRemoveCompare" : "Supprimer de la liste de comparaison",
+      "TooltipSearch__button" : "rechercher un produit",
+      "TooltipClickWishlist" : "Liste de souhaits",
+      "TooltipCartlist" : "Liste de panier"
+    }
+  },
+  "Contact_Us" : {
+    "OurAddress" : "Notre adresse",
+    "LeaveUsMessage" : "Laissez-nous un message",
+    "YourName" : "votre nom",
+    "Email" : "E-mail",
+    "Subject" : "Sujet",
+    "Message" : "écrire un message",
+    "SendMessage" : "Envoyer le message"
+  },
+  "shop": {
+    "categorySideBar": {
+      "Filters" : "Filtration"
+    },
+    "product": {
+      "ProductFullDescription": "Description détaillée du produit",
+      "Categories": "Catégories",
+      "WriteReview": "Ecrire une critique",
+      "Quantity": "Quantité",
+      "Specification": "spécification",
+      "Description": "Description",
+      "Reviews": "Commentaires",
+      "Brand": "Marque"
+    },
+    "productSidebar" : {
+      "LatestProducts" : "Derniers Produits" 
+    },
+    "compare":{
+      "compareEmpty" : "Vous n'avez sélectionné aucun produit à comparer!",
+      "Rating" : "Notation",
+      "Availability" : "Disponibilité"
+    },
+    "productsView" : {
+      "NoMatchingItems" : "Aucun élément correspondant",
+      "TryResettingTheFilters" : "Essayez de réinitialiser les filtres",
+      "ResetFilters" : "Réinitialiser les filtres" ,
+      "Default" : "Défaut",
+      "NameA_Z" : "Nom (A-Z)",
+      "NameZ_A" : "Nom (Z-A)",
+      "Reviews" : "Commentaires",
+      "CustomerReviews" : "Avis des clients",
+      "Show" : "Afficher",
+      "Showing": "Montrant",
+      "AllProducts": "Tous les produits",
+      "of": "de",
+      "SortBy": "Trier par"
+    }
+  },
   "DZD": "DZD", 
   "wishlist":{
     "wishEmpty" : "Votre liste de souhaits est vide!",
@@ -22,6 +87,7 @@
     "New" : "Nouveau"
   },
   "blocks": {
+    "RelatedProducts": "Produits connexes",
     "FeaturedProducts" : "Produits populaires",
     "Bestsellers" : "Meilleurs vendeurs",
     "PopularCategories" : "Catégories populaires",
@@ -38,6 +104,23 @@
     }
   },
   "header": {
+    "Home" : "Maison", 
+    "Shop" : "Achats",
+    "Comparison" : "Comparaison",
+    "ContactUs" : "Contactez-Nous",
+    "login":{
+      "LogIntoYourAccount" : "Connectez-vous à votre compte", 
+      "Emailaddress" : "Adresse e-mail",
+      "Password" : "Mot de passe",
+      "Forgot" : "Oublié?",
+      "Login" : "Connexion",
+      "CreateAnAccount" : "Créer un compte",
+      "EditProfile" : "Editer le profil",
+      "OrderHistory" : "Historique des commandes",
+      "Addresses" : "Adresses",
+      "Password" : "Mot de passe",
+      "Logout" : "Se déconnecter"
+    },
     "titlePage":{
       "title" : "Accueil"
     },
@@ -55,6 +138,10 @@
     "nav-links" : {
       "home": "Accueil",
       "product": "Produits",
+      "shopping" : "Shopping",
+      "faq" : "FAQ",
+      "compare" : "compare",
+      "terms" : "Termes",
       "CE" : "CE",
       "actualites": "Actualités",
       "aPropos": "à Propos",
@@ -76,7 +163,7 @@
         "features_subtitle_3" : "Seuls les paiements sécurisés",
         "features_title_4" : "Offres chaudes",
         "features_subtitle_4" : "Réductions jusqu'à 90%"
-    }
+      }
   }
 }
 

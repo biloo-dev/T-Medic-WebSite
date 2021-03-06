@@ -1,7 +1,7 @@
 <template>
     <div :class="`product product--layout--${layout}`">
         <div class="product__content">
-            <ProductGallery :layout="layout" :images="$url.parse(product.images)" />
+            <ProductGallery :layout="layout" :images="JSON.parse(product.images)" />
 
             <div class="product__info">
                 <div class="product__wishlist-compare">
@@ -38,7 +38,7 @@
                     </AsyncAction>
                 </div>
                 <h1 class="product__name">
-                    {{ product.name }}
+                    {{ product['name_' + $i18n.locale] }}
                 </h1>
                 <div class="product__rating">
                     <div class="product__rating-stars">
@@ -46,38 +46,33 @@
                     </div>
                     <div class="product__rating-legend">
                         <AppLink to="/">
-                            {{ product.reviews }} Reviews
+                            {{ product.reviews }}  {{ $t('shop.productsView.Reviews') }}
                         </AppLink>
                         <span>/</span>
                         <AppLink to="/">
-                            Write A Review
+                            {{ $t('shop.product.WriteReview') }}
                         </AppLink>
                     </div>
                 </div>
                 <div class="product__description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                    ornare, mi in ornare elementum, libero nibh lacinia urna, quis
-                    convallis lorem erat at purus. Maecenas eu varius nisi.
+                    {{ product['description_'+$i18n.locale] }}
                 </div>
                 <ul class="product__features">
-                    <li>Speed: 750 RPM</li>
-                    <li>Power Source: Cordless-Electric</li>
-                    <li>Battery Cell Type: Lithium</li>
-                    <li>Voltage: 20 Volts</li>
-                    <li>Battery Capacity: 2 Ah</li>
+                    <li v-for="(attr,i) in product.attributes" :key="'attr' + i">
+                        {{ attr['name_'+$i18n.locale] }} : {{ attr.pivot.values['name_'+$i18n.locale] }}
+                    </li> 
                 </ul>
                 <ul class="product__meta">
                     <li class="product__meta-availability">
-                        Availability:
-                        <span class="text-success">In Stock</span>
+                        {{ $t('shop.compare.Availability') }}
+                        <span class="text-success"> {{ $t('wishlist.InStock') }}</span>
                     </li>
                     <li>
-                        Brand:
+                           {{ $t('shop.product.Brand') }}:
                         <AppLink to="/">
-                            Wakita
+                            {{ product.brand['name_' + $i18n.locale] }}
                         </AppLink>
-                    </li>
-                    <li>SKU: 83690/32</li>
+                    </li> 
                 </ul>
             </div>
 
@@ -101,52 +96,7 @@
                     </template>
                 </div>
 
-                <form class="product__options">
-                    <div class="form-group product__option">
-                        <div class="product__option-label">
-                            Color
-                        </div>
-                        <div class="input-radio-color">
-                            <div class="input-radio-color__list">
-                                <label
-                                    class="input-radio-color__item input-radio-color__item--white"
-                                    :style="{ color: '#fff' }"
-                                    data-toggle="tooltip"
-                                    title="White"
-                                >
-                                    <input type="radio" name="color">
-                                    <span />
-                                </label>
-                                <label
-                                    class="input-radio-color__item"
-                                    :style="{ color: '#ffd333' }"
-                                    data-toggle="tooltip"
-                                    title="Yellow"
-                                >
-                                    <input type="radio" name="color">
-                                    <span />
-                                </label>
-                                <label
-                                    class="input-radio-color__item"
-                                    :style="{ color: '#ff4040' }"
-                                    data-toggle="tooltip"
-                                    title="Red"
-                                >
-                                    <input type="radio" name="color">
-                                    <span />
-                                </label>
-                                <label
-                                    class="input-radio-color__item input-radio-color__item--disabled"
-                                    :style="{ color: '#4080ff' }"
-                                    data-toggle="tooltip"
-                                    title="Blue"
-                                >
-                                    <input type="radio" name="color" disabled>
-                                    <span />
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                <form class="product__options"> 
                     <div class="form-group product__option">
                         <div class="product__option-label">
                             Material
@@ -170,7 +120,7 @@
                     </div>
                     <div class="form-group product__option">
                         <!-- suppress XmlInvalidId -->
-                        <label for="product-quantity" class="product__option-label">Quantity</label>
+                        <label for="product-quantity" class="product__option-label"> {{ $t('shop.product.Quantity') }} </label>
                         <div class="product__actions">
                             <div class="product__actions-item">
                                 <InputNumber
@@ -184,7 +134,7 @@
                             </div>
                           <div class="product__actions-item product__actions-item--addtocart">
                                 <AsyncAction v-slot:default="{ run, isLoading }" :action="addToCart">
-                                    <button
+                                    <button v-b-tooltip.hover :title="$t('general.ToolTips.TooltipAddToCart')"
                                         type="button"
                                         :class="[
                                             'btn btn-primary btn-lg',
@@ -197,12 +147,11 @@
                                     </button>
                                 </AsyncAction>
                             </div> 
+                            <br/>
                             <div class="product__actions-item product__actions-item--wishlist">
                                 <AsyncAction v-slot:default="{ run, isLoading }" :action="() => $store.dispatch('wishlist/add', { product })">
-                                    <button
-                                        type="button"
-                                        data-toggle="tooltip"
-                                        title="Wishlist"
+                                    <button v-b-tooltip.hover :title="$t('general.ToolTips.TooltipWishlist')"
+                                        type="button" 
                                         :class="[
                                             'btn btn-secondary btn-svg-icon btn-lg',
                                             {'btn-loading': isLoading}
@@ -217,8 +166,7 @@
                                 <AsyncAction v-slot:default="{ run, isLoading }" :action="() => $store.dispatch('compare/add', { product })">
                                     <button
                                         type="button"
-                                        data-toggle="tooltip"
-                                        title="Compare"
+                                        v-b-tooltip.hover :title="$t('general.ToolTips.TooltipCompare')"
                                         :class="[
                                             'btn btn-secondary btn-svg-icon btn-lg',
                                             {'btn-loading': isLoading}
@@ -237,19 +185,14 @@
             <div class="product__footer">
                 <div class="product__tags tags">
                     <div class="tags__list">
-                        <AppLink to="/">
-                            Mounts
-                        </AppLink>
-                        <AppLink to="/">
-                            Electrodes
-                        </AppLink>
-                        <AppLink to="/">
-                            Chainsaws
-                        </AppLink>
+
+                        <AppLink :to="`/shop/catalog?filter_tags=${tags.slug}`" v-for="(tags,i) in product.tags" :key="'tag_'+i" >
+                            {{ tags['name_'+$i18n.locale] }}
+                        </AppLink> 
                     </div>
                 </div>
 
-                <div class="product__share-links share-links">
+                <!-- <div class="product__share-links share-links">
                     <ul class="share-links__list">
                         <li class="share-links__item share-links__item--type--like">
                             <AppLink to="/">
@@ -272,7 +215,7 @@
                             </AppLink>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -291,16 +234,20 @@ import Wishlist16Svg from '~/svg/wishlist-16.svg'
 import Compare16Svg from '~/svg/compare-16.svg'
 
 export type ProductLayout = 'standard' | 'sidebar' | 'columnar' | 'quickview';
-
-@Component({
+ 
+@Component({ 
     components: { Rating, AppLink, ProductGallery, AsyncAction, Wishlist16Svg, Compare16Svg, InputNumber }
 })
 export default class Product extends Vue {
     @Prop({ type: String, required: true }) readonly layout!: ProductLayout
-    @Prop({ type: Object, required: true }) readonly product!: IProduct
+    @Prop({ type: Object, required: true }) product!: IProduct
 
     quantity: number | string = 1
-
+    created(){
+        if(this.product){
+            this.product.attributes.filter((e,i) => this.product.attributes[i].pivot.values = e.pivot.values )   
+        }
+    }
     addToCart (): Promise<void> {
         if (typeof this.quantity === 'string' || this.quantity < 1) {
             return Promise.resolve()

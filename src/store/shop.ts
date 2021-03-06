@@ -193,8 +193,8 @@ export const getters: GetterTree<ShopState, {}> = {
     productsList (store) {
         return store.productsList
     },
-    productsListFilters (store) {
-        return store.productsList?.filters
+    productsListFilters (store) { 
+        return store.productsList?.filters || []
     },
     options (store) {
         return store.options

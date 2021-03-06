@@ -30,8 +30,7 @@
     flex-wrap: wrap;
 }
 .products-list__item {
-    display: flex;
-
+    display: flex; 
     .product-card {
         width: 100%;
         flex-shrink: 0;

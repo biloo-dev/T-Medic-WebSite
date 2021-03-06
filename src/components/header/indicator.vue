@@ -13,13 +13,13 @@
         @mouseenter="onMouseEnter"
         @mouseleave="onMouseLeave"
     >
-        <AppLink v-if="to && trigger !== 'click'" :to="to" class="indicator__button" @click.native="onClick">
+        <AppLink v-if="to && trigger !== 'click'" :to="to" class="indicator__button" @click.native="onClick" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipClickWishlist')">
             <span class="indicator__area">
                 <slot name="icon" />
                 <span v-if="value !== null" class="indicator__value">{{ value }}</span>
             </span>
         </AppLink>
-        <a v-if="to && trigger === 'click'" :href="$url.anyLink(to)" class="indicator__button" @click="onClick">
+        <a v-if="to && trigger === 'click'" :href="$url.anyLink(to)" class="indicator__button" @click="onClick" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipCartlist')">
             <span class="indicator__area">
                 <slot name="icon" />
                 <span v-if="value !== null" class="indicator__value">{{ value }}</span>
@@ -29,10 +29,10 @@
             <span class="indicator__area">
                 <slot name="icon" />
                 <span v-if="value !== null" class="indicator__value">{{ value }}</span>
-            </span>
+            </span> 
         </button>
         <div v-if="$slots.default" ref="dropdown" class="indicator__dropdown">
-            <slot />
+            <slot /> fffff
         </div>
     </div>
 </template>

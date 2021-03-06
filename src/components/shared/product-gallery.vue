@@ -9,13 +9,13 @@
                     @click="handleZoomButtonClick"
                 >
                     <ZoomIn24Svg />
-                </button>
+                </button> 
                 <Carousel ref="featured" :options="featuredGalleryOptions">
                     <CarouselSlide v-for="(image, index) in images" :key="index">
                         <div class="product-image product-image--location--gallery">
                             <a
                                 :href="$url.img(image)"
-                                class="product-image__body"
+                                class="product-image__body" style="padding-bottom: 10% !important"
                                 target="_blank"
                                 @click="handleFeaturedClick($event, index)"
                             >
@@ -28,14 +28,16 @@
                                 naturalWidth and naturalHeight property of img.product-image__img.
                                 -->
                                 <!--suppress HtmlUnknownTarget -->
-                                <img
+                                <!-- <img
                                     ref="images"
                                     class="product-image__img"
                                     :src="$url.img(image)"
                                     alt=""
-                                    data-width="700"
-                                    data-height="700"
-                                >
+                                    data-width="700" data-height="700"
+                                    
+                                >  -->
+                                <ImageZoom ref="images" data-width="700" data-height="700" :img-normal="$url.img(image)" class="product-image__img" :scale="2"/>
+
                             </a>
                         </div>
                     </CarouselSlide>
@@ -51,7 +53,7 @@
                             ]"
                             @click="handleThumbnailClick(index)"
                         >
-                            <span class="product-image__body">
+                            <span class="product-image__body" style="height: 60px;">
                                 <!--suppress HtmlUnknownTarget -->
                                 <img
                                     class="product-image__img product-gallery__carousel-image"
@@ -67,8 +69,8 @@
     </div>
 </template>
 
-<script lang="ts">
-
+<script lang="ts"> 
+import 'vue-inner-image-zoom/lib/vue-inner-image-zoom.css' 
 import { Vue, Component, Prop, Ref } from 'vue-property-decorator'
 import { Getter } from 'vuex-class'
 import { Swiper } from 'swiper'
@@ -76,6 +78,7 @@ import { IDirection } from '~/interfaces/language'
 import type { createGalleryFn, Gallery, GalleryOptions } from '~/services/photoswipe'
 import Carousel from '~/components/shared/carousel.vue'
 import CarouselSlide from '~/components/shared/carousel-slide.vue'
+import ImageZoom from '~/components/shared/image-zoom.vue'
 import ZoomIn24Svg from '~/svg/zoom-in-24.svg'
 
 export type ProductGalleryLayout = 'standard' | 'sidebar' | 'columnar' | 'quickview';
@@ -115,14 +118,14 @@ const galleryOptions = {
 }
 
 @Component({
-    components: { ZoomIn24Svg, Carousel, CarouselSlide }
+    components: { ZoomIn24Svg, Carousel,ImageZoom, CarouselSlide }
 })
 export default class ProductGallery extends Vue {
     @Prop({ type: String, required: true }) readonly layout!: ProductGalleryLayout
     @Prop({ type: Array, required: true }) readonly images!: string[]
 
     @Ref() readonly featured!: Carousel | null
-    @Ref('images') readonly imageElements!: HTMLImageElement[]
+    @Ref('images') readonly imageElements!: any
 
     @Getter('locale/direction') direction!: IDirection
 
@@ -134,6 +137,7 @@ export default class ProductGallery extends Vue {
 
     // noinspection JSUnusedGlobalSymbols
     featuredGalleryOptions = {
+        autoplay : false,
         pagination: {},
         on: {
             slideChangeTransitionStart: this.handleFeaturedSlideChange
@@ -185,11 +189,12 @@ export default class ProductGallery extends Vue {
     }
 
     openPhotoswipe (index: number) {
-        const items = this.imageElements.map((tag, index) => {
-            if (!tag) {
+        const items = this.imageElements.map((tag : any, index:number) => { 
+            tag = tag.$el
+            if (!tag || !tag.dataset) {
+                return 
                 throw new Error('Image ref is null')
             }
-
             const width = (tag.dataset.width ? parseFloat(tag.dataset.width) : null) || tag.naturalWidth
             const height = (tag.dataset.height ? parseFloat(tag.dataset.height) : null) || tag.naturalHeight
 
@@ -207,8 +212,7 @@ export default class ProductGallery extends Vue {
 
         const options: GalleryOptions = {
             getThumbBoundsFn: (index) => {
-                const tag = this.imageElements[this.getIndexDependOnDir(index)]
-
+                const tag = this.imageElements[this.getIndexDependOnDir(index)].$el 
                 if (!tag) {
                     return { x: 0, y: 0, w: 0 }
                 }

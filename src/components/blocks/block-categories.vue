@@ -18,13 +18,13 @@
                         <div class=" category-card__content">
                             <div class=" category-card__name">
                                 <AppLink :to="$url.category(category)">
-                                    {{ category.name }}
+                                    {{ category['name_'+$i18n.locale] }}
                                 </AppLink>
                             </div>
                             <ul class="category-card__links">
                                 <li v-for="(sub, subIndex) in category.children" :key="subIndex">
                                     <AppLink :to="$url.category(sub)">
-                                        {{ sub.name }}
+                                        {{ sub['name_'+$i18n.locale] }}
                                     </AppLink>
                                 </li>
                             </ul>

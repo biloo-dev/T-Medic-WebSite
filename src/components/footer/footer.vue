@@ -52,15 +52,12 @@
   <div class="w wave"></div>
   <div class="w wave2"></div>
   <div class="w wave3"></div>
-  <div class="w wave4"></div>
+  <div class="w wave4"></div>s
 </div>
 </template>
 
 <script lang="ts">
-import {
-  Vue,
-  Component
-} from 'vue-property-decorator'
+import { Vue, Component } from 'vue-property-decorator'
 import FooterContacts from '~/components/footer/footer-contacts.vue'
 import FooterLinks from '~/components/footer/footer-links.vue'
 import FooterNewsletter from '~/components/footer/footer-newsletter.vue'
@@ -69,16 +66,16 @@ import theme from '~/data/theme'
 
 import { tsParticles } from "tsparticles";
 @Component({
-  components: {
+  components: { 
     ToTop,
     FooterNewsletter,
     FooterLinks,
     FooterContacts
-  }
+  }, 
 })
 export default class Footer extends Vue {
   theme = theme
-    mounted(){
+    mounted(){ 
       tsParticles.loadJSON("footer", "https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/XjRprX_particles.json?" )
     }
 }

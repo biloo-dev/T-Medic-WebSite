@@ -1,30 +1,30 @@
 <template>
     <div
         :class="[
-            'products-view',
-            {'products-view--loading': $store.getters['shop/productsListIsLoading']}
+            'productsView',
+            {'productsView--loading': $store.getters['shop/productsListIsLoading']}
         ]"
     >
-        <div class="products-view__loader" />
+        <div class="productsView__loader" />
 
-        <div v-if="productsList.items.length === 0" class="products-view__empty">
-            <div class="products-view__empty-title">
-                No matching items
+        <div v-if="productsList.items && productsList.items.length === 0" class="productsView__empty">
+            <div class="productsView__empty-title">
+                {{ $t('shop.productsView.NoMatchingItems') }}
             </div>
-            <div class="products-view__empty-subtitle">
-                Try resetting the filters
+            <div class="productsView__empty-subtitle">
+                 {{ $t('shop.productsView.TryResettingTheFilters') }}
             </div>
             <button
                 type="button"
                 class="btn btn-primary btn-sm"
                 @click="$store.dispatch('shop/resetFilters')"
             >
-                Reset filters
+                 {{ $t('shop.productsView.ResetFilters') }}
             </button>
         </div>
 
-        <div v-if="productsList.items.length !== 0" class="products-view__content">
-            <div class="products-view__options">
+        <div v-if="productsList.items && productsList.items.length !== 0" class="productsView__content">
+            <div class="productsView__options">
                 <div
                     :class="[
                         'view-options',
@@ -37,7 +37,7 @@
                     <div class="view-options__filters-button">
                         <button type="button" class="filters-button" @click="$emit('openSidebar')">
                             <Filters16Svg class="filters-button__icon" />
-                            <span class="filters-button__title">Filters</span>
+                            <span class="filters-button__title">{{ $t('shop.categorySideBar.Filters') }}</span>
                             <span v-if="filtersCount" class="filters-button__counter">{{ filtersCount }}</span>
                         </button>
                     </div>
@@ -61,11 +61,11 @@
                         </div>
                     </div>
                     <div class="view-options__legend">
-                        Showing {{ productsList.from }}—{{ productsList.to }} of {{ productsList.total }} products
+                        {{ $t('shop.productsView.Showing') }} {{ productsList.from }} — {{ productsList.to }} {{ $t('shop.productsView.of') }} {{ productsList.total }} {{ $t('general.products')}}
                     </div>
                     <div class="view-options__divider" />
                     <div class="view-options__control">
-                        <label for="view-options-sort">Sort By</label>
+                        <label for="view-options-sort">{{ $t('shop.productsView.SortBy') }}</label>
                         <div>
                             <select
                                 id="view-options-sort"
@@ -74,19 +74,19 @@
                                 @change="handleSortChange"
                             >
                                 <option value="default">
-                                    Default
+                                    {{ $t('shop.productsView.Default') }}
                                 </option>
                                 <option value="name_asc">
-                                    Name (A-Z)
+                                    {{ $t('shop.productsView.NameA_Z') }}
                                 </option>
                                 <option value="name_desc">
-                                    Name (Z-A)
+                                    {{ $t('shop.productsView.NameZ_A') }}
                                 </option>
                             </select>
                         </div>
                     </div>
                     <div class="view-options__control">
-                        <label for="view-options-limit">Show</label>
+                        <label for="view-options-limit"> {{ $t('shop.productsView.Show') }}</label>
                         <div>
                             <select
                                 id="view-options-limit"
@@ -113,7 +113,7 @@
             </div>
 
             <div
-                class="products-view__list products-list"
+                class="productsView__list products-list"
                 :data-layout="currentLayout !== 'list' ? grid : currentLayout"
                 :data-with-features="currentLayout === 'grid-with-features' ? 'true' : 'false'"
                 :data-mobile-grid-columns="2"
@@ -125,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="products-view__pagination">
+            <div class="productsView__pagination">
                 <Pagination
                     :current="options.page || productsList.page"
                     :siblings="2"
@@ -182,7 +182,8 @@ export default class ProductsView extends Vue {
     ]
 
     get filtersCount () {
-        return Object.keys(this.filters).map(x => this.filters[x]).filter(x => x).length
+        let obj = Object.keys(this.filters).map(x => this.filters[x]).filter(x => x) || []
+        return obj.length
     }
 
     handlePageChange (page: number) {

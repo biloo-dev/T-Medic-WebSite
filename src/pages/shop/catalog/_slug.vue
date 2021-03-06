@@ -13,14 +13,13 @@ import ShopPageCategory from '~/components/shop/shop-page-category.vue'
     components: { ShopPageCategory },
     async asyncData ({ store, params, query }): Promise<object | void> {
         const options = parseQueryOptions(query as ParsedQuery)
-        const filters = parseQueryFilters(query as ParsedQuery)
-
+        const filters = parseQueryFilters(query as ParsedQuery) 
         await store.dispatch('shop/init', {
             categorySlug: params.slug || null,
             options,
             filters
         })
-    }
+    } 
 })
 export default class Page extends Vue { }
 

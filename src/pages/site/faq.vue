@@ -1,158 +1,25 @@
 <template>
     <div>
         <PageHeader
-            title="Frequently Asked Questions"
+            :title="Settings('frequently_asked_questions')['name_' + $i18n.locale]"
             :breadcrumb="[
-                { title: 'Home', url: '' },
-                { title: 'Frequently Asked Questions', url: '' },
-            ]"
-        />
-
+                { title: $t('header.Home'), url: '/' },
+                { title: Settings('frequently_asked_questions')['name_' + $i18n.locale], url: '' },
+            ]"/> 
+                     
         <div class="block faq">
             <div class="container">
-                <div class="faq__section">
-                    <div class="faq__section-title">
-                        <h3>Shipping Information</h3>
+                <div class="faq__section" v-for="item in JSON.parse(Settings('frequently_asked_questions').values)" :key="item.slug">
+                    <div class="faq__section-title"> 
+                        <h3>
+                            <i class="fas fa-star" :class="$i18n.locale == 'ar' ? 'ml-2' : 'mr-2'" style="font-size: 18px;"></i> 
+                            {{ item['title_' + $i18n.locale] }}<b-badge pill variant="light" style="padding: 0;position: relative;bottom: 10px;border-radius: 50%;" >({{ item.values.length }})</b-badge>
+                        </h3> 
                     </div>
-                    <div class="faq__section-body">
-                        <div class="row">
-                            <div class="faq__section-column col-12 col-lg-6">
-                                <div class="typography">
-                                    <h6>What shipping methods are available?</h6>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat.
-                                    </p>
-
-                                    <h6>Do you ship internationally?</h6>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="faq__section-column col-12 col-lg-6">
-                                <div class="typography">
-                                    <h6>What shipping methods are available?</h6>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat.
-                                    </p>
-
-                                    <h6>Do you ship internationally?</h6>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq__section">
-                    <div class="faq__section-title">
-                        <h3>Payment Information</h3>
-                    </div>
-                    <div class="faq__section-body">
-                        <div class="row">
-                            <div class="faq__section-column col-12 col-lg-6">
-                                <div class="typography">
-                                    <h6>What shipping methods are available?</h6>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="faq__section-column col-12 col-lg-6">
-                                <div class="typography">
-                                    <h6>What shipping methods are available?</h6>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq__section">
-                    <div class="faq__section-title">
-                        <h3>Orders and Returns</h3>
-                    </div>
-                    <div class="faq__section-body">
-                        <div class="row">
-                            <div class="faq__section-column col-12 col-lg-6">
-                                <div class="typography">
-                                    <h6>What shipping methods are available?</h6>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="faq__section-column col-12 col-lg-6">
-                                <div class="typography">
-                                    <h6>What shipping methods are available?</h6>
-
-                                    <p>
-                                        Lorem ipsum dolor sit amet conse ctetur adipisicing
-                                        elit, sed do eiusmod tempor incididunt ut labore et
-                                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                                        nostrud exercitation ullamco laboris nisi ut aliquip
-                                        ex ea commodo consequat. Duis aute irure dolor in
-                                        reprehenderit in voluptate velit esse cillum dolore
-                                        eu fugiat.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <!-- <div class="faq__section-body">  -->
+                        <faq :questions="item.values" :slug="item.slug"/>  
+                    <!-- </div> -->
+                </div> 
             </div>
         </div>
     </div>
@@ -162,15 +29,28 @@
 
 import { Vue, Component } from 'vue-property-decorator'
 import PageHeader from '~/components/shared/page-header.vue'
+import faq from '~/components/site/faq.vue'
+import { Getter } from 'vuex-class' 
+import { ISettings } from '~/interfaces/Settings' 
 
 @Component({
-    components: { PageHeader },
+    components: { PageHeader,faq },
+    async asyncData ({ store, query }): Promise<object | void> {
+        await store.dispatch('settings/fetchSettings')
+    },
     head () {
         return {
-            title: 'FAQ'
+            title: this.Settings("frequently_asked_questions")['name_' + this.$i18n.locale]
         }
     }
 })
-export default class SitePageFaq extends Vue { }
+export default class SitePageFaq extends Vue {
+
+    @Getter('settings/getSettingBySlug') Settings! : (slug: string) => ISettings[]
+
+    mounted(){
+        console.log('this.Settings("frequently_asked_questions") =>>>>>>>>>',this.Settings("frequently_asked_questions"))
+    }
+ }
 
 </script>

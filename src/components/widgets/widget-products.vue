@@ -20,7 +20,7 @@
                 <div class="widget-products__info">
                     <div class="widget-products__name">
                         <AppLink :to="$url.product(product)">
-                            {{ product.name }}
+                            {{ product['name_'+$i18n.locale] }}
                         </AppLink>
                     </div>
                     <div class="widget-products__prices">

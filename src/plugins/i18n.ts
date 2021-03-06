@@ -11,6 +11,7 @@ export default ({ app, store }: Context) => {
     app.i18n = new VueI18n({
         locale: store.state.locale.current,
         fallbackLocale: defaultLocale,
+        // silentTranslationWarn: process.env.NODE_ENV === 'production',
         messages: dataLanguages.reduce((acc, lang) => ({ ...acc, [lang.locale]: lang.messages }), {})
     })
 }

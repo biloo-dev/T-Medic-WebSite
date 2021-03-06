@@ -1,4 +1,71 @@
+
 {
+  "general": {
+    "all" : "الكل",
+    "products" : "المنتجات",
+    "Remove" : "حذف",
+    "Price" : "السعر",
+    "Reset" : "إعادة ضبط",
+    "ToolTips": {
+      "TooltipAddToCart": "أضف إلى أوامر الشراء",
+      "TooltipWishlist": "أضف إلى قائمة الرغبات",
+      "TooltipCompare": "أضف إلى قائمة مقارنة المنتج",
+      "TooltipRemoveWishlist": "إزالة من قائمة الرغبات",
+      "TooltipQuickview": "نظرة سريعة",
+      "TooltipRemoveCompare": "إزالة من قائمة المقارنة",
+      "TooltipSearch__button": "ابحث عن منتج",
+      "TooltipClickWishlist": "قائمة الرغبات",
+      "TooltipCartlist": "قائمة التسوق"
+    }
+  },
+  "Contact_Us" : {
+    "OurAddress" : "عنواننا",
+    "LeaveUsMessage" : "اترك لنا رسالة",
+    "YourName" : "اسمك",
+    "Email" : "بريد الالكتروني",
+    "Subject" : "موضوعات",
+    "Message" : "اكتب رسالة",
+    "SendMessage" : "أرسل رسالة"
+    
+  },
+  "shop": {
+    "categorySideBar": {
+      "Filters": "تصفية"
+    },
+    "productSidebar" : {
+      "LatestProducts" : "أحدث المنتجات" 
+    },
+    "product" : {
+      "ProductFullDescription" : "الوصف المفصل  للمنتج ",
+      "Categories" : "الفئات",
+      "WriteReview" : "أكتب مراجعة" ,
+      "Quantity" : "الكمية",
+      "Specification" : "خصائص المنتج",
+      "Description" : "وصف المنتج", 
+      "Reviews" : "المراجعات",
+      "Brand" : "الماركة"
+    },
+    "compare":{
+      "compareEmpty" : "لم تختر أي منتجات للمقارنة!",
+      "Rating" : "تقييم",
+      "Availability" : "التوفر"
+    },
+    "productsView": {
+      "NoMatchingItems": "لا يوجد عنصر مطابق",
+      "TryResettingTheFilters": "حاول إعادة تعيين الفلترة",
+      "ResetFilters": "إعادة تعيين الفلترة",
+      "Default" : "إفتراضي", 
+      "NameA_Z" : "الاسم (أ-ي)",
+      "CustomerReviews" : "آراء المستهلكين",
+      "Reviews" : "المراجعات",
+      "NameZ_A" : "الاسم (ي-أ)",
+      "AllProducts": "جميع المنتجات",
+      "Show" : "إظهار",
+      "Showing": "عرض",
+      "of": "من",
+      "SortBy": "ترتيب حسب"
+    }
+  },
   "DZD": "دج", 
   "wishlist":{
     "wishEmpty" :  "قائمة رغباتك فارغة!",
@@ -22,6 +89,7 @@
     "New" : "جديد" 
   },
   "blocks" : {
+    "RelatedProducts" : "منتجات ذات صله",
     "FeaturedProducts" : "منتجات مميزة",
     "Bestsellers" : "أفضل البائعين",
     "PopularCategories" : "الفئات الشعبية",
@@ -38,6 +106,23 @@
     }  
   },
   "header": {
+    "Home" : "الصفحة الرئيسية",
+    "Shop" : "التسوق",
+    "Comparison" : "المقارنة",
+    "ContactUs" : "اتصل بنا",
+     "login":{
+        "LogIntoYourAccount" : "تسجيل الدخول إلى حسابك",
+        "Emailaddress" : "عنوان بريد الكتروني",
+        "Password" : "كلمة المرور",
+        "Forgot" : "نسيت؟",
+        "Login" : "تسجيل الدخول",
+        "CreateAnAccount" : "انشئ حساب",
+        "EditProfile" : "تعديل الملف الشخصي",
+        "OrderHistory" : "تاريخ الطلب",
+        "Addresses" : "عناوين",
+        "Password" : "كلمة المرور",
+        "Logout" : "تسجيل خروج"
+      },
      "titlePage":{
       "title" : "الرئيسية"
     },
@@ -53,7 +138,11 @@
       "language": "اللغة"
     },
     "nav-links": {
-      "home": "الرئيسية",
+      "home": "الرئيسية", 
+      "shopping" : "التسوق",
+      "faq" : "اسإلة مكررة",
+      "compare" : "مقارنة",
+      "terms" : "مصلحات",
       "product": "المنتجات",
       "CE": "نحن",
       "actualites": "الجديد",

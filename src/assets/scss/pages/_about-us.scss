@@ -35,7 +35,14 @@
 .about-us__teammates {
     margin-top: 42px;
 }
-
+.about_logo {
+    width:200px;
+    margin: 0 auto;
+    img {
+        width: 200px;
+        height:200px;
+    }
+}
 
 .teammates {
     .swiper-pagination {

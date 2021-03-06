@@ -46,7 +46,7 @@
       <div class="product-card__rating">
         <Rating class="product-card__rating-stars" :value="product.rating" />
         <div class=" product-card__rating-legend">
-          {{ product.reviews }} Reviews
+          {{ product.reviews }}  {{ $t('shop.productsView.Reviews') }}
         </div>
       </div>
 
@@ -76,7 +76,7 @@
           <button type="button" :class="[
                             'btn btn-primary product-card__addtocart',
                             {'btn-loading': isLoading}
-                        ]" @click="run">
+                        ]" @click="run" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipAddToCart')">
             {{ $t('btns.AddToCart') }}
           </button>
         </AsyncAction>
@@ -84,7 +84,7 @@
           <button type="button" :class="[
                             'btn btn-secondary product-card__addtocart product-card__addtocart--list',
                             {'btn-loading': isLoading}
-                        ]" @click="run">
+                        ]" @click="run" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipAddToCart')">
             {{ $t('btns.AddToCart') }}
           </button>
         </AsyncAction>
@@ -93,7 +93,7 @@
           <button type="button" :class="[
                             'btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist',
                             {'btn-loading': isLoading}
-                        ]" @click="run">
+                        ]" @click="run" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipWishlist')">
             <Wishlist16Svg />
           </button>
         </AsyncAction>
@@ -102,7 +102,7 @@
           <button type="button" :class="[
                             'btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare',
                             {'btn-loading': isLoading}
-                        ]" @click="run">
+                        ]" @click="run" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipCompare')">
             <Compare16Svg />
           </button>
         </AsyncAction>

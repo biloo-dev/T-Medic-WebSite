@@ -9,12 +9,12 @@
                 <div class="shop-layout__content">
                     <div class="block">
                         <Product :product="product" :layout="layout" />
-                        <ProductTabs :with-sidebar="true" />
+                        <ProductTabs :product="product"  :with-sidebar="true" />
                     </div>
 
                     <BlockProductsCarousel
                         v-if="relatedProducts.length > 0"
-                        title="Related Products"
+                        title="RelatedProducts"
                         layout="grid-4-sm"
                         :products="relatedProducts"
                         :with-sidebar="true"
@@ -29,13 +29,13 @@
             <div class="block">
                 <div class="container">
                     <Product :product="product" :layout="layout" />
-                    <ProductTabs />
+                    <ProductTabs :product="product"  />
                 </div>
             </div>
 
             <BlockProductsCarousel
                 v-if="relatedProducts.length > 0"
-                title="Related Products"
+                title="RelatedProducts"
                 layout="grid-5"
                 :products="relatedProducts"
             />
@@ -61,8 +61,9 @@ export type ShopPageProductSidebarPosition = 'start' | 'end';
 @Component({
     components: { PageHeader, Product, ProductTabs, BlockProductsCarousel, ProductSidebar },
     head (this: ShopPageProduct) {
+        let name = this.$url.getName(this.$i18n.locale,this.product) 
         return {
-            title: `${this.product.name}`
+            title: `${name}`
         }
     }
 })
@@ -74,10 +75,11 @@ export default class ShopPageProduct extends Vue {
     relatedProducts: IProduct[] = []
 
     get breadcrumb (): ILink[] {
-        return [
-            { title: 'Home', url: this.$url.home() },
-            { title: 'Shop', url: this.$url.catalog() },
-            { title: this.product.name, url: this.$url.product(this.product) }
+        let name = this.$url.getName(this.$i18n.locale,this.product) 
+        return [ 
+            { title: this.$t('header.Home').toString(), url: this.$url.home() },
+            { title: this.$t('header.Shop').toString(), url: this.$url.catalog() },
+            { title: name, url: this.$url.product(this.product) }
         ]
     }
 

@@ -30,7 +30,7 @@
                         <div class="dropcart__product-info">
                             <div class="dropcart__product-name">
                                 <AppLink :to="$url.product(item.product)">
-                                    {{ item.product.name }}
+                                    {{ item.product['name_'+$i18n.locale] }}
                                 </AppLink>
                             </div>
                             <ul v-if="item.options.length > 0" class="dropcart__product-options">

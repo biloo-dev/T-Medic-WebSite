@@ -3,6 +3,7 @@ import { ICategory } from '~/interfaces/category'
 import { IFilterValues, IListOptions } from '~/interfaces/list'
 
 export function getCategoryParents (category: ICategory): ICategory[] {
+   
     return category.parent ? [...getCategoryParents(category.parent), category.parent] : []
 }
 
@@ -33,8 +34,7 @@ export function parseQueryOptions (query: string | queryString.ParsedQuery) {
 
 export function parseQueryFilters (query: string | queryString.ParsedQuery) {
     const queryObject = typeof query === 'string' ? queryString.parse(query) : query
-    const filterValues: IFilterValues = {}
-
+    const filterValues: IFilterValues = {} 
     Object.keys(queryObject).forEach((param) => {
         const value = queryObject[param]
         const mr = param.match(/^filter_([-_A-Za-z0-9]+)$/)

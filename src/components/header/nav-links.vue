@@ -18,7 +18,8 @@
                 <AppLink class="nav-links__item-link" :to="item.url">
                     <div class="nav-links__item-body">
                         <i :class="item.icon + ($i18n.locale == 'ar' ? ' ml-1' : ' mr-1')"></i>
-                        {{ $t('header.nav-links.'+item.title) }}
+                        
+                        {{ item.title ? $t('header.nav-links.'+item.title) : '' }}
                         <ArrowRoundedDown9x6Svg v-if="item.submenu" class="nav-links__item-arrow" />
                     </div>
                 </AppLink>

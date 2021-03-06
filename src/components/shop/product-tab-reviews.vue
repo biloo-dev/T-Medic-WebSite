@@ -2,7 +2,7 @@
     <div class="reviews-view">
         <div class="reviews-view__list">
             <h3 class="reviews-view__header">
-                Customer Reviews
+                {{ $t('shop.productsView.CustomerReviews') }}
             </h3>
 
             <div class="reviews-list">

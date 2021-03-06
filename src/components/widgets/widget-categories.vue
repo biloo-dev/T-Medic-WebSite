@@ -1,7 +1,7 @@
 <template>
     <div :class="['widget-categories', `widget-categories--location--${location} widget`]">
         <h4 class="widget__title">
-            Categories
+            {{ $t('shop.product.Categories') }}
         </h4>
         <ul class="widget-categories__list">
             <Collapse
@@ -11,10 +11,10 @@
                 item-open-class="widget-categories__item--open"
             >
                 <li :class="['widget-categories__item', itemClasses]">
-                    <div class="widget-categories__row">
+                    <div class="widget-categories__row"  v-if="!category.parent_id">
                         <AppLink :to="$url.category(category)">
                             <ArrowRoundedRight6x9Svg class="widget-categories__arrow" />
-                            {{ category.name }}
+                            {{ category['name_' + $i18n.locale] }}
                         </AppLink>
                         <button
                             v-if="category.children && category.children.length > 0"
@@ -31,7 +31,7 @@
                         <ul>
                             <li v-for="child in category.children" :key="child.id">
                                 <AppLink :to="$url.category(child)">
-                                    {{ child.name }}
+                                    {{ child['name_' + $i18n.locale] }}
                                 </AppLink>
                             </li>
                         </ul>

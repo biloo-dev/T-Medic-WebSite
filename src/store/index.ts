@@ -8,6 +8,8 @@ import { CartState } from '~/store/cart'
 import { LocaleState } from '~/store/locale'
 import { ShopState } from '~/store/shop'
 import { ConfigState } from '~/store/config'
+import { SettingsState } from '~/store/settings'
+import { AuthState } from '~/store/auth'
 
 export interface RootState {
     cart: CartState;
@@ -19,5 +21,6 @@ export interface RootState {
     wishlist: WishlistState;
     locale: LocaleState;
     shop: ShopState;
-    config: ConfigState;
+    settings: SettingsState;
+    auth: AuthState;
 }

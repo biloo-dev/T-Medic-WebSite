@@ -1,23 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars,arrow-body-style */
 // noinspection ES6UnusedImports
 // import qs from 'query-string';
-import { $axios } from '~/utils/api'
-import { getCategories, getCategoryBySlug } from '~/fake-server/endpoints/categories'
+import { $axios } from '~/utils/api' 
 import { IShopCategory } from '~/interfaces/category'
+import { ISettings } from '~/interfaces/Settings'
+import { IUser, IData } from '~/interfaces/User'
 import { IProduct, IProductsList } from '~/interfaces/product'
 import { IFilterValues, IListOptions } from '~/interfaces/list'
-import {
-    getDiscountedProducts,
-    getFeaturedProducts,
-    getLatestProducts,
-    getPopularProducts,
-    getProductBySlug,
-    getProductsList,
-    getRelatedProducts,
-    getSuggestions,
-    getTopRatedProducts
-} from '~/fake-server/endpoints/products'
-
+  
 export interface GetCategoriesOptions {
     depth?: number;
 }
@@ -46,12 +36,27 @@ interface AxiosRequestConfig {
 }
 const shopApi = {
     /**
+     * Returns array of Login.
+     */
+    Login: async (credentials : IData): Promise<IUser[]> => {
+         
+        let data = await $axios.$post('login',credentials)  
+        return data 
+    },
+    /**
+     * Returns array of Settings.
+     */
+    getSettings: async (): Promise<ISettings[]> => {
+         
+        let data = await $axios.$post('getSettings')  
+        return data 
+    },
+    /**
      * Returns array of categories.
      */
     getCategories: async (options: GetCategoriesOptions = {}): Promise<[]> => {
          
-        let data = await $axios.$post('categorys', { options }) 
-    
+        let data = await $axios.$post('categorys', { options })  
         return data 
     },
     /**
@@ -65,45 +70,44 @@ const shopApi = {
     /**
      * Returns category by slug.
      */
-    getCategoryBySlug: (slug: string, options: GetCategoryBySlugOptions = {}): Promise<IShopCategory> => {
-        
-        return getCategoryBySlug(slug, options)
+    getCategoryBySlug: async (slug: string, options: GetCategoryBySlugOptions = {}): Promise<IShopCategory> => {
+         
+        let data = await $axios.$post('getCategoryBySlug', { slug, options })
+        return data
+        // return getCategoryBySlug(slug, options)
     },
     /**
      * Returns product.
      */
-    getProductBySlug: (slug: string): Promise<IProduct> => {
-        
-        return getProductBySlug(slug)
+    getProductBySlug: async (slug: string): Promise<IProduct> => {
+        let data = await $axios.$post('getProductBySlug', { slug })
+        return data
+ 
     },
     /**
      * Returns array of related products.
      */
-    getRelatedProducts: (slug: string, options: GetRelatedProductsOptions = {}): Promise<IProduct[]> => {
-         
+    getRelatedProducts: async (slug: string, options: GetRelatedProductsOptions = {}): Promise<IProduct[]> => {
+        let data = await $axios.$post('getRelatedProducts', { slug, options}) 
+        return data
 
-        // This is for demonstration purposes only. Remove it and use the code above.
-        return getRelatedProducts(slug, options)
+        // This is for demonstration purposes only. Remove it and use the code above. 
     },
     /**
      * Return products list.
      */
     
     getProductsList: async (options: IListOptions = {}, filters: IFilterValues = {}): Promise<IProductsList> => {
-       
-        console.log('getProductsList(options, filters)',await getProductsList(options, filters))
-        console.log('{ options, filters}',  { options, filters})
-        let data = await $axios.$post('getProductsList',{ options, filters})
-        // return data
-        return getProductsList(options, filters)
-    },
+        let data = await $axios.$post('getProductsList',{ options, filters}) 
+         return data
+     },
     /**
      * Returns array of featured products.
      */
     getFeaturedProducts: async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
         let data = await $axios.$post('getFeaturedProducts', { options })
         return data
-        return getFeaturedProducts(options)
+        // return getFeaturedProducts(options)
     },
     /**
      * Returns array of latest products.
@@ -111,7 +115,7 @@ const shopApi = {
     getLatestProducts : async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
         let data = await $axios.$post('getLatestProducts', { options })
         return data 
-        return getLatestProducts(options)
+        // return getLatestProducts(options)
     },
     /**
      * Returns an array of top rated products.
@@ -119,15 +123,15 @@ const shopApi = {
     getTopRatedProducts: async  (options: GetProductsOptions = {}): Promise<IProduct[]> => {
         let data = await $axios.$post('getTopRatedProducts', { options })
         return data
-        return getTopRatedProducts(options)
+        // return getTopRatedProducts(options)
     },
     /**
      * Returns an array of discounted products.
      */
     getDiscountedProducts: async  (options: GetProductsOptions = {}): Promise<IProduct[]> => {
-         let data = await $axios.$post('getDiscountedProducts', { options })
+        let data = await $axios.$post('getDiscountedProducts', { options })
         return data
-        return getDiscountedProducts(options)
+        // return getDiscountedProducts(options)
     },
     /**
      * Returns an array of most popular products.
@@ -135,15 +139,16 @@ const shopApi = {
     getPopularProducts: async (options: GetProductsOptions = {}): Promise<IProduct[]> => {
         let data = await $axios.$post('getPopularProducts', { options })
         return data
-        return getPopularProducts(options)
+        // return getPopularProducts(options)
     },
     
     /**
      * Returns search suggestions.
      */
-    getSuggestions: (query: string, options: GetSuggestionsOptions = {}): Promise<IProduct[]> => {
-         
-        return getSuggestions(query, options)
+    getSuggestions: async (query: string, options: GetSuggestionsOptions = {}): Promise<IProduct[]> => {
+        let data = await $axios.$post('getSuggestions', {query, options })
+        return data
+        // return getSuggestions(query, options)
     }
 }
 

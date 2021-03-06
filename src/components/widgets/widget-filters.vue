@@ -21,7 +21,7 @@
                 >
                     <div :class="['filter', itemClasses]">
                         <button type="button" class="filter__title" @click="toggle">
-                            {{ filter.name }}
+                            {{ filter['name_'+$i18n.locale] }}
                             <ArrowRoundedDown12x7Svg class="filter__arrow" />
                         </button>
                         <div :class="['filter__body', contentClasses]">
@@ -44,7 +44,7 @@
                 class="btn btn-secondary btn-sm"
                 @click="resetFilters"
             >
-                Reset
+                {{ $t('general.Reset') }}
             </button>
         </div>
     </div>

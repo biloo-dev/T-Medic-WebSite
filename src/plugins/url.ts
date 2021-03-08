@@ -117,7 +117,7 @@ function make (context: Context) {
         base (url: string) { 
             if (url && url[0] === '/') {
                 if (url.substr(1)) { 
-                    return 'http://127.0.0.1:3333/api/getImg'+ context.base + url.substr(1)
+                    return 'http://161.35.124.15/api/getImg'+ context.base + url.substr(1)
                 } 
             } 
             return url

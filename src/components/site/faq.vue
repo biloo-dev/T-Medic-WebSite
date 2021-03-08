@@ -31,8 +31,8 @@ interface IFaq {
 }
 @Component 
 export default class SitePageFaq extends Vue {
-  @Prop({ type: Array, requierd : true }) readonly questions!: IFaq[] 
-  @Prop({ type: String, requierd : true }) readonly slug! : String
+  @Prop({ type: Array, default: () => [] }) readonly questions!: IFaq[] 
+  @Prop({ type: String, default: () => "" }) readonly slug! : String
  }
 
 </script>

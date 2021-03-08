@@ -117,8 +117,7 @@
       "CreateAnAccount" : "Créer un compte",
       "EditProfile" : "Editer le profil",
       "OrderHistory" : "Historique des commandes",
-      "Addresses" : "Adresses",
-      "Password" : "Mot de passe",
+      "Addresses" : "Adresses", 
       "Logout" : "Se déconnecter"
     },
     "titlePage":{

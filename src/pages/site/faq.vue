@@ -39,8 +39,10 @@ import { ISettings } from '~/interfaces/Settings'
         await store.dispatch('settings/fetchSettings')
     },
     head () {
+       
+        // title: this.Settings("")['name_' + this.$i18n.locale]
         return {
-            title: this.Settings("frequently_asked_questions")['name_' + this.$i18n.locale]
+            title: this.$t("header.nav-links.faq.frequently_asked_questions").toString()
         }
     }
 })

@@ -19,7 +19,7 @@ export interface IOrderItem {
 export interface IOrderAdditionalLine {
     label: string;
     total: number;
-}
+} 
 
 export interface IOrder {
     id: number;

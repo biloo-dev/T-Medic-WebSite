@@ -1,10 +1,46 @@
 {
+  "profile" : { 
+    "Account" : "Compte",
+    "profile" : "Profile",
+    "FirstName" : "Prénom",
+    "orders" : "les Ordres",
+    "LastName" : "Nom", 
+    "PhoneNumber" : "Numéro de téléphone",
+    "saveProfile" : "Enregistrer le profil",
+    "EditProfile" : "Modifier le profil",
+    "ChangePassword":"Changer le mot de passe",
+    "CurrentPassword":"Mot de passe actuel",
+    "Navigation":"La navigation",
+    "NewPassword":"nouveau mot de passe",
+    "ReenterNewPassword":"Ré-entrez le nouveau mot de passe",
+    "Change":"Changement",
+    "DefaultAddress":"Adresse par défaut",
+    "EmailAddress" : "Adresse E-mail",
+    "RecentOrders" : "Dernières commandes",
+    "EditAddress" : "Modifier l'adresse",
+    "LogIntoYourAccount" : "Connectez-vous à votre compte",  
+    "Password" : "Mot de passe",
+    "Forgot" : "Oublié?",
+    "Login" : "Connexion",
+    "dashboard" : "Tableau de bord",
+    "CreateAnAccount" : "Créer un compte", 
+    "OrderDetails" : "Détails de la commande",
+    "OrderHistory" : "Historique des commandes",
+    "Addresses" : "Adresses", 
+    "Logout" : "Se déconnecter"
+  },
   "general": {
     "all" : "Tout",
     "products" : "Produits",
     "Remove" : "Supprimer",
     "Price" : "Prix",
-    "Reset" :"Réinitialiser",
+    "Reset" :"Réinitialiser", 
+    "Order" : "La command",
+    "Date" : "Date",
+    "Status" : "Statut",
+    "Total" : "Total",
+    "for" : "Pour",
+    "item(s)" : "élément(s)",
     "ToolTips" : {
       "TooltipAddToCart" : "ajouter à la liste de panier",
       "TooltipWishlist" : "Ajouter à la liste de souhaits",
@@ -104,22 +140,11 @@
     }
   },
   "header": {
-    "Home" : "Maison", 
+    "Home" : "Accueil", 
     "Shop" : "Achats",
     "Comparison" : "Comparaison",
     "ContactUs" : "Contactez-Nous",
-    "login":{
-      "LogIntoYourAccount" : "Connectez-vous à votre compte", 
-      "Emailaddress" : "Adresse e-mail",
-      "Password" : "Mot de passe",
-      "Forgot" : "Oublié?",
-      "Login" : "Connexion",
-      "CreateAnAccount" : "Créer un compte",
-      "EditProfile" : "Editer le profil",
-      "OrderHistory" : "Historique des commandes",
-      "Addresses" : "Adresses", 
-      "Logout" : "Se déconnecter"
-    },
+     
     "titlePage":{
       "title" : "Accueil"
     },

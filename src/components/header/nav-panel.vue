@@ -43,6 +43,12 @@
                             />
                         </Indicator>
                     </SearchScope>
+<!-- 
+                    <Indicator :to="$url.wishlist()" :value="wishlist.items.length">
+                        <template v-slot:icon>
+                            <compareSvg />
+                        </template>
+                    </Indicator> -->
 
                     <Indicator :to="$url.wishlist()" :value="wishlist.items.length">
                         <template v-slot:icon>
@@ -82,7 +88,7 @@
 import { Vue, Component, Prop, Ref } from 'vue-property-decorator'
 import { State } from 'vuex-class'
 import { RootState } from '~/store'
-import { WishlistState } from '~/store/wishlist'
+import { WishlistState } from '~/store/wishlist' 
 import { DropcartType } from '~/store/options'
 import Sticky from '~/services/sticky'
 import departments from '~/services/departments'
@@ -102,6 +108,7 @@ import Cart20Svg from '~/svg/cart-20.svg'
 import Person20Svg from '~/svg/person-20.svg'
 import Search20Svg from '~/svg/search-20.svg'
 import Cross20Svg from '~/svg/cross-20.svg'
+import compareSvg from '~/svg/compare.svg'
 
 type Layout = 'default' | 'compact';
 
@@ -114,6 +121,7 @@ type StickyMode = 'pullToShow' | 'alwaysOnTop' | false
         Indicator,
         NavLinks,
         Departments,
+        compareSvg,
         LogoSmallSvg,
         Heart20Svg,
         Cart20Svg,
@@ -130,7 +138,7 @@ export default class NavPanel extends Vue {
     @Prop({ type: [String, Boolean], default: () => false }) readonly stickyMode!: StickyMode
 
     @State((state: RootState) => state.options.dropcartType) dropcartType!: DropcartType
-    @State((state: RootState) => state.wishlist) wishlist!: WishlistState
+    @State((state: RootState) => state.wishlist) wishlist!: WishlistState 
 
     @Ref() readonly departments: Departments | undefined
     @Ref() readonly nav: NavLinks | undefined

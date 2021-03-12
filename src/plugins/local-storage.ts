@@ -3,11 +3,12 @@ import { Plugin } from '@nuxt/types'
 
 const plugin: Plugin = ({ store }) => {
     createPersistedState({
-        key: 'stroyka',
+        key: 't-medic',
         paths: [
             'currency',
             'cart',
             'wishlist',
+            'auth',
             'compare'
         ]
     })(store)

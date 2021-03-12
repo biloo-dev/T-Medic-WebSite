@@ -26,7 +26,7 @@ export const mutations: MutationTree<CompareState> = {
     add (state, payload: CompareAddPayload): void {
         if (!state.items.find(x => x.id === payload.product.id)) {
             state.items.push(payload.product)
-        }
+        } 
 
         Vue.notify({
             type: 'success',

@@ -33,7 +33,7 @@ function make (context: Context) {
             return '/shop/cart'
         },
         checkout () {
-            return '/checkout'
+            return '/shop/checkout'
         },
         wishlist () {
             return '/shop/wishlist'
@@ -117,7 +117,8 @@ function make (context: Context) {
         base (url: string) { 
             if (url && url[0] === '/') {
                 if (url.substr(1)) { 
-                    return 'http://161.35.124.15/api/getImg'+ context.base + url.substr(1)
+                    return 'http://127.0.0.1:3333/api/getImg'+ context.base + url.substr(1)
+                    // return 'http://161.35.124.15/api/getImg'+ context.base + url.substr(1)
                 } 
             } 
             return url
@@ -142,6 +143,9 @@ function make (context: Context) {
                 return 'active-cat' 
             } 
             return ''
+        },
+        isInt(str : any) {
+            return !isNaN(str) && Number.isInteger(parseFloat(str));
         }
     }
 }

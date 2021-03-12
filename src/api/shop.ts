@@ -38,9 +38,25 @@ const shopApi = {
     /**
      * Returns array of Login.
      */
+    getProfile: async (): Promise<IUser[]> => {
+         
+        let data = await $axios.$post('/users/profile')  
+        return data 
+    },
+    /**
+     * Returns array of Login.
+     */
     Login: async (credentials : IData): Promise<IUser[]> => {
          
         let data = await $axios.$post('login',credentials)  
+        return data 
+    },
+
+    /**
+     * logout.
+     */
+    logout: async (refreshToken : string | undefined): Promise<[]> => { 
+        let data = await $axios.$post('logout',{refreshToken})   
         return data 
     },
     /**

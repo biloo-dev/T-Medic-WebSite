@@ -6,8 +6,7 @@
 
 
 .block-loader {
-    position: relative;
-    min-height: 820px;
+    position: relative; 
 }
 .block-loader__spinner {
     @include preloader(80px);

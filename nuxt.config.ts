@@ -14,6 +14,10 @@ const config: NuxtConfig = {
     },
     mode: envMode,
     srcDir: 'src/',
+     
+    globalUrl: 'http://161.35.124.15/api/',
+    // globalUrl: 'http://127.0.0.1:3333/api/',
+ 
     /*
     ** Headers of the page
     */

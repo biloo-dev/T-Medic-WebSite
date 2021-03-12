@@ -32,7 +32,7 @@
             </span> 
         </button>
         <div v-if="$slots.default" ref="dropdown" class="indicator__dropdown">
-            <slot /> fffff
+            <slot /> 
         </div>
     </div>
 </template>

@@ -26,14 +26,14 @@
                                             <br>
                                             {{ Settings('email')['name_'+$i18n.locale] }}  : {{ Settings('email').values }}
                                             <br>
-                                            {{ Settings('phone')['name_'+$i18n.locale] }}  :   <li v-for="val in JSON.parse(Settings('phone').values)">{{ val }}</li>
-                                        </p>
-
+                                            {{ Settings('phone')['name_'+$i18n.locale] }}  :  
+                                             <li v-for="(val,i) in JSON.parse(Settings('phone').values)" :key="i"> {{ val }} </li>
+                                        </p> 
                                         <p>
                                             <strong>{{ Settings('opening_hours')['name_'+$i18n.locale] }}</strong>
                                             <br>
-                                            <template v-for="val in JSON.parse(Settings('opening_hours').values)">
-                                                {{ val['name_'+$i18n.locale]  }}<br>
+                                            <template v-for="(val,i) in JSON.parse(Settings('opening_hours').values)"> 
+                                                <span  :key="i"> {{ val['name_'+$i18n.locale]  }}<br> </span>
                                             </template>
                                         </p>
 

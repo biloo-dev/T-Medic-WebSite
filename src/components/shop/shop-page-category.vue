@@ -1,6 +1,6 @@
 <template>
     <div>
-        <BlockLoader v-if="isLoading" />
+        <BlockLoader :minHeight="820"  v-if="isLoading" />
 
         <template v-if="!isLoading">
             <PageHeader :title="pageTitle" :breadcrumb="breadcrumb" />

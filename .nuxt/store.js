@@ -28,6 +28,7 @@ let store = {};
   resolveStoreModules(require('..\\src\\store\\mobileMenu.ts'), 'mobileMenu.ts')
   resolveStoreModules(require('..\\src\\store\\offcanvasCart.ts'), 'offcanvasCart.ts')
   resolveStoreModules(require('..\\src\\store\\options.ts'), 'options.ts')
+  resolveStoreModules(require('..\\src\\store\\profile.ts'), 'profile.ts')
   resolveStoreModules(require('..\\src\\store\\quickview.ts'), 'quickview.ts')
   resolveStoreModules(require('..\\src\\store\\settings.ts'), 'settings.ts')
   resolveStoreModules(require('..\\src\\store\\shop.ts'), 'shop.ts')
@@ -48,6 +49,7 @@ let store = {};
       '..\\src\\store\\mobileMenu.ts',
       '..\\src\\store\\offcanvasCart.ts',
       '..\\src\\store\\options.ts',
+      '..\\src\\store\\profile.ts',
       '..\\src\\store\\quickview.ts',
       '..\\src\\store\\settings.ts',
       '..\\src\\store\\shop.ts',

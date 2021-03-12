@@ -4,17 +4,17 @@
             <div class="dashboard__profile card profile-card">
                 <div class="card-body profile-card__body">
                     <div class="profile-card__avatar">
-                        <img :src="$url.img('/images/avatars/avatar-3.jpg')" alt="">
+                        <img :src="$url.img(User().img)" alt="">
                     </div>
                     <div class="profile-card__name">
-                        Helena Garcia
+                        {{ User().firstName }}
                     </div>
                     <div class="profile-card__email">
-                        stroyka@example.com
+                        {{ User().lastName }}
                     </div>
                     <div class="profile-card__edit">
                         <AppLink :to="$url.accountProfile()" class="btn btn-secondary btn-sm">
-                            Edit Profile
+                            {{ $t('profile.EditProfile') }}
                         </AppLink>
                     </div>
                 </div>
@@ -24,16 +24,16 @@
                 :address="address"
                 class="dashboard__address"
                 featured
-                :badge="address.default ? 'Default Address' : ''"
+                :badge="address.default ? $t('profile.DefaultAddress') : ''"
             >
                 <AppLink :to="$url.accountAddress({ id: 5 })">
-                    Edit Address
+                    {{ $t('profile.EditAddress') }}
                 </AppLink>
             </AddressCard>
 
             <div class="dashboard__orders card">
                 <div class="card-header">
-                    <h5>Recent Orders</h5>
+                    <h5>{{ $t('profile.RecentOrders') }}</h5>
                 </div>
                 <div class="card-divider" />
                 <div class="card-table">
@@ -41,10 +41,10 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>Order</th>
-                                    <th>Date</th>
-                                    <th>Status</th>
-                                    <th>Total</th>
+                                    <th>{{ $t('general.Order') }}</th>
+                                    <th>{{ $t('general.Date') }}</th>
+                                    <th>{{ $t('general.Status') }}</th>
+                                    <th>{{ $t('general.Total') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,9 +58,9 @@
                                     <td>{{ order.status }}</td>
                                     <td>
                                         {{ $price(order.total) }}
-                                        for
+                                        {{ $t('general.for') }}
                                         {{ order.quantity }}
-                                        item(s)
+                                        {{ $t('general.item(s)') }}
                                     </td>
                                 </tr>
                             </tbody>
@@ -73,7 +73,7 @@
 </template>
 
 <script lang="ts">
-
+import { IUser, IData } from '~/interfaces/User' 
 import { Vue, Component } from 'vue-property-decorator'
 import { IUserAddress } from '~/interfaces/address'
 import { IOrderSummary } from '~/interfaces/order'
@@ -82,14 +82,14 @@ import AddressCard from '~/components/shared/address-card.vue'
 import AccountLayout from '~/components/account/account-layout.vue'
 import dataAccountAddresses from '~/data/accountAddresses'
 import dataAccountOrders from '~/data/accountOrders'
-
+import { Getter } from 'vuex-class' 
 @Component({
     components: { AppLink, AddressCard, AccountLayout },
     head: { title: 'My Account' }
 })
 export default class Page extends Vue {
     address: IUserAddress = dataAccountAddresses[0]
-
+    @Getter('auth/getUser') User! : IUser
     orders: IOrderSummary[] = dataAccountOrders.slice(0, 3)
 }
 

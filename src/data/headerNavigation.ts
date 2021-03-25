@@ -11,11 +11,11 @@ const dataHeaderNavigation: INav = [
         title: 'shopping',
         url: '/shop', 
     },
-    {
-        icon: 'fas fa-newspaper',
-        title: 'compare',
-        url: '/shop/compare', 
-    },
+    // {
+    //     icon: 'fas fa-newspaper',
+    //     title: 'compare',
+    //     url: '/shop/compare', 
+    // },
     {
         icon: 'far fa-address-card',
         title: 'aPropos',

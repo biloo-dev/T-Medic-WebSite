@@ -118,7 +118,7 @@ import Check9x7Svg from '~/svg/check-9x7.svg'
 
 @Component({
     components: { PageHeader, Check9x7Svg },
-    head: { title: 'Log In' }
+    head(){ return { title: this.$t('profile.Login').toString() }}, 
 })
 export default class Page extends Vue { }
 

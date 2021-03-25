@@ -43,20 +43,19 @@
                             />
                         </Indicator>
                     </SearchScope>
-<!-- 
-                    <Indicator :to="$url.wishlist()" :value="wishlist.items.length">
-                        <template v-slot:icon>
-                            <compareSvg />
-                        </template>
-                    </Indicator> -->
 
-                    <Indicator :to="$url.wishlist()" :value="wishlist.items.length">
+                    <Indicator :to="$url.compare()" :title="'TooltipClickCompare'" :value="compare.items.length">
+                        <template v-slot:icon>
+                            <compareSvg width="30px" height="30px" />
+                        </template>
+                    </Indicator>
+                      
+                    <Indicator :to="$url.wishlist()" :title="'TooltipClickWishlist'" :value="wishlist.items.length">
                         <template v-slot:icon>
                             <Heart20Svg />
                         </template>
-                    </Indicator>
-
-                    <Indicator
+                    </Indicator> 
+                    <Indicator :title="'TooltipCartlist'"
                         ref="cartIndicator"
                         :to="$url.cart()"
                         :value="$store.getters['cart/quantity']"
@@ -70,7 +69,7 @@
                         <Dropcart v-if="dropcartType === 'dropdown'" />
                     </Indicator>
 
-                    <Indicator ref="accountIndicator" :to="$url.accountDashboard()" trigger="click">
+                    <Indicator ref="accountIndicator" :title="'TooltipClickAccountDashboard'" :to="$url.accountDashboard()" trigger="click">
                         <template v-slot:icon>
                             <Person20Svg />
                         </template>
@@ -92,6 +91,7 @@ import { WishlistState } from '~/store/wishlist'
 import { DropcartType } from '~/store/options'
 import Sticky from '~/services/sticky'
 import departments from '~/services/departments'
+import { IProduct } from '~/interfaces/product'
 
 import Departments from '~/components/header/departments.vue'
 import NavLinks from '~/components/header/nav-links.vue'
@@ -139,6 +139,7 @@ export default class NavPanel extends Vue {
 
     @State((state: RootState) => state.options.dropcartType) dropcartType!: DropcartType
     @State((state: RootState) => state.wishlist) wishlist!: WishlistState 
+    @State((state: RootState) => state.compare) compare!: IProduct 
 
     @Ref() readonly departments: Departments | undefined
     @Ref() readonly nav: NavLinks | undefined
@@ -150,13 +151,12 @@ export default class NavPanel extends Vue {
     sticky: Sticky | null = null
 
     mounted () {
-        const element = this.$el as HTMLElement
-
+        const element = this.$el as HTMLElement 
         this.sticky = new Sticky(element, {
             stuck: 'nav-panel--stuck',
             show: 'nav-panel--show'
-        })
-
+        }) 
+        
         this.sticky.on('stuck', () => {
             if (this.departments) {
                 this.departments.setStickyState(true)

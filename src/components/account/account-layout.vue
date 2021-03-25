@@ -28,10 +28,17 @@
                                         ]"
                                     >
                                         <AppLink :to="item.link">
+                                            <i :class="item.icon" class="mx-2"></i>
                                             {{ $t('profile.'+item.title) }}
                                         </AppLink>
                                     </li>
                                 </NuxtLink>
+                                <li class="account-nav__item" > 
+                                    <b-button variant="link"  @click="$Swal.logout()">
+                                        <i  class="fas fa-sign-out-alt mx-2"></i>
+                                        {{ $t('profile.Logout') }} 
+                                    </b-button>  
+                                </li> 
                             </ul>
                         </div>
                     </div>
@@ -62,14 +69,14 @@ export default class AccountLayout extends Vue {
     data () {
         return {
             items: [
-                { title: 'dashboard', link: this.$url.accountDashboard() },
-                { title: 'EditProfile', link: this.$url.accountProfile() },
-                { title: 'OrderHistory', link: this.$url.accountOrders() },
-                { title: 'OrderDetails', link: this.$url.accountOrder({ id: 5 }) },
-                { title: 'Addresses', link: this.$url.accountAddresses() },
-                { title: 'EditAddress', link: this.$url.accountAddress({ id: 5 }) },
-                { title: 'Password', link: this.$url.accountPassword() },
-                { title: 'Logout', link: this.$url.signIn() }
+                { icon : 'fas fa-solar-panel', title: 'dashboard', link: this.$url.accountDashboard() },
+                { icon : 'fas fa-user-edit', title: 'EditProfile', link: this.$url.accountProfile() },
+                { icon : 'fas fa-history', title: 'OrderHistory', link: this.$url.accountOrders("Order")},
+                { icon : 'fas fa-calendar-week', title: 'FacturHistory', link: this.$url.accountOrders("Factur")},
+                // { icon : 'fas fa-calendar-week', title: 'FacturHistory', link: this.$url.accountOrders()},
+                { icon : 'fas fa-address-card', title: 'addresses', link: this.$url.accountAddresses() }, 
+                { icon : 'fas fa-key', title: 'password', link: this.$url.accountPassword() },
+                // { title: 'Logout', link: this.logout() }
             ]
         }
     } 
@@ -93,8 +100,11 @@ export default class AccountLayout extends Vue {
             return breadcrumbArray
         }, []) 
     }
-    checkLatest(arry : array) : string{ 
+    checkLatest(arry : any) : string{ 
         return this.$url.isInt(arry[arry.length -1]) ? arry[arry.length -2] : arry[arry.length -1]
+    }
+     logout(){
+        
     }
 }
 

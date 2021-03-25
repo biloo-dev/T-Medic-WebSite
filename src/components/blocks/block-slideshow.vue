@@ -30,9 +30,9 @@
                                     />
                                     <div class="block-slideshow__slide-content">
                                         <!-- eslint-disable-next-line vue/no-v-html -->
-                                        <div class="block-slideshow__slide-title" v-html="slide.title" />
+                                        <div class="block-slideshow__slide-title" v-html="slide['title_'+$i18n.locale]" />
                                         <!-- eslint-disable-next-line vue/no-v-html -->
-                                        <div class="block-slideshow__slide-text" v-html="slide.text" />
+                                        <div class="block-slideshow__slide-text" v-html="slide['text_'+$i18n.locale]" />
                                         <div class="block-slideshow__slide-button">
                                             <span class="btn btn-primary btn-lg">{{ $t('btns.ShopNow') }}</span>
                                         </div>

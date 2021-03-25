@@ -9,6 +9,11 @@ export interface IProductAttributeValue {
     name_fr?: string;
     name_ar?: string;
 }
+export interface ITva { 
+    id?: number;
+    description?: string;
+    value?: number;
+}
 
 export interface IProductAttribute {
     slug: string;
@@ -26,6 +31,7 @@ export interface IProduct {
     name: string;
     images: string[];
     price: number;
+    tva: ITva;
     compareAtPrice: number | null;
     brand: IBrand | null;
     badges: string[];

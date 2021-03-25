@@ -1,98 +1,154 @@
 import Vue from 'vue'
 import { ActionTree, GetterTree, MutationTree } from 'vuex'
-import { IUser, IData } from '~/interfaces/User' 
+import { IUser, IData,IProfile,IAddresse, IForm} from '~/interfaces/User' 
 import shopApi from '~/api/shop'
-import { $axios } from '~/utils/api' 
-export interface AuthState {
-    user : IUser[];
-    isLoading : boolean;
-    isLogin : boolean;
-    token?: string;
-    refreshToken?: string;
-}
- 
-export interface IUserP {
-    user : IUser[]; 
-    token?: string;
-    refreshToken?: string;
-}
+import { ISubOrders ,IOrders,IOrderFilters } from '~/interfaces/order'
 
-function getDefaultState (): AuthState {
+export interface ProfileState {
+    profile : IProfile;
+    orders : IOrders[];
+    order : IOrders  | {};
+    isLoading : boolean; 
+}
+   
+  
+function getDefaultState (): ProfileState {
     return {
-        user: [], 
-        isLoading: false, 
-        isLogin: false, 
-        refreshToken : '',
-        token : ''
+        profile: {}, 
+        orders: [], 
+        order: {}, 
+        isLoading: true,  
     }
 }
 export const state = getDefaultState
-
-
-export const mutations: MutationTree<AuthState> = {
-    Login (state, payload: IUserP) {  
-        console.log('payload.refreshToken ',payload.refreshToken )
-        state.user = payload.user
-        state.token = payload.token 
-        state.refreshToken = payload.refreshToken 
-        $axios.setHeader('Authorization', 'Bearer ' + payload.token )
-        state.isLogin = true
+ 
+export const mutations: MutationTree<ProfileState> = {
+    getProfile (state, payload: IProfile) {    
+        state.profile = payload    
         state.isLoading = false 
-    },
-    logout (state) { 
-         let request: Promise<IUser[]> 
-        request = shopApi.logout(state.refreshToken) 
-        console.log(request)
-        state.user = []
-        state.isLoading = false
-        state.isLogin = false
-        state.token = ""
-        $axios.setHeader('Authorization','')
-    },
-    setLoading (state, payload: boolean) {   
-        // setTimeout(() => {
-            state.isLoading = payload 
-        // }, 1000);
-    },
+    }, 
+    getOrders (state, payload: IOrders[]) {    
+        state.isLoading = true 
+        state.orders = payload    
+        state.isLoading = false 
+    }, 
+    getOrder (state, payload: IOrders) {    
+        state.isLoading = true 
+        state.order = payload    
+        state.isLoading = false 
+    }, 
 }
 
 
-export const actions: ActionTree<AuthState, {}> = { 
-    async login ({ commit },data : IData): Promise<void> {  
-        try {
-            commit('setLoading', true ) 
-            let request: Promise<IUser[]> 
-            request = shopApi.Login(data)
-            const user = await request   
-            commit('Login', user ) 
-            commit('setLoading', false ) 
-
-        } catch (err) {
-            commit('setLoading', false )  
-            console.log('err :>> ', err);
+export const actions: ActionTree<ProfileState, {}> = { 
+    async deleteAddress ({ commit },id:number): Promise<void> {
+        try {   
+            let request: Promise<any> 
+            request = shopApi.deleteAddress(id)
+            const isDeleted = await request
+            if (isDeleted) {
+                await this.$auth.fetchUser()
+                await this.app.$Swal.success("successfuly delete Address")  
+            } 
+            return isDeleted
+        } catch (err) {  
+            console.log('errr' , err)
         }
-    },
+    }, 
+    async savePassword ({ commit },data:IForm): Promise<void> {  
+        try {   
+            let request: Promise<any> 
+            request = shopApi.savePassword(data)
+            const password = await request   
+            if (password) {
+                await this.$auth.fetchUser()
+                await this.app.$Swal.success("successfuly change password") 
+                await this.$auth.logout()
+                this.app.$url.lang("/")
+            } 
+            return password
+        } catch (err) {  
+            console.log('errr' , err)
+        }
+    }, 
+    async saveAddress ({ commit },data:IAddresse): Promise<void> {  
+        try {   
+            let request: Promise<IAddresse> 
+            request = shopApi.saveAddress(data)
+            const Addresse = await request    
+            if (Addresse) {
+                await this.$auth.fetchUser()
+                this.app.$Swal.success("successfuly Saved address") 
+            }  
+        } catch (err) {  
+            console.log('errr' , err)
+        }
+    }, 
+    async getOrdrts ({ commit },data:IOrderFilters): Promise<void> {  
+        try {   
+            let request: Promise<IOrders[]> 
+            request = shopApi.getOrders(data)
+            const Orders = await request    
+            commit('getOrders', Orders )  
+        } catch (err) {  
+            console.log('errr' , err)
+        }
+    }, 
     async logout ({ commit }): Promise<void> {  
-        try {
-            commit('setLoading', true )  
-            commit('logout')  
-            commit('setLoading', false )  
-        } catch (err) {
-            commit('setLoading', false )  
-            console.log('err :>> ', err);
+        try {   
+            let request: Promise<boolean> 
+            request = shopApi.logout()
+            const Islogout = await request
+            if (Islogout) {
+                // await this.$auth.fetchUser()
+                this.app.$Swal.error("successfuly Saved profile") 
+            }
+
+        } catch (err) {  
+            console.log('errr' , err)
         }
-    },
+    }, 
+    async getOrdrtById ({ commit },id:number): Promise<void> {  
+        try {   
+            let request: Promise<IOrders> 
+            request = shopApi.getOrderById(id)
+            const Order = await request    
+            commit('getOrder', Order )  
+        } catch (err) {  
+            console.log('errr' , err)
+        }
+    }, 
+    async editProfile ({ commit },payload : IProfile): Promise<void> {  
+        try {   
+            let request: Promise<IProfile> 
+            // let token = this.app.$auth.strategy.token.get();
+            request = shopApi.editProfile(payload)
+            const profile = await request      
+            if (profile) {
+                await this.$auth.fetchUser()
+                this.app.$Swal.success("successfuly Saved profile") 
+            }
+        } catch (err) {  
+             
+        }
+    }, 
 }
  
-export const getters: GetterTree<AuthState, {}> = {
+export const getters: GetterTree<ProfileState, {}> = {
     isLoading: (store) => {
-        return store.isLoading ||  !store.user
+        return store.isLoading || !store.profile
+    }, 
+    getProfile: (store) => { 
+        return store.profile
     },
-    isLogin: (store) => {
-        return store.isLogin
+    getOrdrts: (store) => { 
+        return store.orders
     },
-    getUser: (store) => (slug: string) => { 
-        return store.user
-    },
+    getDefaultAddress: (store) => {
+        if (store.profile.addresse) {
+             return store.profile.addresse.find((e: any) => e.default == true)
+        } 
+        return {}
+    }, 
 
 }

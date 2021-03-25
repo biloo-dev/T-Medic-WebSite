@@ -1,4 +1,5 @@
 import VueI18n from 'vue-i18n'
+import Vue from 'vue'
 import { Context, Plugin } from '@nuxt/types'
 import { IProduct } from '~/interfaces/product'
 import { IUserAddress } from '~/interfaces/address'
@@ -7,7 +8,7 @@ import { ICategory, IShopCategory } from '~/interfaces/category'
 
 function make (context: Context) {
     return {
-        home () {
+        home () { 
             return '/'
         },
         category (category: ICategory) {
@@ -22,6 +23,9 @@ function make (context: Context) {
         },
         shopCategory (category: IShopCategory) {
             return `/shop/catalog/${category.slug}`
+        },
+        compare () {
+            return '/shop/compare'
         },
         catalog () {
             return '/shop/catalog'
@@ -42,10 +46,10 @@ function make (context: Context) {
             return '/shop/track-order'
         },
         signIn () {
-            return '/account'
+            return '/account/login'
         },
         signUp () {
-            return '/account'
+            return '/account/login'
         },
         signOut () {
             return '/account'
@@ -59,7 +63,8 @@ function make (context: Context) {
         accountProfile () {
             return '/account/profile'
         },
-        accountOrders () {
+        accountOrders (isFactur : string) { 
+            if(isFactur) return '/account/orders?'+isFactur
             return '/account/orders'
         },
         accountOrder (order: Pick<IOrder, 'id'>) {
@@ -67,6 +72,9 @@ function make (context: Context) {
         },
         accountAddresses () {
             return '/account/addresses'
+        },
+        accountAddressesadd () {
+            return '/account/addresses/addNew'
         },
         accountAddress (address: Pick<IUserAddress, 'id'>) {
             return `/account/addresses/${address.id}`
@@ -113,17 +121,21 @@ function make (context: Context) {
         },
         terms () {
             return '/site/terms'
+        }, 
+        ext(url :string) {
+            let check = (url = url.substr(1 + url.lastIndexOf("/")).split('?')[0]).split('#')[0].substr(url.lastIndexOf("."))
+            return check[0] == "."
         },
-        base (url: string) { 
+        base (url: string) {  
             if (url && url[0] === '/') {
-                if (url.substr(1)) { 
-                    return 'http://127.0.0.1:3333/api/getImg'+ context.base + url.substr(1)
+                if (url.substr(1)) {
+                    return this.ext(url) ? 'http://127.0.0.1:3333/api/getImg' + context.base + url.substr(1) : context.base + url.substr(1)
                     // return 'http://161.35.124.15/api/getImg'+ context.base + url.substr(1)
                 } 
             } 
             return url
         },
-        img (url: string) {
+        img (url: string) {   
             return this.base(url)
         },
         parse(str :string){ 
@@ -146,7 +158,9 @@ function make (context: Context) {
         },
         isInt(str : any) {
             return !isNaN(str) && Number.isInteger(parseFloat(str));
-        }
+        },
+       
+       
     }
 }
 

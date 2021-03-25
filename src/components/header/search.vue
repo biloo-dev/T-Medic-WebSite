@@ -73,12 +73,12 @@
                         </div>
 
                         <div class="suggestions__item-info">
-                            <NuxtLink :to="$url.product(product)" class="suggestions__item-name" @click.native="closeSuggestion()">
+                            <NuxtLink :to="$url.lang($url.product(product))" class="suggestions__item-name" @click.native="closeSuggestion()">
                                 {{ product['name_'+$i18n.locale] }}
                             </NuxtLink>
-                            <div class="suggestions__item-meta">
+                            <!-- <div class="suggestions__item-meta">
                                 SKU: {{ product.sku }}
-                            </div>
+                            </div> -->
                         </div>
                         <div class="suggestions__item-price">
                             {{ $price(product.price) }}

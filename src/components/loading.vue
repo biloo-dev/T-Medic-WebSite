@@ -26,8 +26,7 @@
       finish() {
         this.loading = false
       },
-      increase(num){
-        console.log('num :>> ', num);
+      increase(num){ 
       }
     },
     mounted() {

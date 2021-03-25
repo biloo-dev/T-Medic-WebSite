@@ -39,7 +39,7 @@
         margin-bottom: 1rem;
     }
     .account-nav__item a {
-        padding: 5px 26px;
+        padding: 5px 12px;
 
         @include direction {
             #{$margin-inline-start}: -2px;
@@ -74,7 +74,7 @@
         }
     }
     .account-nav__item a {
-        padding: 8px 16px;
+        padding: 8px 12px;
         margin-bottom: -2px;
         border-bottom: $card-border-width solid $card-border-color;
     }

@@ -17,32 +17,38 @@
             >
                 {{ badge }}
             </div>
-            <div class="address-card__name">
-                {{ address.firstName }}
-                {{ address.lastName }}
-            </div>
+            <!-- <div class="address-card__name">
+                {{ address['firstName_'+$i18n.locale] }}
+                {{ address['lastName_'+$i18n.locale] }}
+            </div> -->
             <div class="address-card__row">
-                {{ address.country }}
-                <br>
-                {{ address.postcode }},
-                {{ address.city }}
-                <br>
-                {{ address.address }}
+                <div class="address-card__row-title">
+                    {{ $t('profile.wilaya') }} : 
+                </div>
+                {{ address.wilaya['name_'+$i18n.locale] }}  
             </div>
             <div class="address-card__row">
                 <div class="address-card__row-title">
-                    Phone Number
+                    {{ $t('profile.daira') }} : 
                 </div>
                 <div class="address-card__row-content">
-                    {{ address.phone }}
+                    {{ address.daira['name_'+$i18n.locale] }},
+                </div>
+            </div>   
+            <div class="address-card__row">
+                <div class="address-card__row-title">
+                    {{ $t('profile.commune') }}
+                </div>
+                <div class="address-card__row-content">
+                   {{ address.commune['name_'+$i18n.locale] }}
                 </div>
             </div>
             <div class="address-card__row">
                 <div class="address-card__row-title">
-                    Email Address
+                    {{ $t('profile.address') }} : 
                 </div>
                 <div class="address-card__row-content">
-                    {{ address.email }}
+                    {{ address['address_'+$i18n.locale] }}
                 </div>
             </div>
             <div v-if="$slots.default" class="address-card__footer">

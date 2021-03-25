@@ -1,4 +1,4 @@
-import { IProduct } from './product'
+import { IProduct ,ITva} from './product'
 
 export interface CartItemOption {
     optionId: number;
@@ -11,9 +11,13 @@ export interface CartItem {
     id: number
     product: IProduct;
     options: CartItemOption[];
+    tva?: ITva;
     price: number;
     quantity: number;
     total: number;
+    totalHt: number;
+    totalTva: number;
+    totalTtc: number;
 }
 
 export type CartTotalType = 'shipping' | 'tax';
@@ -30,4 +34,10 @@ export interface Cart {
     subtotal: number;
     totals: CartTotal[];
     total: number;
+    totalHt: number;
+    totalTva: number;
+    totalTtc: number;
+    isFacture: boolean, 
+    isLoading: boolean, 
+
 }

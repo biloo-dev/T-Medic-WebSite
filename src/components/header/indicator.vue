@@ -11,15 +11,15 @@
             }
         ]"
         @mouseenter="onMouseEnter"
-        @mouseleave="onMouseLeave"
-    >
-        <AppLink v-if="to && trigger !== 'click'" :to="to" class="indicator__button" @click.native="onClick" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipClickWishlist')">
+        @mouseleave="onMouseLeave" 
+    > 
+        <AppLink v-if="to && trigger !== 'click'" :to="to" class="indicator__button" @click.native="onClick" v-b-tooltip.hover :title="$t('general.ToolTips.'+title)">
             <span class="indicator__area">
                 <slot name="icon" />
                 <span v-if="value !== null" class="indicator__value">{{ value }}</span>
             </span>
         </AppLink>
-        <a v-if="to && trigger === 'click'" :href="$url.anyLink(to)" class="indicator__button" @click="onClick" v-b-tooltip.hover :title="$t('general.ToolTips.TooltipCartlist')">
+        <a v-if="to && trigger === 'click'" :href="$url.anyLink(to)" class="indicator__button" @click="onClick" v-b-tooltip.hover :title="$t('general.ToolTips.'+title)">
             <span class="indicator__area">
                 <slot name="icon" />
                 <span v-if="value !== null" class="indicator__value">{{ value }}</span>

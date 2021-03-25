@@ -13,6 +13,8 @@ import '..\\node_modules\\@fortawesome\\fontawesome-free\\css\\all.min.css'
 
 import '..\\node_modules\\vue-slider-component\\dist-css\\vue-slider-component.css'
 
+import '..\\node_modules\\sweetalert2\\src\\sweetalert2.scss'
+
 import '..\\src\\assets\\scss\\swiper.scss'
 
 import '..\\src\\assets\\scss\\style.scss'

@@ -106,7 +106,7 @@ export default class Topbar extends Vue {
     const fullPath = this.$route.fullPath
     const re = new RegExp('^/(' + dataLanguages.map(x => x.locale).join('|') + ')(/|$)')
     const path = fullPath.replace(re, '/')
-
+    this.$Swal.setLangMoment(locale)
     this.$router.push(`/${locale}${path}`)
   }
 }

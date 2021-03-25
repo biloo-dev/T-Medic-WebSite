@@ -12,7 +12,7 @@
             <div class="dropcart__body">
                 <div v-if="type === 'offcanvas'" class="dropcart__header">
                     <div class="dropcart__title">
-                        Shopping Cart
+                        {{ $t('shop.cart.ShoppingCart')}}
                     </div>
                     <button class="dropcart__close" type="button" @click="$store.commit('offcanvasCart/close')">
                         <Cross12Svg />
@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="dropcart__products-list">
-                    <div v-for="item in items" :key="item.id" class="dropcart__product">
+                    <div v-for="item in cart.items" :key="item.id" class="dropcart__product">
                         <div class="product-image dropcart__product-image">
                             <AppLink :to="$url.product(item.product)" class="product-image__body">
                                 <!--suppress HtmlUnknownTarget -->
@@ -38,8 +38,8 @@
                                     {{ option.optionTitle }}: {{ option.valueTitle }}
                                 </li>
                             </ul>
-                            <div class="dropcart__product-meta">
-                                <span class="dropcart__product-quantity">{{ item.quantity }}</span> ×
+                            <div class="dropcart__product-meta" :class="$i18n.locale =='ar' ? 'float-left' : 'float-right'">
+                                <span class="dropcart__product-quantity">({{ item.quantity }})</span> ×
                                 <span class="dropcart__product-price">{{ $price(item.price) }}</span>
                             </div>
                         </div>
@@ -61,24 +61,25 @@
                         </AsyncAction>
                     </div>
                 </div>
-
+                 <b-card  v-if="cart.quantity" no-body class=" mx-3 mb-2 py-2"> 
+                    <b-form-checkbox v-model="checked" @input="updateIsFacture()" name="check-button" switch>
+                        <strong>{{ checked ? $t('profile.facteur') : $t('profile.order')  }}</strong>
+                    </b-form-checkbox>
+                </b-card>   
                 <div class="dropcart__totals">
                     <table>
-                        <tbody>
-                            <template v-if="totals.length > 0">
-                                <tr>
-                                    <th>Subtotal</th>
-                                    <td>{{ $price(subtotal) }}</td>
-                                </tr>
-                                <tr v-for="(item, index) in totals" :key="index">
-                                    <th>{{ item.title }}</th>
-                                    <td>{{ $price(item.price) }}</td>
-                                </tr>
-                            </template>
-
+                        <tbody> 
                             <tr>
-                                <th>Total</th>
-                                <td>{{ $price(total) }}</td>
+                                <th>{{ $t('profile.totalHt') }}</th>
+                                <td>{{ $price(cart.totalHt) }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ $t('profile.totalTva') }}</th>
+                                <td>{{ $price(cart.totalTva) }}</td>
+                            </tr>
+                            <tr>
+                                <th>{{ $t('profile.totalTtc') }}</th>
+                                <td>{{ $price(cart.totalTtc) }}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -86,10 +87,10 @@
 
                 <div class="dropcart__buttons">
                     <AppLink :to="$url.cart()" class="btn btn-secondary">
-                        View Cart
+                        {{ $t('shop.cart.ViewCart')}}
                     </AppLink>
                     <AppLink :to="$url.checkout()" class="btn btn-primary">
-                        Checkout
+                        {{ $t('shop.cart.Checkout')}}
                     </AppLink>
                 </div>
             </div>
@@ -103,12 +104,11 @@
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator'
 import { State } from 'vuex-class'
 import { RootState } from '~/store'
-import { CartItem, CartTotal } from '~/interfaces/cart'
+import { Cart,CartItem, CartTotal } from '~/interfaces/cart'
 import AppLink from '~/components/shared/app-link.vue'
 import AsyncAction from '~/components/shared/async-action.vue'
 import Cross10Svg from '~/svg/cross-10.svg'
-import Cross12Svg from '~/svg/cross-12.svg'
-
+import Cross12Svg from '~/svg/cross-12.svg' 
 type Type = 'dropdown' | 'offcanvas'
 
 @Component({
@@ -117,13 +117,11 @@ type Type = 'dropdown' | 'offcanvas'
 export default class Dropcart extends Vue {
     @Prop({ type: String, default: () => 'dropdown' }) readonly type!: Type
 
-    @State((state: RootState) => state.cart.items) items!: CartItem[]
-    @State((state: RootState) => state.cart.subtotal) subtotal!: number
-    @State((state: RootState) => state.cart.totals) totals!: CartTotal[]
-    @State((state: RootState) => state.cart.total) total!: number
+    @State((state: RootState) => state.cart) cart!: Cart 
     @State((state: RootState) => state.offcanvasCart.isOpen) isOpen!: boolean
 
     bodyWidth = 0
+    checked : boolean = false
 
     @Watch('isOpen') onIsOpenChange (newValue: boolean) {
         if (newValue) {
@@ -135,6 +133,15 @@ export default class Dropcart extends Vue {
 
     open (): void {
         this.hideScrollbar()
+    }
+
+    async updateIsFacture () {
+        if(this.cart.isFacture == this.checked) return
+        await this.$store.dispatch('cart/updateIsFacture', this.checked)
+    }
+
+    created(){
+        this.checked = this.cart.isFacture
     }
 
     close (): void {

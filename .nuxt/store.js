@@ -19,7 +19,6 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
-  resolveStoreModules(require('..\\src\\store\\auth.ts'), 'auth.ts')
   resolveStoreModules(require('..\\src\\store\\cart.ts'), 'cart.ts')
   resolveStoreModules(require('..\\src\\store\\compare.ts'), 'compare.ts')
   resolveStoreModules(require('..\\src\\store\\config.ts'), 'config.ts')
@@ -39,7 +38,6 @@ let store = {};
   if (process.client && module.hot) {
     // Whenever any Vuex module is updated...
     module.hot.accept([
-      '..\\src\\store\\auth.ts',
       '..\\src\\store\\cart.ts',
       '..\\src\\store\\compare.ts',
       '..\\src\\store\\config.ts',

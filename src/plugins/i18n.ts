@@ -8,10 +8,17 @@ Vue.use(VueI18n)
 export default ({ app, store }: Context) => {
     // Set i18n instance on app
     // This way we can use it in middleware and pages asyncData/fetch
-    app.i18n = new VueI18n({
+    let i18n = new VueI18n({ 
         locale: store.state.locale.current,
         fallbackLocale: defaultLocale,
         // silentTranslationWarn: process.env.NODE_ENV === 'production',
         messages: dataLanguages.reduce((acc, lang) => ({ ...acc, [lang.locale]: lang.messages }), {})
     })
+    app.i18n = i18n
+    app.t = (key: string) => {
+        if (!key) {
+            return '';
+        }
+        return i18n.t(key);
+    };
 }

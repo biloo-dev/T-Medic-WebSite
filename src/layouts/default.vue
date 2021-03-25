@@ -12,7 +12,7 @@ import { tsParticles } from "tsparticles";
 @Component({
     components: { Layout },
     async asyncData ({ store, query }): Promise<object | void> { 
-        console.log('hyhyhyhyh',query)
+   
     }
 })
 export default class DefaultLayout extends Vue { 

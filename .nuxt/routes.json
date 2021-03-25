@@ -3,616 +3,528 @@
     "name": "account",
     "path": "/account",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\index.vue",
-    "chunkName": "pages/account/index",
-    "_name": "_547af0e0"
+    "chunkName": "pages/account/index"
   },
   {
     "name": "home-two",
     "path": "/home-two",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\home-two.vue",
-    "chunkName": "pages/home-two",
-    "_name": "_5c456f0e"
+    "chunkName": "pages/home-two"
   },
   {
     "name": "offcanvas-cart",
     "path": "/offcanvas-cart",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\offcanvas-cart.vue",
-    "chunkName": "pages/offcanvas-cart",
-    "_name": "_0ae690fe"
+    "chunkName": "pages/offcanvas-cart"
   },
   {
     "name": "shop",
     "path": "/shop",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\index.vue",
-    "chunkName": "pages/shop/index",
-    "_name": "_03d3da5e"
+    "chunkName": "pages/shop/index"
   },
   {
     "name": "account-addresses",
     "path": "/account/addresses",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\addresses\\\\index.vue",
-    "chunkName": "pages/account/addresses/index",
-    "_name": "_ed6e045c"
+    "chunkName": "pages/account/addresses/index"
   },
   {
     "name": "account-dashboard",
     "path": "/account/dashboard",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\dashboard.vue",
-    "chunkName": "pages/account/dashboard",
-    "_name": "_cc5052bc"
+    "chunkName": "pages/account/dashboard"
   },
   {
     "name": "account-login",
     "path": "/account/login",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\login.vue",
-    "chunkName": "pages/account/login",
-    "_name": "_1e2293f7"
+    "chunkName": "pages/account/login"
   },
   {
     "name": "account-orders",
     "path": "/account/orders",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\orders\\\\index.vue",
-    "chunkName": "pages/account/orders/index",
-    "_name": "_5ae54b5b"
+    "chunkName": "pages/account/orders/index"
   },
   {
     "name": "account-password",
     "path": "/account/password",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\password.vue",
-    "chunkName": "pages/account/password",
-    "_name": "_1fc8bd7d"
+    "chunkName": "pages/account/password"
   },
   {
     "name": "account-profile",
     "path": "/account/profile",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\profile.vue",
-    "chunkName": "pages/account/profile",
-    "_name": "_1afa48b7"
+    "chunkName": "pages/account/profile"
   },
   {
     "name": "blog-category-classic",
     "path": "/blog/category-classic",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\category-classic.vue",
-    "chunkName": "pages/blog/category-classic",
-    "_name": "_4e7778c0"
+    "chunkName": "pages/blog/category-classic"
   },
   {
     "name": "blog-category-grid",
     "path": "/blog/category-grid",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\category-grid.vue",
-    "chunkName": "pages/blog/category-grid",
-    "_name": "_1fd107f0"
+    "chunkName": "pages/blog/category-grid"
   },
   {
     "name": "blog-category-left-sidebar",
     "path": "/blog/category-left-sidebar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\category-left-sidebar.vue",
-    "chunkName": "pages/blog/category-left-sidebar",
-    "_name": "_35dbd350"
+    "chunkName": "pages/blog/category-left-sidebar"
   },
   {
     "name": "blog-category-list",
     "path": "/blog/category-list",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\category-list.vue",
-    "chunkName": "pages/blog/category-list",
-    "_name": "_2d573560"
+    "chunkName": "pages/blog/category-list"
   },
   {
     "name": "blog-post-classic",
     "path": "/blog/post-classic",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\post-classic.vue",
-    "chunkName": "pages/blog/post-classic",
-    "_name": "_20bb2be2"
+    "chunkName": "pages/blog/post-classic"
   },
   {
     "name": "blog-post-full",
     "path": "/blog/post-full",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\post-full.vue",
-    "chunkName": "pages/blog/post-full",
-    "_name": "_247c36ef"
+    "chunkName": "pages/blog/post-full"
   },
   {
     "name": "shop-cart",
     "path": "/shop/cart",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\cart.vue",
-    "chunkName": "pages/shop/cart",
-    "_name": "_4ef2f71e"
+    "chunkName": "pages/shop/cart"
   },
   {
     "name": "shop-catalog",
     "path": "/shop/catalog",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\catalog\\\\index.vue",
-    "chunkName": "pages/shop/catalog/index",
-    "_name": "_469160aa"
+    "chunkName": "pages/shop/catalog/index"
   },
   {
     "name": "shop-category-grid-3-columns-sidebar",
     "path": "/shop/category-grid-3-columns-sidebar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-grid-3-columns-sidebar.vue",
-    "chunkName": "pages/shop/category-grid-3-columns-sidebar",
-    "_name": "_def27c0e"
+    "chunkName": "pages/shop/category-grid-3-columns-sidebar"
   },
   {
     "name": "shop-category-grid-4-columns-full",
     "path": "/shop/category-grid-4-columns-full",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-grid-4-columns-full.vue",
-    "chunkName": "pages/shop/category-grid-4-columns-full",
-    "_name": "_29238be1"
+    "chunkName": "pages/shop/category-grid-4-columns-full"
   },
   {
     "name": "shop-category-grid-5-columns-full",
     "path": "/shop/category-grid-5-columns-full",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-grid-5-columns-full.vue",
-    "chunkName": "pages/shop/category-grid-5-columns-full",
-    "_name": "_24952400"
+    "chunkName": "pages/shop/category-grid-5-columns-full"
   },
   {
     "name": "shop-category-list",
     "path": "/shop/category-list",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-list.vue",
-    "chunkName": "pages/shop/category-list",
-    "_name": "_253c018c"
+    "chunkName": "pages/shop/category-list"
   },
   {
     "name": "shop-category-right-sidebar",
     "path": "/shop/category-right-sidebar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-right-sidebar.vue",
-    "chunkName": "pages/shop/category-right-sidebar",
-    "_name": "_774bbd2d"
+    "chunkName": "pages/shop/category-right-sidebar"
   },
   {
     "name": "shop-checkout",
     "path": "/shop/checkout",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\checkout\\\\index.vue",
-    "chunkName": "pages/shop/checkout/index",
-    "_name": "_61cea4ea"
+    "chunkName": "pages/shop/checkout/index"
   },
   {
     "name": "shop-compare",
     "path": "/shop/compare",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\compare.vue",
-    "chunkName": "pages/shop/compare",
-    "_name": "_b1ad30b8"
+    "chunkName": "pages/shop/compare"
   },
   {
     "name": "shop-product-columnar",
     "path": "/shop/product-columnar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\product-columnar.vue",
-    "chunkName": "pages/shop/product-columnar",
-    "_name": "_07413314"
+    "chunkName": "pages/shop/product-columnar"
   },
   {
     "name": "shop-product-sidebar",
     "path": "/shop/product-sidebar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\product-sidebar.vue",
-    "chunkName": "pages/shop/product-sidebar",
-    "_name": "_c5c50886"
+    "chunkName": "pages/shop/product-sidebar"
   },
   {
     "name": "shop-product-standard",
     "path": "/shop/product-standard",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\product-standard.vue",
-    "chunkName": "pages/shop/product-standard",
-    "_name": "_cee84fa8"
+    "chunkName": "pages/shop/product-standard"
   },
   {
     "name": "shop-track-order",
     "path": "/shop/track-order",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\track-order.vue",
-    "chunkName": "pages/shop/track-order",
-    "_name": "_33169c0b"
+    "chunkName": "pages/shop/track-order"
   },
   {
     "name": "shop-wishlist",
     "path": "/shop/wishlist",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\wishlist.vue",
-    "chunkName": "pages/shop/wishlist",
-    "_name": "_284fe016"
+    "chunkName": "pages/shop/wishlist"
   },
   {
     "name": "site-about-us",
     "path": "/site/about-us",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\about-us.vue",
-    "chunkName": "pages/site/about-us",
-    "_name": "_48b93580"
+    "chunkName": "pages/site/about-us"
   },
   {
     "name": "site-components",
     "path": "/site/components",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\components.vue",
-    "chunkName": "pages/site/components",
-    "_name": "_396f34f8"
+    "chunkName": "pages/site/components"
   },
   {
     "name": "site-contact-us",
     "path": "/site/contact-us",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\contact-us.vue",
-    "chunkName": "pages/site/contact-us",
-    "_name": "_f99fc266"
+    "chunkName": "pages/site/contact-us"
   },
   {
     "name": "site-contact-us-alt",
     "path": "/site/contact-us-alt",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\contact-us-alt.vue",
-    "chunkName": "pages/site/contact-us-alt",
-    "_name": "_50045ca9"
+    "chunkName": "pages/site/contact-us-alt"
   },
   {
     "name": "site-faq",
     "path": "/site/faq",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\faq.vue",
-    "chunkName": "pages/site/faq",
-    "_name": "_7159e7a4"
+    "chunkName": "pages/site/faq"
   },
   {
     "name": "site-not-found",
     "path": "/site/not-found",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\not-found.vue",
-    "chunkName": "pages/site/not-found",
-    "_name": "_1835a1d4"
+    "chunkName": "pages/site/not-found"
   },
   {
     "name": "site-terms",
     "path": "/site/terms",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\terms.vue",
-    "chunkName": "pages/site/terms",
-    "_name": "_4442bfd6"
+    "chunkName": "pages/site/terms"
   },
   {
     "name": "site-typography",
     "path": "/site/typography",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\typography.vue",
-    "chunkName": "pages/site/typography",
-    "_name": "_71607291"
+    "chunkName": "pages/site/typography"
   },
   {
     "name": "shop-checkout-success",
     "path": "/shop/checkout/success",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\checkout\\\\success.vue",
-    "chunkName": "pages/shop/checkout/success",
-    "_name": "_0eeb7ffc"
+    "chunkName": "pages/shop/checkout/success"
   },
   {
     "name": "account-addresses-id",
     "path": "/account/addresses/:id",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\addresses\\\\_id.vue",
-    "chunkName": "pages/account/addresses/_id",
-    "_name": "_68404cba"
+    "chunkName": "pages/account/addresses/_id"
   },
   {
     "name": "account-orders-id",
     "path": "/account/orders/:id",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\orders\\\\_id.vue",
-    "chunkName": "pages/account/orders/_id",
-    "_name": "_13172efa"
+    "chunkName": "pages/account/orders/_id"
   },
   {
     "name": "shop-catalog-slug",
     "path": "/shop/catalog/:slug",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\catalog\\\\_slug.vue",
-    "chunkName": "pages/shop/catalog/_slug",
-    "_name": "_44dabf62"
+    "chunkName": "pages/shop/catalog/_slug"
   },
   {
     "name": "shop-products-slug",
     "path": "/shop/products/:slug?",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\products\\\\_slug.vue",
-    "chunkName": "pages/shop/products/_slug",
-    "_name": "_2a2f2d36"
+    "chunkName": "pages/shop/products/_slug"
   },
   {
     "name": "index",
     "path": "/",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\index.vue",
-    "chunkName": "pages/index",
-    "_name": "_40a94e72"
+    "chunkName": "pages/index"
   },
   {
     "name": "lang-account",
     "path": "/:lang/account",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\index.vue",
-    "chunkName": "pages/_lang/account/index",
-    "_name": "_547af0e0"
+    "chunkName": "pages/_lang/account/index"
   },
   {
     "name": "lang-home-two",
     "path": "/:lang/home-two",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\home-two.vue",
-    "chunkName": "pages/_lang/home-two",
-    "_name": "_5c456f0e"
+    "chunkName": "pages/_lang/home-two"
   },
   {
     "name": "lang-offcanvas-cart",
     "path": "/:lang/offcanvas-cart",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\offcanvas-cart.vue",
-    "chunkName": "pages/_lang/offcanvas-cart",
-    "_name": "_0ae690fe"
+    "chunkName": "pages/_lang/offcanvas-cart"
   },
   {
     "name": "lang-shop",
     "path": "/:lang/shop",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\index.vue",
-    "chunkName": "pages/_lang/shop/index",
-    "_name": "_03d3da5e"
+    "chunkName": "pages/_lang/shop/index"
   },
   {
     "name": "lang-account-addresses",
     "path": "/:lang/account/addresses",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\addresses\\\\index.vue",
-    "chunkName": "pages/_lang/account/addresses/index",
-    "_name": "_ed6e045c"
+    "chunkName": "pages/_lang/account/addresses/index"
   },
   {
     "name": "lang-account-dashboard",
     "path": "/:lang/account/dashboard",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\dashboard.vue",
-    "chunkName": "pages/_lang/account/dashboard",
-    "_name": "_cc5052bc"
+    "chunkName": "pages/_lang/account/dashboard"
   },
   {
     "name": "lang-account-login",
     "path": "/:lang/account/login",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\login.vue",
-    "chunkName": "pages/_lang/account/login",
-    "_name": "_1e2293f7"
+    "chunkName": "pages/_lang/account/login"
   },
   {
     "name": "lang-account-orders",
     "path": "/:lang/account/orders",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\orders\\\\index.vue",
-    "chunkName": "pages/_lang/account/orders/index",
-    "_name": "_5ae54b5b"
+    "chunkName": "pages/_lang/account/orders/index"
   },
   {
     "name": "lang-account-password",
     "path": "/:lang/account/password",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\password.vue",
-    "chunkName": "pages/_lang/account/password",
-    "_name": "_1fc8bd7d"
+    "chunkName": "pages/_lang/account/password"
   },
   {
     "name": "lang-account-profile",
     "path": "/:lang/account/profile",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\profile.vue",
-    "chunkName": "pages/_lang/account/profile",
-    "_name": "_1afa48b7"
+    "chunkName": "pages/_lang/account/profile"
   },
   {
     "name": "lang-blog-category-classic",
     "path": "/:lang/blog/category-classic",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\category-classic.vue",
-    "chunkName": "pages/_lang/blog/category-classic",
-    "_name": "_4e7778c0"
+    "chunkName": "pages/_lang/blog/category-classic"
   },
   {
     "name": "lang-blog-category-grid",
     "path": "/:lang/blog/category-grid",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\category-grid.vue",
-    "chunkName": "pages/_lang/blog/category-grid",
-    "_name": "_1fd107f0"
+    "chunkName": "pages/_lang/blog/category-grid"
   },
   {
     "name": "lang-blog-category-left-sidebar",
     "path": "/:lang/blog/category-left-sidebar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\category-left-sidebar.vue",
-    "chunkName": "pages/_lang/blog/category-left-sidebar",
-    "_name": "_35dbd350"
+    "chunkName": "pages/_lang/blog/category-left-sidebar"
   },
   {
     "name": "lang-blog-category-list",
     "path": "/:lang/blog/category-list",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\category-list.vue",
-    "chunkName": "pages/_lang/blog/category-list",
-    "_name": "_2d573560"
+    "chunkName": "pages/_lang/blog/category-list"
   },
   {
     "name": "lang-blog-post-classic",
     "path": "/:lang/blog/post-classic",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\post-classic.vue",
-    "chunkName": "pages/_lang/blog/post-classic",
-    "_name": "_20bb2be2"
+    "chunkName": "pages/_lang/blog/post-classic"
   },
   {
     "name": "lang-blog-post-full",
     "path": "/:lang/blog/post-full",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\blog\\\\post-full.vue",
-    "chunkName": "pages/_lang/blog/post-full",
-    "_name": "_247c36ef"
+    "chunkName": "pages/_lang/blog/post-full"
   },
   {
     "name": "lang-shop-cart",
     "path": "/:lang/shop/cart",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\cart.vue",
-    "chunkName": "pages/_lang/shop/cart",
-    "_name": "_4ef2f71e"
+    "chunkName": "pages/_lang/shop/cart"
   },
   {
     "name": "lang-shop-catalog",
     "path": "/:lang/shop/catalog",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\catalog\\\\index.vue",
-    "chunkName": "pages/_lang/shop/catalog/index",
-    "_name": "_469160aa"
+    "chunkName": "pages/_lang/shop/catalog/index"
   },
   {
     "name": "lang-shop-category-grid-3-columns-sidebar",
     "path": "/:lang/shop/category-grid-3-columns-sidebar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-grid-3-columns-sidebar.vue",
-    "chunkName": "pages/_lang/shop/category-grid-3-columns-sidebar",
-    "_name": "_def27c0e"
+    "chunkName": "pages/_lang/shop/category-grid-3-columns-sidebar"
   },
   {
     "name": "lang-shop-category-grid-4-columns-full",
     "path": "/:lang/shop/category-grid-4-columns-full",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-grid-4-columns-full.vue",
-    "chunkName": "pages/_lang/shop/category-grid-4-columns-full",
-    "_name": "_29238be1"
+    "chunkName": "pages/_lang/shop/category-grid-4-columns-full"
   },
   {
     "name": "lang-shop-category-grid-5-columns-full",
     "path": "/:lang/shop/category-grid-5-columns-full",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-grid-5-columns-full.vue",
-    "chunkName": "pages/_lang/shop/category-grid-5-columns-full",
-    "_name": "_24952400"
+    "chunkName": "pages/_lang/shop/category-grid-5-columns-full"
   },
   {
     "name": "lang-shop-category-list",
     "path": "/:lang/shop/category-list",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-list.vue",
-    "chunkName": "pages/_lang/shop/category-list",
-    "_name": "_253c018c"
+    "chunkName": "pages/_lang/shop/category-list"
   },
   {
     "name": "lang-shop-category-right-sidebar",
     "path": "/:lang/shop/category-right-sidebar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\category-right-sidebar.vue",
-    "chunkName": "pages/_lang/shop/category-right-sidebar",
-    "_name": "_774bbd2d"
+    "chunkName": "pages/_lang/shop/category-right-sidebar"
   },
   {
     "name": "lang-shop-checkout",
     "path": "/:lang/shop/checkout",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\checkout\\\\index.vue",
-    "chunkName": "pages/_lang/shop/checkout/index",
-    "_name": "_61cea4ea"
+    "chunkName": "pages/_lang/shop/checkout/index"
   },
   {
     "name": "lang-shop-compare",
     "path": "/:lang/shop/compare",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\compare.vue",
-    "chunkName": "pages/_lang/shop/compare",
-    "_name": "_b1ad30b8"
+    "chunkName": "pages/_lang/shop/compare"
   },
   {
     "name": "lang-shop-product-columnar",
     "path": "/:lang/shop/product-columnar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\product-columnar.vue",
-    "chunkName": "pages/_lang/shop/product-columnar",
-    "_name": "_07413314"
+    "chunkName": "pages/_lang/shop/product-columnar"
   },
   {
     "name": "lang-shop-product-sidebar",
     "path": "/:lang/shop/product-sidebar",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\product-sidebar.vue",
-    "chunkName": "pages/_lang/shop/product-sidebar",
-    "_name": "_c5c50886"
+    "chunkName": "pages/_lang/shop/product-sidebar"
   },
   {
     "name": "lang-shop-product-standard",
     "path": "/:lang/shop/product-standard",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\product-standard.vue",
-    "chunkName": "pages/_lang/shop/product-standard",
-    "_name": "_cee84fa8"
+    "chunkName": "pages/_lang/shop/product-standard"
   },
   {
     "name": "lang-shop-track-order",
     "path": "/:lang/shop/track-order",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\track-order.vue",
-    "chunkName": "pages/_lang/shop/track-order",
-    "_name": "_33169c0b"
+    "chunkName": "pages/_lang/shop/track-order"
   },
   {
     "name": "lang-shop-wishlist",
     "path": "/:lang/shop/wishlist",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\wishlist.vue",
-    "chunkName": "pages/_lang/shop/wishlist",
-    "_name": "_284fe016"
+    "chunkName": "pages/_lang/shop/wishlist"
   },
   {
     "name": "lang-site-about-us",
     "path": "/:lang/site/about-us",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\about-us.vue",
-    "chunkName": "pages/_lang/site/about-us",
-    "_name": "_48b93580"
+    "chunkName": "pages/_lang/site/about-us"
   },
   {
     "name": "lang-site-components",
     "path": "/:lang/site/components",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\components.vue",
-    "chunkName": "pages/_lang/site/components",
-    "_name": "_396f34f8"
+    "chunkName": "pages/_lang/site/components"
   },
   {
     "name": "lang-site-contact-us",
     "path": "/:lang/site/contact-us",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\contact-us.vue",
-    "chunkName": "pages/_lang/site/contact-us",
-    "_name": "_f99fc266"
+    "chunkName": "pages/_lang/site/contact-us"
   },
   {
     "name": "lang-site-contact-us-alt",
     "path": "/:lang/site/contact-us-alt",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\contact-us-alt.vue",
-    "chunkName": "pages/_lang/site/contact-us-alt",
-    "_name": "_50045ca9"
+    "chunkName": "pages/_lang/site/contact-us-alt"
   },
   {
     "name": "lang-site-faq",
     "path": "/:lang/site/faq",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\faq.vue",
-    "chunkName": "pages/_lang/site/faq",
-    "_name": "_7159e7a4"
+    "chunkName": "pages/_lang/site/faq"
   },
   {
     "name": "lang-site-not-found",
     "path": "/:lang/site/not-found",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\not-found.vue",
-    "chunkName": "pages/_lang/site/not-found",
-    "_name": "_1835a1d4"
+    "chunkName": "pages/_lang/site/not-found"
   },
   {
     "name": "lang-site-terms",
     "path": "/:lang/site/terms",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\terms.vue",
-    "chunkName": "pages/_lang/site/terms",
-    "_name": "_4442bfd6"
+    "chunkName": "pages/_lang/site/terms"
   },
   {
     "name": "lang-site-typography",
     "path": "/:lang/site/typography",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\site\\\\typography.vue",
-    "chunkName": "pages/_lang/site/typography",
-    "_name": "_71607291"
+    "chunkName": "pages/_lang/site/typography"
   },
   {
     "name": "lang-shop-checkout-success",
     "path": "/:lang/shop/checkout/success",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\checkout\\\\success.vue",
-    "chunkName": "pages/_lang/shop/checkout/success",
-    "_name": "_0eeb7ffc"
+    "chunkName": "pages/_lang/shop/checkout/success"
   },
   {
     "name": "lang-account-addresses-id",
     "path": "/:lang/account/addresses/:id",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\addresses\\\\_id.vue",
-    "chunkName": "pages/_lang/account/addresses/_id",
-    "_name": "_68404cba"
+    "chunkName": "pages/_lang/account/addresses/_id"
   },
   {
     "name": "lang-account-orders-id",
     "path": "/:lang/account/orders/:id",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\account\\\\orders\\\\_id.vue",
-    "chunkName": "pages/_lang/account/orders/_id",
-    "_name": "_13172efa"
+    "chunkName": "pages/_lang/account/orders/_id"
   },
   {
     "name": "lang-shop-catalog-slug",
     "path": "/:lang/shop/catalog/:slug",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\catalog\\\\_slug.vue",
-    "chunkName": "pages/_lang/shop/catalog/_slug",
-    "_name": "_44dabf62"
+    "chunkName": "pages/_lang/shop/catalog/_slug"
   },
   {
     "name": "lang-shop-products-slug",
     "path": "/:lang/shop/products/:slug?",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\shop\\\\products\\\\_slug.vue",
-    "chunkName": "pages/_lang/shop/products/_slug",
-    "_name": "_2a2f2d36"
+    "chunkName": "pages/_lang/shop/products/_slug"
   },
   {
     "name": "lang-index",
     "path": "/:lang/",
     "component": "E:\\\\Bureau\\\\T-medic-Stroyk\\\\Sources\\\\src\\\\pages\\\\index.vue",
-    "chunkName": "pages/_lang/index",
-    "_name": "_40a94e72"
+    "chunkName": "pages/_lang/index"
   }
 ]

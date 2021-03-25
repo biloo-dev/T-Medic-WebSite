@@ -86,8 +86,9 @@ const config: NuxtConfig = {
     ** Global CSS
     */
     css: [
-        '@fortawesome/fontawesome-free/css/all.min.css',
+        '@fortawesome/fontawesome-free/css/all.min.css', 
         'vue-slider-component/dist-css/vue-slider-component.css',
+        'sweetalert2/src/sweetalert2.scss',
         '~assets/scss/swiper.scss',
         '~assets/scss/style.scss'
     ],
@@ -111,28 +112,58 @@ const config: NuxtConfig = {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        '~/plugins/url.ts',
+        '~/plugins/url.ts', 
         '~/plugins/currency.ts',
         '~/plugins/i18n.ts',
         '~/plugins/axios-accessor.ts',
+        { src: '~/plugins/swal.ts' },
+        // { src: '~/plugins/auth.ts', ssr: false },
         { src: '~/plugins/notifications.ts', ssr: false },
-        { src: '~/plugins/local-storage.ts', ssr: false }
+        { src: '~/plugins/local-storage.ts', ssr: false },
+        { src: '~/plugins/v-select.ts', ssr: false }
+         
     ],
     /*
     ** Nuxt.js dev-modules
     */
     buildModules: [
-        '@nuxt/typescript-build'
+        '@nuxt/typescript-build',
+        'nuxt-vite'
     ],
     /*
     ** Nuxt.js modules
     */
     modules: [
         // Doc: https://bootstrap-vue.js.org
-        'bootstrap-vue/nuxt',
-        '@nuxtjs/axios'
-    ],
-    
+        'bootstrap-vue/nuxt', 
+        '@nuxtjs/axios',
+        '@nuxtjs/auth-next' 
+    ],  
+    auth: {
+        plugins: [ '~/plugins/auth.ts' ],
+        strategies: {
+            local: { 
+                token: {  
+                    property: 'token', 
+                    type: 'Bearer'
+                }, 
+                redirect:{ 
+                    login: '/account/dashboard',
+                    logout: '/',
+                    callback: '/',
+                    home: '/account/dashboard'
+                },
+                user: {
+                    property: 'user', 
+                },
+                endpoints: {
+                    login: { url: '/login', method: 'post' }, 
+                    user: { url: '/users/profile', method: 'post' },
+                    logout: { url: '/logout', method: 'post' }
+                }, 
+            }
+        }
+    } ,
     /*
     ** Build configuration
     */

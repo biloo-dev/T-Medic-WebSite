@@ -1,6 +1,89 @@
 
 {
-   "profile" : {
+  "fields": {
+    "address_fr" : "العنوان بالفرنسية",
+    "address_ar" : "العنوان بالعربية",
+    "address_en" : "العنوان بالانجليزية",
+    "firstName_fr" : "الإسم بالفرنسية",
+    "firstName_en" : "الاسم بالعربية",
+    "firstName_ar" : "الاسم بالانجليزية",
+    "lastName_fr" : "اللقب بالفرنسية",
+    "lastName_en" : "اللقب بالعربية",
+    "lastName_ar" : "اللقب بالانجليزية"
+  },
+  "validation":{
+    "required" :  { 
+      "firstName_fr" : "لا يمكن ترك الحقل <strong>الإسم بالفرنسية</strong> فارغًا",
+      "firstName_en" : "لا يمكن ترك الحقل <strong>الاسم بالعربية</strong>  فارغًا",
+      "firstName_ar" : "لا يمكن ترك الحقل <strong>الاسم بالانجليزية</strong>  فارغًا",
+      "lastName_fr" : "لا يمكن ترك الحقل <strong>اللقب بالفرنسية</strong>  فارغًا",
+      "lastName_en" : "لا يمكن ترك الحقل <strong>اللقب بالعربية</strong>  فارغًا",
+      "lastName_ar" : "لا يمكن ترك الحقل <strong>اللقب بالانجليزية</strong>  فارغًا",   
+      "phone1" :  "لا يمكن ترك الحقل <strong>رقم الهاتف (1)</strong>  فارغًا",
+      "email" :  "لا يمكن ترك الحقل <strong>البريد الإلكتروني</strong>  فارغًا" 
+    },
+    "Incorrect" : {
+      "oldPassword" : "كلمة المرور القديمة غير صحيحة يرجى إعادة المحاولة"
+    },
+    "notMatch" : {
+      "confirmPassword" : "كلمة السر غير متطابقة. يرجى تأكيد"
+    },
+     "email" : {
+      "email" : " حقل <strong> البريد الالكتروني </strong>غير صالح" 
+    },
+    "unique" : {
+      "email" : "لقد تم تسجيل <strong>بريدك الإلكتروني</strong> من قبل " 
+    }
+  },
+  "profile" : {
+    "newsletter" : "رسالة إخبارية", 
+    "newsletterText" : "ادخل بريدك الإلكتروني لكي يصلك كل جديد عن أخبارنا ومنتجاتنا الجديدة",
+    "ThereAreNoRecordsToShow" : "لا توجد سجلات لعرضها", 
+    "FacturHistory" : "قائمة الفواتير", 
+    "AllOrderHistory" : "قائمة جميع الطلبات (طلبات/فواتير)", 
+    "MinPassword" : "يجب ان يحتوي كلمة المرور اكثر من 8 احرف",
+    "requiredPassword" : "لا يمكن ترك هذا الحقل فارغا",
+    "confirmPassword" : "كلمة المرور غير متطابقة يرجرى التأكد",
+    "addNewAddress" : "أضف عنوان جديد",
+    "EditAddress" : "تعديل العنوان",
+    "saveAddress" : "حفظ العنوان",
+    "updateAddress" : "تحديث العنوان",
+    "labelNotFound" : "لا توجد بيانات",
+    "wilayaSearch" : "حدد الولاية",
+    "dairaSearch" : "اختر الدائرة",
+    "communeSearch" : "اختر البلدية",
+    "totalHt" : "إجمالي (HT)",
+    "totalTva" : "إجمالي (TVA)",
+    "totalTtc" : "إجمالي (TTC)",
+    "num" : "رقم",
+    "tva" : "الضريبة",
+    "qty" : "الكمية",
+    "ref" : "المرجع",
+    "desgnation" : "وصف المنتج",
+    "WasPlacedOn" : "تم وضعه في",
+    "andIsCurrently" : "وحاليا", 
+    "bonCommand" : "أمر شراء",
+    "facteur" : "فاتورة بيع",    
+    "BackToList" : "الرجوع للقائمة",
+    "first" : "أول",
+    "prev" : "السابق",
+    "next" : "التالي",
+    "last" : "الاخير",
+    "male" : "ذكر",
+    "female" : "أنثى",
+    "sexe" : "نوع الجنس",
+    "footerImg" : "إضغط على الصورة",
+    "AddressList" : "قائمة العناوين",
+    "title_fr" : "الفرنسية",
+    "title_en" : "الانجليزية",
+    "title_ar" : "العربية", 
+    "shipped" : "تم شحنها",
+    "canceled" : "ألغيت",
+    "pending" : "قيد الانتظار",
+    "wilaya" : "ولاية",
+    "daira" : "دائرة",
+    "commune" : "بلدية",
+    "address" : "العنوان ",
     "Account" : "الحساب",
     "profile" : "الملف الشخصي",
     "orders" : "الطلبات",
@@ -15,24 +98,42 @@
     "CurrentPassword":"كلمة المرور الحالي",
     "NewPassword":"كلمة السر الجديدة",
     "ReenterNewPassword":"أعد إدخال كلمة المرور الجديدة",
-    "Change":"يتغيرون", 
+    "Change":"تغيير كلمة المرور", 
     "DefaultAddress":"العنوان الافتراضي",
     "EditAddress" : "تعديل العنوان",
     "RecentOrders" : "الطلبيات الأخيرة",
-    "LogIntoYourAccount" : "تسجيل الدخول إلى حسابك",
-    "Emailaddress" : "عنوان بريد الكتروني", 
+    "LogIntoYourAccount" : "تسجيل الدخول إلى حسابك", 
     "Forgot" : "نسيت؟",
     "Login" : "تسجيل الدخول",
     "CreateAnAccount" : "انشئ حساب", 
-    "OrderHistory" : "قائمة الطلبات",
-    "Addresses" : "عناوين",
-    "Password" : "كلمة المرور",
+    "OrderHistory" : "قائمة أوامر الشراء",
+    "addresses" : "عناوين",
+    "password" : "كلمة المرور",
     "OrderDetails" : "تفاصيل الطلب",
     "dashboard" : "لوحة القيادة",
-    "Logout" : "تسجيل خروج"
+    "Logout" : "تسجيل خروج",
+    "order" : "طلب شراء",
+    "date" : "تاريخ",
+    "status" : "حالة",
+    "total" : "مجموع",
+    "type" : "النوع"
   },
   "general": {
+    "confirmButtonDelete" : "نعم، إحذفه",
+    "titleDelete" : "هل أنت متأكد أنك تريد حذف؟", 
+    "textDelete" : "لا يمكنك الرجوع بعد الحذف !!", 
+    "loading" : "جار التحميل", 
+    "addNew" : "أضف جديد", 
+    "edit" : "تعديل", 
+    "title":"هل أنت متأكد من تسجيل الخروج؟",
+    "text":"هل انت فعلا متاكد من انك تريد تسجيل الخروج",
+    "confirmButtonText":"نعم، سجل الخروج!",
+    "cancelButtonText":"لا، إلغاء!",
     "all" : "الكل",
+    "product" : "المنتج",
+    "addedToCart" : "تمت الإضافته إلى عربة التسوق",
+    "addedToCompare" : "قد تم إضافته قائمة المقارنة",
+    "addedToWishList" : "قد تم إضافته إلى بطاقة الرغبات",
     "products" : "المنتجات",
     "Remove" : "حذف",
     "Price" : "السعر",
@@ -41,7 +142,7 @@
     "Date" : "تاريخ",
     "Status" : "حالة",
     "Total" : "مجموع",
-    "for" : "بالنسبة",
+    "for" : "من مجموع",
     "item(s)":"العناصر",
     "ToolTips": {
       "TooltipAddToCart": "أضف إلى أوامر الشراء",
@@ -52,6 +153,8 @@
       "TooltipRemoveCompare": "إزالة من قائمة المقارنة",
       "TooltipSearch__button": "ابحث عن منتج",
       "TooltipClickWishlist": "قائمة الرغبات",
+      "TooltipClickCompare" : "قائمة مقارنة المنتج",
+      "TooltipClickAccountDashboard" : "لوحة حساب",
       "TooltipCartlist": "قائمة التسوق"
     }
   },
@@ -66,6 +169,21 @@
     
   },
   "shop": {
+    "cart" : {
+      "PleaseSelectAddress" : "الرجاء تحديد عنوان",
+      "ViewCart" : "عرض عربة التسوق",  
+      "Checkout" : "الدفع",  
+
+      "CartTotals" : "مجموع سلة التسوق",
+      "ProceedToCheckout" : "تمرير إلى صندوق النقود", 
+      "withShopping" : "مع نقل البضائع",  
+
+      "isFucteur" : "حساب على أساس الفاتورة",
+      "isOrder" : "الحساب على أساس نموذج طلب الشراء", 
+      "ShoppingCart" : "عربة التسوق",
+      "empty" : "سلة التسوق الخاصة بك فارغة!",
+      "continue" : "استمر"
+    },
     "categorySideBar": {
       "Filters": "تصفية"
     },

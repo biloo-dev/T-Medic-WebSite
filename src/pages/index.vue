@@ -118,7 +118,7 @@ async function loadColumns () {
         BlockBrands,
         BlockProductColumns
     },
-    async asyncData (context: Context) {
+    async asyncData (context: Context) { 
         context.store.commit('options/setHeaderLayout', 'default')
         context.store.commit('options/setDropcartType', 'dropdown') 
         const featuredProducts = runOnlyOnServer(() => shopApi.getFeaturedProducts({ limit: 8 }), null)

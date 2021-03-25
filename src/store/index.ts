@@ -6,10 +6,10 @@ import { QuickviewState } from '~/store/quickview'
 import { WishlistState } from '~/store/wishlist'
 import { CartState } from '~/store/cart'
 import { LocaleState } from '~/store/locale'
-import { ShopState } from '~/store/shop'
-import { ConfigState } from '~/store/config'
-import { SettingsState } from '~/store/settings'
-import { AuthState } from '~/store/auth'
+import { ShopState } from '~/store/shop' 
+import { SettingsState } from '~/store/settings' 
+import { ProfileState } from '~/store/profile'
+import { CompareState } from '~/store/compare'
 
 export interface RootState {
     cart: CartState;
@@ -22,5 +22,6 @@ export interface RootState {
     locale: LocaleState;
     shop: ShopState;
     settings: SettingsState;
-    auth: AuthState;
+    profile: ProfileState;
+    compare: CompareState; 
 }

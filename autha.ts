@@ -68,8 +68,7 @@ export const actions: ActionTree<AuthState, {}> = {
             commit('setLoading', false ) 
 
         } catch (err) {
-            commit('setLoading', false )  
-            console.log('err :>> ', err);
+            commit('setLoading', false )   
         }
     },
     async logout ({ commit }): Promise<void> {  
@@ -78,8 +77,7 @@ export const actions: ActionTree<AuthState, {}> = {
             commit('logout')  
             commit('setLoading', false )  
         } catch (err) {
-            commit('setLoading', false )  
-            console.log('err :>> ', err);
+            commit('setLoading', false )   
         }
     },
 }
@@ -91,8 +89,11 @@ export const getters: GetterTree<AuthState, {}> = {
     isLogin: (store) => {
         return store.isLogin
     },
-    getUser: (store) => (slug: string) => { 
+    getUser: (store) => { 
         return store.user
+    },
+    getToken: (store) => { 
+        return store.token
     },
 
 }

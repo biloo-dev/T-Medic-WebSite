@@ -1,19 +1,20 @@
 <template>
     <div class="site-footer__widget footer-newsletter">
         <h5 class="footer-newsletter__title">
-            Newsletter
+            {{ $t('profile.newsletter')}}
         </h5>
         <div class="footer-newsletter__text">
-            Praesent pellentesque volutpat ex, vitae auctor lorem pulvinar mollis felis at lacinia.
+             {{ $t('profile.newsletterText')}}
         </div>
 
         <form action="" class="footer-newsletter__form">
-            <label class="sr-only" for="footer-newsletter-address">Email Address</label>
+            <label class="sr-only" for="footer-newsletter-address">{{ $t('profile.EmailAddress') }}</label>
             <input
                 id="footer-newsletter-address"
+                v-model="email"
                 class="footer-newsletter__form-input form-control"
                 type="text"
-                placeholder="Email Address..."
+                :placeholder="$t('profile.EmailAddress')+'...'"
             >
 
             <button class="footer-newsletter__form-button btn btn-primary">
@@ -33,10 +34,13 @@
 
 import { Vue, Component } from 'vue-property-decorator'
 import SocialLinks from '~/components/shared/social-links.vue'
-
+import apiConfig from '~/api/config'
+//newsletter
 @Component({
     components: { SocialLinks }
 })
-export default class FooterNewsletter extends Vue { }
+export default class FooterNewsletter extends Vue {
+    email : string = ""
+}
 
 </script>

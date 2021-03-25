@@ -9,6 +9,7 @@ type Location = 'nav-panel' | 'mobile-header'
     components: { AppLink }
 })
 export default class Indicator extends Vue {
+    @Prop({ type: String, default: () => '' }) readonly title!: string | null
     @Prop({ type: Number, default: () => null }) readonly value!: number | null
     @Prop({ type: String, default: () => '' }) readonly to!: string
     @Prop({ type: String, default: () => 'none' }) readonly trigger!: Trigger

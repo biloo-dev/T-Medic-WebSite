@@ -9,6 +9,29 @@
 .locale-en {
     font-family: 'Roboto', sans-serif;
 }
+.v-select-toggle {
+    border: 1px solid #1513133b  !important;
+    background: #fff  !important; 
+    font-weight: 400  !important;
+    color: #212529  !important;    
+    padding: .375rem .75rem  !important;
+    font-size: 16px  !important;
+    line-height: 1.5  !important; 
+    transition: color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out  !important;
+}  
+.v-dropdown-item {
+    font-weight: 400  !important;   
+    padding: .375rem .75rem  !important;
+    font-size: 16px  !important;
+    line-height: 1.5  !important; 
+} 
+.v-dropdown-container{
+    overflow: auto;
+    max-height: 300px;
+}   
 
 .locale-fr {
     font-family: 'Roboto', serif;
@@ -25,7 +48,19 @@
         left: 0;
         
     }
+    .msg_errorList i {
+        color: red;
+    }
+    .msg_errorList strong {
+        color: red;
+    }
+    .msg_errorList,
+    .v-dropdown-item {
+        text-align: left;
+    }
+     
 }
+
 
 .locale-ar {
     font-family: 'Droid Arabic Kufi',
@@ -39,5 +74,17 @@
         background: orange;
         right: 0;
     }
+    .msg_errorList i {
+        color: red;
+    }
+    .msg_errorList strong {
+        color: red;
+    }
+    .msg_errorList,
+    .v-dropdown-item {
+        text-align: right;
+    }
+    
+     
 }
  

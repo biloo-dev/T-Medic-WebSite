@@ -125,7 +125,7 @@
         width: 1px;
 
         @include direction {
-            #{$padding-inline-start}: 90px;
+            #{$padding-inline-start}: 20px;
         }
     }
     .cart-table__column--total {

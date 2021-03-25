@@ -1,15 +1,15 @@
 <template>
     <AccountLayout>
         <div class="addresses-list">
-            <AppLink to="/" class="addresses-list__item addresses-list__item--new">
+            <AppLink :to="$url.accountAddressesadd()" class="addresses-list__item addresses-list__item--new">
                 <div class="addresses-list__plus" />
                 <div class="btn btn-secondary btn-sm">
-                    Add New
-                </div>
+                      {{ $t('general.addNew') }}
+                </div> 
             </AppLink>
 
             <div class="addresses-list__divider" />
-            <template v-for="address in addresses">
+            <template v-for="address in $auth.user.addresse">
                 <AddressCard
                     :key="address.id"
                     :address="address"
@@ -17,12 +17,12 @@
                     class="addresses-list__item"
                 >
                     <AppLink :to="$url.accountAddress(address)">
-                        Edit
+                        {{ $t('general.edit') }}
                     </AppLink>
                     &nbsp;&nbsp;
-                    <AppLink to="/">
-                        Remove
-                    </AppLink>
+                    <b-button variant="link" @click="removeAddress(address.id)">
+                        {{ $t('general.Remove') }}
+                    </b-button>
                 </AddressCard>
                 <div :key="address.id + '-divider'" class="addresses-list__divider" />
             </template>
@@ -31,20 +31,32 @@
 </template>
 
 <script lang="ts">
+import { Context } from '@nuxt/types'
 
 import { Vue, Component } from 'vue-property-decorator'
 import { IUserAddress } from '~/interfaces/address'
 import AppLink from '~/components/shared/app-link.vue'
 import AddressCard from '~/components/shared/address-card.vue'
-import AccountLayout from '~/components/account/account-layout.vue'
-import dataAccountAddresses from '~/data/accountAddresses'
+import AccountLayout from '~/components/account/account-layout.vue' 
 
 @Component({
-    components: { AppLink, AddressCard, AccountLayout },
-    head: { title: 'Address List' }
+    components: { AppLink, AddressCard, AccountLayout }, 
+    head(){ return { title: this.$t('profile.AddressList').toString() }}, 
+     middleware ({ redirect, $url,$auth }: Context) {
+        if(!$auth.loggedIn) {
+            $auth.logout()
+            return redirect($url.lang($url.signIn()))
+        }
+    }
 })
-export default class Page extends Vue {
-    addresses: IUserAddress[] = dataAccountAddresses
+export default class Page extends Vue { 
+    removeAddress(id : number){
+        this.$Swal.delete().then((result) => {
+                if (result.isConfirmed) {
+                    this.$store.dispatch('profile/deleteAddress',id)
+                } 
+            })
+    }
 }
 
 </script>

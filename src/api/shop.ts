@@ -4,10 +4,10 @@
 import { $axios } from '~/utils/api' 
 import { IShopCategory } from '~/interfaces/category'
 import { ISettings } from '~/interfaces/Settings'
-import { IUser, IData } from '~/interfaces/User'
+import { IUser, IData ,IProfile,IAllAdress , IAddresse,IForm} from '~/interfaces/User'
 import { IProduct, IProductsList } from '~/interfaces/product'
 import { IFilterValues, IListOptions } from '~/interfaces/list'
-  
+import { ISubOrders ,IOrders,IOrderFilters } from '~/interfaces/order' 
 export interface GetCategoriesOptions {
     depth?: number;
 }
@@ -31,23 +31,70 @@ export type GetSuggestionsOptions = {
 };
 // let url = 'http://161.35.124.15/api/'
 // let url = 'http://127.0.0.1:3333/api/'
-interface AxiosRequestConfig {
-    options?: IListOptions;
-}
+
+ 
+
 const shopApi = {
     /**
      * Returns array of Login.
      */
-    getProfile: async (): Promise<IUser[]> => {
-         
+    newsletter: async (email : string): Promise<boolean> => {
+        let data = await $axios.$post('/newsletter', email)
+        return data 
+    },
+
+    proceedToCheckout: async (form : IOrders): Promise<any> => {  
+        let data = await $axios.$post('/orders/proceedToCheckout',form)  
+        return data 
+    },
+
+    /**
+     * Returns array of Login.
+     */
+    savePassword: async (form : IForm): Promise<any> => {  
+        let data = await $axios.$post('/users/password',form)  
+        return data 
+    },
+    
+    deleteAddress: async (id : number): Promise<any> => {
+        let data = await $axios.$post('/users/deleteAddress',{ id : id })
+        return data 
+    },
+
+    saveAddress: async (form : IAddresse): Promise<IAddresse> => {  
+        let data = await $axios.$post('/users/saveAddress',form)  
+        return data 
+    },
+
+    getWilaya: async (): Promise<IAllAdress> => {  
+        let data = await $axios.$post('/settings/allAdress')  
+        return data 
+    },
+
+    getOrders: async (filters : IOrderFilters): Promise<IOrders[]> => {  
+        let data = await $axios.$post('/orders/orders',filters)  
+        return data 
+    },
+
+    getOrderById: async (id : number): Promise<IOrders> => {  
+        let data = await $axios.$post('/orders/orderById',{id})  
+        return data 
+    },
+
+    
+    getProfile: async (): Promise<IProfile> => {   
         let data = await $axios.$post('/users/profile')  
+        return data 
+    },
+
+    editProfile: async (form : IProfile): Promise<IProfile> => {   
+        let data = await $axios.$post('/users/editProfile',form)  
         return data 
     },
     /**
      * Returns array of Login.
      */
-    Login: async (credentials : IData): Promise<IUser[]> => {
-         
+    Login: async (credentials : IData): Promise<IUser[]> => { 
         let data = await $axios.$post('login',credentials)  
         return data 
     },
@@ -55,8 +102,8 @@ const shopApi = {
     /**
      * logout.
      */
-    logout: async (refreshToken : string | undefined): Promise<[]> => { 
-        let data = await $axios.$post('logout',{refreshToken})   
+    logout: async (): Promise<boolean> => { 
+        let data = await $axios.$post('logout')   
         return data 
     },
     /**

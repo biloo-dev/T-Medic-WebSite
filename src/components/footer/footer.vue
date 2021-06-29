@@ -1,5 +1,5 @@
 <template>
-<div class="hero name footer" id="footer">
+<div class="hero name footer">
   <div class="site-footer">
     <div class="container">
       <div class="site-footer__widgets">
@@ -48,11 +48,7 @@
       </div>
     </div>
     <ToTop />
-  </div>
-  <div class="w wave"></div>
-  <div class="w wave2"></div>
-  <div class="w wave3"></div>
-  <div class="w wave4"></div>s
+  </div> 
 </div>
 </template>
 

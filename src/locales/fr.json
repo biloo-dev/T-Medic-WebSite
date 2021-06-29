@@ -30,7 +30,9 @@
     "email" : {
       "email" : "Le champ <strong>E-mail</strong> n'est pas valide" 
     },
-    "unique" : ""
+    "unique" : {
+      "email" : "Votre <strong>email</strong> a déjà été enregistré " 
+    }
   },
   "profile" : { 
     "newsletter" : "lettre de nouvelles", 

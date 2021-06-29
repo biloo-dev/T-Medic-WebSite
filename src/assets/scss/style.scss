@@ -245,8 +245,8 @@ Table of Contents:
 .logo{
   width: 100px;
   height: 100px;
-  -webkit-animation: flip-vertical-fwd 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate backwards;
-  animation: flip-vertical-fwd 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate backwards;
+//   -webkit-animation: flip-vertical-fwd 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate backwards;
+//   animation: flip-vertical-fwd 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite alternate backwards;
 }
 .slide-fwd-center {
     -webkit-animation: slide-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;

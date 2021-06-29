@@ -11,6 +11,7 @@
             <!-- desktop site__header -->
             <header class="site__header d-lg-block d-none">
                 <Header />
+                
             </header>
             <!-- desktop site__header / end -->
 
@@ -56,6 +57,7 @@ import { RootState } from '~/store'
 import { DropcartType } from '~/store/options'
 import Footer from '~/components/footer/footer.vue'
 import Header from '~/components/header/header.vue'
+
 import MobileHeader from '~/components/mobile/mobile-header.vue'
 import Dropcart from '~/components/header/dropcart.vue'
 import MobileMenu from '~/components/mobile/mobile-menu.vue'
@@ -68,6 +70,7 @@ import Quickview from '~/components/shared/quickview.vue'
         MobileHeader,
         Header,
         Footer,
+        
         Quickview
     },
     head (this: Layout) {

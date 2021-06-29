@@ -17,7 +17,7 @@
                 :placeholder="$t('profile.EmailAddress')+'...'"
             >
 
-            <button class="footer-newsletter__form-button btn btn-primary">
+            <button class="footer-newsletter__form-button btn btn-primary" @click.prevent="sendNewsLetter">
                 Subscribe
             </button>
         </form>
@@ -34,13 +34,18 @@
 
 import { Vue, Component } from 'vue-property-decorator'
 import SocialLinks from '~/components/shared/social-links.vue'
-import apiConfig from '~/api/config'
+import shopApi from '~/api/shop'
 //newsletter
 @Component({
     components: { SocialLinks }
 })
 export default class FooterNewsletter extends Vue {
     email : string = ""
+    async sendNewsLetter(){
+        if(this.email == "") return 
+        let isSend = await shopApi.newsletter(this.email)
+        if(isSend) this.email = ""
+    }
 }
 
 </script>

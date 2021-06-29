@@ -39,7 +39,7 @@ const shopApi = {
      * Returns array of Login.
      */
     newsletter: async (email : string): Promise<boolean> => {
-        let data = await $axios.$post('/newsletter', email)
+        let data = await $axios.$post('/newsletter', {email})
         return data 
     },
 

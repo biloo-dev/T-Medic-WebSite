@@ -12,12 +12,17 @@ const accessor = (context :Context) => {
   context.$axios.onError(error => {
     if (error.response) {
       if (error.response.status == 400) {
+        console.log('err :>> ', error.response.data);
         if (Array.isArray(error.response.data)) {
           let msg = "<ul class='list-group'>"
           error.response.data.forEach(err => { 
             msg += `<li class="msg_errorList list-group-item"><b-alert show variant="danger"><i class="fas fa-times-circle mx-2"></i>${context.app.t(`validation.${err.validation}.${err.field}`)}</b-alert></li>`
-            console.log('validation :>> ', context.app.t(`validation.${err.validation}.${err.field}`));
           })
+          msg += "</ul>"
+          context.app.$Swal.error(msg)
+        }else {
+          let msg = "<ul class='list-group'>"
+          msg += `<li class="msg_errorList list-group-item"><b-alert show variant="danger"><i class="fas fa-times-circle mx-2"></i>${context.app.t(`validation.${error.response.data.validation}.${error.response.data.field}`)}</b-alert></li>`
           msg += "</ul>"
           context.app.$Swal.error(msg)
         }
